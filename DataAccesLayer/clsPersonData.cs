@@ -64,6 +64,7 @@ namespace DataAccesLayer
             command.Parameters.AddWithValue("@Address", Address);
             command.Parameters.AddWithValue("@Phone", Phone);
             command.Parameters.AddWithValue("@Email", Email);
+            
             command.Parameters.AddWithValue("@NationalityCountryID", NationalityCountryID);
             command.Parameters.AddWithValue("@ImagePath", ImagePath);
 
@@ -142,8 +143,11 @@ namespace DataAccesLayer
             command.Parameters.AddWithValue("@Gendor", Gendor);
             command.Parameters.AddWithValue("@Address", Address);
             command.Parameters.AddWithValue("@Phone", Phone);
+            command.Parameters.AddWithValue("@Email", Email);
             command.Parameters.AddWithValue("@NationalityCountryID", NationalityCountryID);
             command.Parameters.AddWithValue("@ImagePath", ImagePath);
+            command.Parameters.AddWithValue("@PersonID", PersonID);
+
 
             try
             {

@@ -23,7 +23,7 @@ namespace BusinessLogicLayer
         public string Address { get; set; }
         public string Phone {  get; set; }
         public string Email { get; set; }
-        public int NationalityCountryID { get; set; }
+        public int NationalityCountryID { get; set; } // to do need validation
         public string ImagePath { get;set; }
 
         public enum enMode { AddNew , Update};
@@ -120,7 +120,8 @@ namespace BusinessLogicLayer
 
         public static clsPerson Find(int PersonID)
         {
-            int  Gendor = 0, NationalityCountryID = 0;
+            int   NationalityCountryID = 0;
+            byte Gendor = 0;
             DateTime DateOfBirth= DateTime.Now;
             string FirstName="", SecondName = "", ThirdName = "", LastName = "", Address = "";
             string Phone = "", Email = "", ImagePath = "", NationalNo = "";
@@ -141,10 +142,11 @@ namespace BusinessLogicLayer
 
         public static clsPerson Find(string NationalNo)
         {
-            int PersonID = 0, Gendor = 0, NationalityCountryID = 0;
+            int PersonID = 0,  NationalityCountryID = 0;
             DateTime DateOfBirth = DateTime.Now;
             string FirstName = "", SecondName = "", ThirdName = "", LastName = "", Address = "";
             string Phone = "", Email = "", ImagePath = "";
+            byte Gendor = 0;
 
             if (clsPersonData.Find(ref PersonID, NationalNo, ref FirstName, ref SecondName,
              ref ThirdName, ref LastName, ref DateOfBirth, ref Gendor, ref Address,

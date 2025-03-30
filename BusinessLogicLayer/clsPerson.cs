@@ -19,7 +19,7 @@ namespace BusinessLogicLayer
         public string ThirdName { get; set; }
         public string LastName { get; set; }
         public DateTime DateOfBirth {  get; set; }
-        public int Gendor {  get; set; }
+        public byte Gendor {  get; set; }
         public string Address { get; set; }
         public string Phone {  get; set; }
         public string Email { get; set; }
@@ -30,7 +30,7 @@ namespace BusinessLogicLayer
         public enMode Mode { get; private set; }
 
        private clsPerson(int PersonID, string NationalNo, string FirstName, string SecondName,
-            string ThirdName, string LastName, DateTime DateOfBirth, int Gendor, string Address,
+            string ThirdName, string LastName, DateTime DateOfBirth, byte Gendor, string Address,
             string Phone, string Email, int NationalityCountryID, string ImagePath)
         {
             this.PersonID = PersonID;
@@ -58,7 +58,7 @@ namespace BusinessLogicLayer
             this.ThirdName = string.Empty;
             this.LastName = string.Empty;
             this.DateOfBirth = DateTime.Now;
-            this.Gendor = -1;
+            this.Gendor = 1;
             this.Address = string.Empty;
             this.Phone = string.Empty;
             this.Email = string.Empty;
@@ -108,17 +108,17 @@ namespace BusinessLogicLayer
 
         }
 
-        static bool DeletePerson(int PersonID)
+        public static bool DeletePerson(int PersonID)
         {
             return clsPersonData.DeletePerson(PersonID);
         }
 
-        static DataTable GetAllPerson()
+        public static DataTable GetAllPerson()
         {
             return clsPersonData.GetAllPeople();
         }
 
-        static clsPerson Find(int PersonID)
+        public static clsPerson Find(int PersonID)
         {
             int  Gendor = 0, NationalityCountryID = 0;
             DateTime DateOfBirth= DateTime.Now;
@@ -139,7 +139,7 @@ namespace BusinessLogicLayer
             }
         }
 
-        static clsPerson Find(string NationalNo)
+        public static clsPerson Find(string NationalNo)
         {
             int PersonID = 0, Gendor = 0, NationalityCountryID = 0;
             DateTime DateOfBirth = DateTime.Now;

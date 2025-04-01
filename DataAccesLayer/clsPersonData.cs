@@ -306,12 +306,13 @@ namespace DataAccesLayer
         {
             bool isFound = false;
             SqlConnection connection = new SqlConnection(clsDataConnection.connection_string);
-            string query = "Select isFound=1 where PersonID=@PersonID";
+            string query = "Select isFound=1 from People where PersonID=@PersonID";
             SqlCommand command= new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@PersonID", PersonID);
 
             try
             {
+                connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
                 isFound = reader.HasRows;
                 reader.Close();
@@ -328,6 +329,34 @@ namespace DataAccesLayer
 
         }
 
+        public static bool isExist(string NationalNo)
+        {
+            bool isFound = false;
+            SqlConnection connection = new SqlConnection(clsDataConnection.connection_string);
+            string query = "Select isFound=1 from People where NationalNo=@NationalNo";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@NationalNo", NationalNo);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                isFound = reader.HasRows;
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return isFound;
+
+        }
+
+     
 
     }
 }

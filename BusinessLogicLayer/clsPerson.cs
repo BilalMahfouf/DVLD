@@ -162,6 +162,15 @@ namespace BusinessLogicLayer
             }
         }
 
+        public static bool isExist(int PersonID)
+        {
+            return clsPersonData.isExist(PersonID);
+        }
+        public static bool isExist(string NationalNo)
+        {
+            return clsPersonData.isExist(NationalNo);
+        }
+
 
 
 

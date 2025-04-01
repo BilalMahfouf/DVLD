@@ -113,7 +113,7 @@ public static class clsPersonTest
             person.FirstName = "Test";
             person.LastName = "User";
             person.DateOfBirth = new DateTime(1990, 1, 1);
-            person.Gendor = 1;
+            person.Gender = 1;
             person.Phone = "555-1234";
             person.NationalityCountryID = 3;
 
@@ -254,7 +254,7 @@ public static class clsPersonTest
         person.FirstName = "Test";
         person.LastName = "User";
         person.DateOfBirth = new DateTime(1990, 1, 1);
-        person.Gendor = 1;
+        person.Gender = 1;
         person.Phone = "555-1234";
         person.NationalityCountryID = 3;
         person.Save();
@@ -314,18 +314,13 @@ class clsPersonTester
 {
     static void Main()
     {
-        Console.WriteLine("Running clsPerson Tests...\n");
+        string str = "Person ID";
+        Console.WriteLine(str);
+        str = str.Replace(" ", "");
+        Console.WriteLine(str);
 
-        clsPersonTest.RunAllTests();
-
-        //clsCountriesTest.RunAllTests(); // test true 
-
-
-
-
-        Console.WriteLine("\nAll tests completed.");
     }
 
-    
-    
+
+
 }

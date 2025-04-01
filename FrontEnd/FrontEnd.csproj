@@ -52,10 +52,19 @@
     <Compile Include="Forms\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmPeople.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPeople.Designer.cs">
+      <DependentUpon>frmPeople.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPeople.resx">
+      <DependentUpon>frmPeople.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -475,6 +484,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\IconLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj">
+      <Project>{f153937b-7610-4015-909d-6117ee4b6144}</Project>
+      <Name>BusinessLogicLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

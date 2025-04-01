@@ -19,7 +19,7 @@ namespace BusinessLogicLayer
         public string ThirdName { get; set; }
         public string LastName { get; set; }
         public DateTime DateOfBirth {  get; set; }
-        public byte Gendor {  get; set; }
+        public byte Gender {  get; set; }
         public string Address { get; set; }
         public string Phone {  get; set; }
         public string Email { get; set; }
@@ -40,7 +40,7 @@ namespace BusinessLogicLayer
             this.ThirdName = ThirdName;
             this.LastName = LastName;
             this.DateOfBirth = DateOfBirth;
-            this.Gendor = Gendor;
+            this.Gender = Gendor;
             this.Address = Address;
             this.Phone = Phone;
             this.Email = Email;
@@ -58,7 +58,7 @@ namespace BusinessLogicLayer
             this.ThirdName = string.Empty;
             this.LastName = string.Empty;
             this.DateOfBirth = DateTime.Now;
-            this.Gendor = 1;
+            this.Gender = 1;
             this.Address = string.Empty;
             this.Phone = string.Empty;
             this.Email = string.Empty;
@@ -70,7 +70,7 @@ namespace BusinessLogicLayer
         private bool _AddNewPerson()
         {
             this.PersonID = clsPersonData.AddNewPerson(this.NationalNo, this.FirstName, this.SecondName,
-             this.ThirdName, this.LastName, this.DateOfBirth, this.Gendor, this.Address,
+             this.ThirdName, this.LastName, this.DateOfBirth, this.Gender, this.Address,
             this.Phone, this.Email, this.NationalityCountryID, this.ImagePath);
             return this.PersonID > -1;
         }
@@ -78,7 +78,7 @@ namespace BusinessLogicLayer
         private bool _UpdatePerson()
         {
             return clsPersonData.UpdatePerson(this.PersonID, this.NationalNo, this.FirstName, this.SecondName,
-             this.ThirdName, this.LastName, this.DateOfBirth, this.Gendor, this.Address,
+             this.ThirdName, this.LastName, this.DateOfBirth, this.Gender, this.Address,
             this.Phone, this.Email, this.NationalityCountryID, this.ImagePath);
         }
 
@@ -169,6 +169,11 @@ namespace BusinessLogicLayer
         public static bool isExist(string NationalNo)
         {
             return clsPersonData.isExist(NationalNo);
+        }
+
+        public static DataTable GetAllPeopleWithCountryName()
+        {
+            return clsPersonData.GetAllPeopleWithCountryName();
         }
 
 

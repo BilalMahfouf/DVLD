@@ -355,6 +355,59 @@ namespace DataAccesLayer
             return isFound;
 
         }
+        
+        public static DataTable GetAllPeopleWithCountryName()
+        {
+            DataTable dt = new DataTable();
+
+            SqlConnection connection = new SqlConnection(clsDataConnection.connection_string);
+            string query = @"SELECT 
+    People.PersonID,
+    People.NationalNo,
+    People.FirstName,
+    People.SecondName,
+    People.ThirdName,
+    People.LastName,
+    CASE 
+        WHEN People.Gender = 0 THEN 'Male'
+        WHEN People.Gender = 1 THEN 'Female'
+        ELSE 'Unknown'  -- Handle unexpected values
+    END AS Gender,
+    People.DateOfBirth,
+    Countries.CountryName,
+    People.Phone,
+    People.Email,
+    People.ImagePath
+FROM People
+INNER JOIN Countries ON People.NationalityCountryID = Countries.CountryID;
+
+";
+            SqlCommand command = new SqlCommand(query, connection);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    dt.Load(reader);
+                    dt.Columns["CountryName"].ColumnName = "Nationality";
+                }
+                reader.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dt;
+
+
+        }
 
      
 

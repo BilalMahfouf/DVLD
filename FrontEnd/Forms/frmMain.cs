@@ -21,5 +21,11 @@ namespace FrontEnd.Forms
         {
 
         }
+
+        private void peopleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmManagePeople frmManagePeople = new frmManagePeople();
+            frmManagePeople.ShowDialog();
+        }
     }
 }

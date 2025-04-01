@@ -34,25 +34,30 @@
             this.applicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmDrivingLicensesServices = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmNewDrivingLicense = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmLocalLincense = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmInternationalLicense = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmRenewDrivingLicense = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmReplacementForLostorDamagedLicense = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmReleaseDetainedDrivingLicense = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmRetakeTest = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmManageApplications = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmLocalDrivingLicenseApplication = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmInternationalLicenseApplication = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmDetainLicenses = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmManageDetainedLicenses = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDetainLicense = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmReleaseDetainedLicense = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmManageApplicationsTypes = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmManageTestTypes = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.peopleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.driversToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsmLocalLincense = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmInternationalLicense = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCurrentUserInfo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmChangePassword = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmSignOut = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,8 +89,7 @@
             this.tsmManageApplications,
             this.tsmDetainLicenses,
             this.tsmManageApplicationsTypes,
-            this.tsmManageTestTypes,
-            this.toolStripMenuItem1});
+            this.tsmManageTestTypes});
             this.applicationToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.applicationToolStripMenuItem.Image = global::FrontEnd.Properties.Resources.Applications_64;
             this.applicationToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -122,6 +126,25 @@
             this.tsmNewDrivingLicense.Size = new System.Drawing.Size(513, 38);
             this.tsmNewDrivingLicense.Text = "New Driving License";
             // 
+            // tsmLocalLincense
+            // 
+            this.tsmLocalLincense.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmLocalLincense.Image = global::FrontEnd.Properties.Resources.Local_32;
+            this.tsmLocalLincense.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsmLocalLincense.Name = "tsmLocalLincense";
+            this.tsmLocalLincense.Size = new System.Drawing.Size(273, 38);
+            this.tsmLocalLincense.Text = "Local Lincense";
+            // 
+            // tsmInternationalLicense
+            // 
+            this.tsmInternationalLicense.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmInternationalLicense.Image = global::FrontEnd.Properties.Resources.International_32;
+            this.tsmInternationalLicense.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tsmInternationalLicense.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsmInternationalLicense.Name = "tsmInternationalLicense";
+            this.tsmInternationalLicense.Size = new System.Drawing.Size(273, 38);
+            this.tsmInternationalLicense.Text = "International License";
+            // 
             // tsmRenewDrivingLicense
             // 
             this.tsmRenewDrivingLicense.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -131,6 +154,11 @@
             this.tsmRenewDrivingLicense.Size = new System.Drawing.Size(513, 38);
             this.tsmRenewDrivingLicense.Text = "Renew Driving License";
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(510, 6);
+            // 
             // tsmReplacementForLostorDamagedLicense
             // 
             this.tsmReplacementForLostorDamagedLicense.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -139,6 +167,11 @@
             this.tsmReplacementForLostorDamagedLicense.Name = "tsmReplacementForLostorDamagedLicense";
             this.tsmReplacementForLostorDamagedLicense.Size = new System.Drawing.Size(513, 38);
             this.tsmReplacementForLostorDamagedLicense.Text = "Replacement For Lost or Damaged License";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(510, 6);
             // 
             // tsmReleaseDetainedDrivingLicense
             // 
@@ -153,6 +186,7 @@
             // 
             this.tsmRetakeTest.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmRetakeTest.Image = global::FrontEnd.Properties.Resources.Retake_Test_32;
+            this.tsmRetakeTest.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsmRetakeTest.Name = "tsmRetakeTest";
             this.tsmRetakeTest.Size = new System.Drawing.Size(513, 38);
             this.tsmRetakeTest.Text = "Retake Test";
@@ -160,21 +194,71 @@
             // tsmManageApplications
             // 
             this.tsmManageApplications.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem2,
-            this.toolStripMenuItem3});
+            this.tsmLocalDrivingLicenseApplication,
+            this.tsmInternationalLicenseApplication});
             this.tsmManageApplications.Image = global::FrontEnd.Properties.Resources.Manage_Applications_64;
             this.tsmManageApplications.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsmManageApplications.Name = "tsmManageApplications";
             this.tsmManageApplications.Size = new System.Drawing.Size(440, 70);
             this.tsmManageApplications.Text = "Manage Applications";
             // 
+            // tsmLocalDrivingLicenseApplication
+            // 
+            this.tsmLocalDrivingLicenseApplication.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmLocalDrivingLicenseApplication.Image = global::FrontEnd.Properties.Resources.LocalDriving_License;
+            this.tsmLocalDrivingLicenseApplication.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsmLocalDrivingLicenseApplication.Name = "tsmLocalDrivingLicenseApplication";
+            this.tsmLocalDrivingLicenseApplication.Size = new System.Drawing.Size(427, 38);
+            this.tsmLocalDrivingLicenseApplication.Text = "Local Driving License Application";
+            // 
+            // tsmInternationalLicenseApplication
+            // 
+            this.tsmInternationalLicenseApplication.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmInternationalLicenseApplication.Image = global::FrontEnd.Properties.Resources.International_32;
+            this.tsmInternationalLicenseApplication.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsmInternationalLicenseApplication.Name = "tsmInternationalLicenseApplication";
+            this.tsmInternationalLicenseApplication.Size = new System.Drawing.Size(427, 38);
+            this.tsmInternationalLicenseApplication.Text = "International License Application";
+            // 
             // tsmDetainLicenses
             // 
+            this.tsmDetainLicenses.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmManageDetainedLicenses,
+            this.tsmDetainLicense,
+            this.tsmReleaseDetainedLicense});
             this.tsmDetainLicenses.Image = global::FrontEnd.Properties.Resources.Detain_64;
             this.tsmDetainLicenses.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsmDetainLicenses.Name = "tsmDetainLicenses";
             this.tsmDetainLicenses.Size = new System.Drawing.Size(440, 70);
             this.tsmDetainLicenses.Text = "Detain Licenses";
+            // 
+            // tsmManageDetainedLicenses
+            // 
+            this.tsmManageDetainedLicenses.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmManageDetainedLicenses.Image = global::FrontEnd.Properties.Resources.Detain_32;
+            this.tsmManageDetainedLicenses.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsmManageDetainedLicenses.Name = "tsmManageDetainedLicenses";
+            this.tsmManageDetainedLicenses.Size = new System.Drawing.Size(365, 38);
+            this.tsmManageDetainedLicenses.Text = "Manage Detained Licenses";
+            // 
+            // tsmDetainLicense
+            // 
+            this.tsmDetainLicense.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmDetainLicense.Image = global::FrontEnd.Properties.Resources.Detain_32;
+            this.tsmDetainLicense.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsmDetainLicense.Name = "tsmDetainLicense";
+            this.tsmDetainLicense.Size = new System.Drawing.Size(365, 38);
+            this.tsmDetainLicense.Text = "Detain License";
+            // 
+            // tsmReleaseDetainedLicense
+            // 
+            this.tsmReleaseDetainedLicense.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmReleaseDetainedLicense.Image = global::FrontEnd.Properties.Resources.Release_Detained_License_32;
+            this.tsmReleaseDetainedLicense.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsmReleaseDetainedLicense.Name = "tsmReleaseDetainedLicense";
+            this.tsmReleaseDetainedLicense.RightToLeftAutoMirrorImage = true;
+            this.tsmReleaseDetainedLicense.Size = new System.Drawing.Size(365, 38);
+            this.tsmReleaseDetainedLicense.Text = "Release Detained License";
             // 
             // tsmManageApplicationsTypes
             // 
@@ -192,12 +276,6 @@
             this.tsmManageTestTypes.Size = new System.Drawing.Size(440, 70);
             this.tsmManageTestTypes.Text = "Manage Test Types";
             // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(440, 70);
-            this.toolStripMenuItem1.Text = "toolStripMenuItem1";
-            // 
             // peopleToolStripMenuItem
             // 
             this.peopleToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -206,6 +284,7 @@
             this.peopleToolStripMenuItem.Name = "peopleToolStripMenuItem";
             this.peopleToolStripMenuItem.Size = new System.Drawing.Size(164, 68);
             this.peopleToolStripMenuItem.Text = "People";
+            this.peopleToolStripMenuItem.Click += new System.EventHandler(this.peopleToolStripMenuItem_Click);
             // 
             // driversToolStripMenuItem
             // 
@@ -227,6 +306,10 @@
             // 
             // accountSettingToolStripMenuItem
             // 
+            this.accountSettingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmCurrentUserInfo,
+            this.tsmChangePassword,
+            this.tsmSignOut});
             this.accountSettingToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accountSettingToolStripMenuItem.Image = global::FrontEnd.Properties.Resources.account_settings_64;
             this.accountSettingToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -234,48 +317,32 @@
             this.accountSettingToolStripMenuItem.Size = new System.Drawing.Size(265, 68);
             this.accountSettingToolStripMenuItem.Text = "Account Setting";
             // 
-            // toolStripSeparator1
+            // tsmCurrentUserInfo
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(510, 6);
+            this.tsmCurrentUserInfo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmCurrentUserInfo.Image = global::FrontEnd.Properties.Resources.User_32__2;
+            this.tsmCurrentUserInfo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsmCurrentUserInfo.Name = "tsmCurrentUserInfo";
+            this.tsmCurrentUserInfo.Size = new System.Drawing.Size(277, 38);
+            this.tsmCurrentUserInfo.Text = "Current User Info";
             // 
-            // toolStripSeparator2
+            // tsmChangePassword
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(510, 6);
+            this.tsmChangePassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmChangePassword.Image = global::FrontEnd.Properties.Resources.Password_32;
+            this.tsmChangePassword.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsmChangePassword.Name = "tsmChangePassword";
+            this.tsmChangePassword.Size = new System.Drawing.Size(277, 38);
+            this.tsmChangePassword.Text = "Change Password";
             // 
-            // tsmLocalLincense
+            // tsmSignOut
             // 
-            this.tsmLocalLincense.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmLocalLincense.Image = global::FrontEnd.Properties.Resources.Local_32;
-            this.tsmLocalLincense.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsmLocalLincense.Name = "tsmLocalLincense";
-            this.tsmLocalLincense.Size = new System.Drawing.Size(273, 38);
-            this.tsmLocalLincense.Text = "Local Lincense";
-            // 
-            // tsmInternationalLicense
-            // 
-            this.tsmInternationalLicense.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmInternationalLicense.Image = global::FrontEnd.Properties.Resources.International_32;
-            this.tsmInternationalLicense.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.tsmInternationalLicense.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsmInternationalLicense.Name = "tsmInternationalLicense";
-            this.tsmInternationalLicense.Size = new System.Drawing.Size(273, 38);
-            this.tsmInternationalLicense.Text = "International License";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(292, 32);
-            this.toolStripMenuItem2.Text = "toolStripMenuItem2";
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(292, 32);
-            this.toolStripMenuItem3.Text = "toolStripMenuItem3";
+            this.tsmSignOut.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmSignOut.Image = global::FrontEnd.Properties.Resources.sign_out_32__2;
+            this.tsmSignOut.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsmSignOut.Name = "tsmSignOut";
+            this.tsmSignOut.Size = new System.Drawing.Size(277, 38);
+            this.tsmSignOut.Text = "Sign Out ";
             // 
             // frmMain
             // 
@@ -307,7 +374,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmDetainLicenses;
         private System.Windows.Forms.ToolStripMenuItem tsmManageApplicationsTypes;
         private System.Windows.Forms.ToolStripMenuItem tsmManageTestTypes;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem tsmNewDrivingLicense;
         private System.Windows.Forms.ToolStripMenuItem tsmRenewDrivingLicense;
         private System.Windows.Forms.ToolStripMenuItem tsmReplacementForLostorDamagedLicense;
@@ -317,7 +383,13 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem tsmLocalLincense;
         private System.Windows.Forms.ToolStripMenuItem tsmInternationalLicense;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem tsmLocalDrivingLicenseApplication;
+        private System.Windows.Forms.ToolStripMenuItem tsmInternationalLicenseApplication;
+        private System.Windows.Forms.ToolStripMenuItem tsmManageDetainedLicenses;
+        private System.Windows.Forms.ToolStripMenuItem tsmDetainLicense;
+        private System.Windows.Forms.ToolStripMenuItem tsmReleaseDetainedLicense;
+        private System.Windows.Forms.ToolStripMenuItem tsmCurrentUserInfo;
+        private System.Windows.Forms.ToolStripMenuItem tsmChangePassword;
+        private System.Windows.Forms.ToolStripMenuItem tsmSignOut;
     }
 }

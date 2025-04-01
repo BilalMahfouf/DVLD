@@ -67,22 +67,22 @@ namespace FrontEnd.Forms
 
             SearchOption = SearchOption.Replace(" ", "");
 
-            // Create a temporary table with the same structure as _People
-            DataTable filteredTable = _People.Clone();
-            filteredTable.Rows.Clear();
+         
+            DataTable temp = _People.Clone();
+            temp.Rows.Clear();
 
             foreach (DataRow row in _People.Rows)
             {
                 if (row[SearchOption].ToString() == SearchOn)
                 {
-                    filteredTable.ImportRow(row); // Copy only the found row
+                    temp.ImportRow(row); // Copy only the found row
                    
                 }
             }
 
-            if(filteredTable.Rows.Count > 0)
+            if(temp.Rows.Count > 0)
             {
-                dgvPeople.DataSource = filteredTable; // Show only this row
+                dgvPeople.DataSource = temp; // Show the rows that has been found 
                 return true;
             }
             else return false;

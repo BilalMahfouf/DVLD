@@ -41,14 +41,14 @@ namespace DataAccesLayer
         }
         // to do later Validation of input
         public static int AddNewPerson(string NationalNo,string FirstName,string SecondName,
-            string ThirdName,string LastName,DateTime DateOfBirth, byte Gendor,string Address,
+            string ThirdName,string LastName,DateTime DateOfBirth, byte Gender,string Address,
             string Phone,string Email,int NationalityCountryID,string ImagePath)
         {
             SqlConnection connection=new SqlConnection(clsDataConnection.connection_string);
             string query = @"INSERT INTO People
-                            (NationalNo,FirstName,SecondName,ThirdName,LastName,DateOfBirth,Gendor
+                            (NationalNo,FirstName,SecondName,ThirdName,LastName,DateOfBirth,Gender
                              ,Address,Phone,Email,NationalityCountryID,ImagePath)
-                VALUES(@NationalNo,@FirstName,@SecondName,@ThirdName,@LastName,@DateOfBirth,@Gendor,@Address
+                VALUES(@NationalNo,@FirstName,@SecondName,@ThirdName,@LastName,@DateOfBirth,@Gender,@Address
                     ,@Phone,@Email,@NationalityCountryID,@ImagePath)
 
                     SELECT SCOPE_IDENTITY();";
@@ -60,7 +60,7 @@ namespace DataAccesLayer
             command.Parameters.AddWithValue("@ThirdName", ThirdName);
             command.Parameters.AddWithValue("@LastName", LastName);
             command.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
-            command.Parameters.AddWithValue("@Gendor", Gendor);
+            command.Parameters.AddWithValue("@Gender", Gender);
             command.Parameters.AddWithValue("@Address", Address);
             command.Parameters.AddWithValue("@Phone", Phone);
             command.Parameters.AddWithValue("@Email", Email);
@@ -113,7 +113,7 @@ namespace DataAccesLayer
         }
 
         public static bool UpdatePerson(int PersonID, string NationalNo, string FirstName, string SecondName,
-            string ThirdName, string LastName, DateTime DateOfBirth, byte Gendor, string Address,
+            string ThirdName, string LastName, DateTime DateOfBirth, byte Gender, string Address,
             string Phone, string Email, int NationalityCountryID, string ImagePath)
         {
             int rowAffected = 0;
@@ -125,7 +125,7 @@ namespace DataAccesLayer
       ,ThirdName = @ThirdName
       ,LastName = @LastName
       ,DateOfBirth = @DateOfBirth
-      ,Gendor = @Gendor
+      ,Gender = @Gender
       ,Address = @Address
       ,Phone = @Phone
       ,Email = @Email
@@ -140,7 +140,7 @@ namespace DataAccesLayer
             command.Parameters.AddWithValue("@ThirdName", ThirdName);
             command.Parameters.AddWithValue("@LastName", LastName);
             command.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
-            command.Parameters.AddWithValue("@Gendor", Gendor);
+            command.Parameters.AddWithValue("@Gender", Gender);
             command.Parameters.AddWithValue("@Address", Address);
             command.Parameters.AddWithValue("@Phone", Phone);
             command.Parameters.AddWithValue("@Email", Email);
@@ -167,7 +167,7 @@ namespace DataAccesLayer
         }
 
         public static bool Find(int PersonID,ref string NationalNo, ref string FirstName, ref string SecondName,
-            ref string ThirdName, ref string LastName, ref DateTime DateOfBirth, ref byte Gendor,
+            ref string ThirdName, ref string LastName, ref DateTime DateOfBirth, ref byte Gender,
             ref string Address, ref string Phone, ref string Email, ref int NationalityCountryID,
             ref string ImagePath)
 
@@ -200,7 +200,7 @@ namespace DataAccesLayer
                     }
                     LastName = (string)reader["LastName"];
                     DateOfBirth = Convert.ToDateTime(reader["DateOfBirth"]);
-                    Gendor = (byte)reader["Gendor"];
+                    Gender = (byte)reader["Gender"];
                     Address = (string)reader["Address"];
                     Phone = (string)reader["Phone"];
                     if (reader["Email"]!=DBNull.Value)
@@ -235,7 +235,7 @@ namespace DataAccesLayer
         }
 
         public static bool Find(ref int PersonID, string NationalNo, ref string FirstName, ref string SecondName,
-           ref string ThirdName, ref string LastName, ref DateTime DateOfBirth, ref byte Gendor,
+           ref string ThirdName, ref string LastName, ref DateTime DateOfBirth, ref byte Gender,
            ref string Address, ref string Phone, ref string Email, ref int NationalityCountryID,
            ref string ImagePath)
 
@@ -268,7 +268,7 @@ namespace DataAccesLayer
                     }
                     LastName = (string)reader["LastName"];
                     DateOfBirth = Convert.ToDateTime(reader["DateOfBirth"]);
-                    Gendor = (byte)reader["Gendor"];
+                    Gender = (byte)reader["Gender"];
                     Address = (string)reader["Address"];
                     Phone = (string)reader["Phone"];
                     if (reader["Email"] != DBNull.Value)

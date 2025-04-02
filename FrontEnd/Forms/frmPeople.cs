@@ -131,5 +131,35 @@ namespace FrontEnd.Forms
         {
 
         }
+
+        private void btnAddNewPerson_Click(object sender, EventArgs e)
+        {
+           
+           
+          
+        }
+
+        private void tsmSendEmail_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This feature is not implementing yet",
+               "" , MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void tsmPhoneCall_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This feature is not implementing yet",
+              "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void tsmShowDetails_Click(object sender, EventArgs e)
+        {
+            if(dgvPeople.CurrentRow != null)
+            {
+                int PersonID = Convert.ToInt32(dgvPeople.CurrentRow.Cells["PersonID"].Value);
+                frmPersonInfo frmPersonInfo = new frmPersonInfo(PersonID);
+                frmPersonInfo.ShowDialog();
+            }
+           
+        }
     }
 }

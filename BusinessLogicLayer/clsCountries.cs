@@ -25,5 +25,15 @@ namespace BusinessLogicLayer
             return clsCountriesData.GetAllCountries();
         }
 
+        public static  clsCountries Find(int CountryID)
+        {
+            string CountryName=string.Empty;
+            if (clsCountriesData.Find(CountryID,ref CountryName))
+            {
+                return new clsCountries(CountryID, CountryName);
+            }
+            return null;
+        }
+
     }
 }

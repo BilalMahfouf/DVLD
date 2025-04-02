@@ -30,13 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.linklblRemove = new System.Windows.Forms.LinkLabel();
             this.linklblSetImage = new System.Windows.Forms.LinkLabel();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.pbPersonPicture = new System.Windows.Forms.PictureBox();
             this.rtbAddress = new System.Windows.Forms.RichTextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbCountries = new System.Windows.Forms.ComboBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -46,7 +47,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rbFemale = new System.Windows.Forms.RadioButton();
-            this.rdMale = new System.Windows.Forms.RadioButton();
+            this.rbMale = new System.Windows.Forms.RadioButton();
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.tbNationalNo = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -68,6 +69,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ofdSetImage = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -84,13 +86,14 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.linklblRemove);
             this.groupBox1.Controls.Add(this.linklblSetImage);
             this.groupBox1.Controls.Add(this.btnSave);
             this.groupBox1.Controls.Add(this.btnClose);
             this.groupBox1.Controls.Add(this.pbPersonPicture);
             this.groupBox1.Controls.Add(this.rtbAddress);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cbCountries);
             this.groupBox1.Controls.Add(this.textBox6);
             this.groupBox1.Controls.Add(this.pictureBox9);
             this.groupBox1.Controls.Add(this.pictureBox8);
@@ -100,7 +103,7 @@
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.rbFemale);
-            this.groupBox1.Controls.Add(this.rdMale);
+            this.groupBox1.Controls.Add(this.rbMale);
             this.groupBox1.Controls.Add(this.tbEmail);
             this.groupBox1.Controls.Add(this.tbNationalNo);
             this.groupBox1.Controls.Add(this.label9);
@@ -121,11 +124,24 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(13, 21);
+            this.groupBox1.Location = new System.Drawing.Point(13, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1147, 427);
+            this.groupBox1.Size = new System.Drawing.Size(1159, 445);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // linklblRemove
+            // 
+            this.linklblRemove.AutoSize = true;
+            this.linklblRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linklblRemove.Location = new System.Drawing.Point(979, 363);
+            this.linklblRemove.Name = "linklblRemove";
+            this.linklblRemove.Size = new System.Drawing.Size(103, 29);
+            this.linklblRemove.TabIndex = 71;
+            this.linklblRemove.TabStop = true;
+            this.linklblRemove.Text = "Remove";
+            this.linklblRemove.Visible = false;
+            this.linklblRemove.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblRemove_LinkClicked);
             // 
             // linklblSetImage
             // 
@@ -137,6 +153,7 @@
             this.linklblSetImage.TabIndex = 70;
             this.linklblSetImage.TabStop = true;
             this.linklblSetImage.Text = "Set Image";
+            this.linklblSetImage.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblSetImage_LinkClicked);
             // 
             // btnSave
             // 
@@ -149,6 +166,7 @@
             this.btnSave.TabIndex = 69;
             this.btnSave.Text = "   Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClose
             // 
@@ -161,6 +179,7 @@
             this.btnClose.TabIndex = 68;
             this.btnClose.Text = "   Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // pbPersonPicture
             // 
@@ -181,7 +200,7 @@
             this.rtbAddress.Size = new System.Drawing.Size(651, 118);
             this.rtbAddress.TabIndex = 1;
             this.rtbAddress.Text = "";
-            
+            this.rtbAddress.TextChanged += new System.EventHandler(this.AllTextBox_TextChanged);
             // 
             // dateTimePicker1
             // 
@@ -193,13 +212,14 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(190, 27);
             this.dateTimePicker1.TabIndex = 66;
             // 
-            // comboBox1
+            // cbCountries
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(704, 193);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(190, 24);
-            this.comboBox1.TabIndex = 65;
+            this.cbCountries.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCountries.FormattingEnabled = true;
+            this.cbCountries.Location = new System.Drawing.Point(704, 193);
+            this.cbCountries.Name = "cbCountries";
+            this.cbCountries.Size = new System.Drawing.Size(190, 33);
+            this.cbCountries.TabIndex = 65;
             // 
             // textBox6
             // 
@@ -208,7 +228,7 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(190, 27);
             this.textBox6.TabIndex = 64;
-           
+            this.textBox6.TextChanged += new System.EventHandler(this.AllTextBox_TextChanged);
             // 
             // pictureBox9
             // 
@@ -289,20 +309,22 @@
             this.rbFemale.Size = new System.Drawing.Size(85, 24);
             this.rbFemale.TabIndex = 53;
             this.rbFemale.TabStop = true;
+            this.rbFemale.Tag = "1";
             this.rbFemale.Text = "Female";
             this.rbFemale.UseVisualStyleBackColor = true;
             // 
-            // rdMale
+            // rbMale
             // 
-            this.rdMale.AutoSize = true;
-            this.rdMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdMale.Location = new System.Drawing.Point(243, 149);
-            this.rdMale.Name = "rdMale";
-            this.rdMale.Size = new System.Drawing.Size(66, 24);
-            this.rdMale.TabIndex = 52;
-            this.rdMale.TabStop = true;
-            this.rdMale.Text = "Male";
-            this.rdMale.UseVisualStyleBackColor = true;
+            this.rbMale.AutoSize = true;
+            this.rbMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbMale.Location = new System.Drawing.Point(243, 149);
+            this.rbMale.Name = "rbMale";
+            this.rbMale.Size = new System.Drawing.Size(66, 24);
+            this.rbMale.TabIndex = 52;
+            this.rbMale.TabStop = true;
+            this.rbMale.Tag = "0";
+            this.rbMale.Text = "Male";
+            this.rbMale.UseVisualStyleBackColor = true;
             // 
             // tbEmail
             // 
@@ -319,7 +341,7 @@
             this.tbNationalNo.Name = "tbNationalNo";
             this.tbNationalNo.Size = new System.Drawing.Size(190, 27);
             this.tbNationalNo.TabIndex = 50;
-           
+            this.tbNationalNo.TextChanged += new System.EventHandler(this.AllTextBox_TextChanged);
             // 
             // label9
             // 
@@ -368,7 +390,8 @@
             this.tbSecondName.Name = "tbSecondName";
             this.tbSecondName.Size = new System.Drawing.Size(190, 27);
             this.tbSecondName.TabIndex = 45;
-           
+            this.tbSecondName.TextChanged += new System.EventHandler(this.AllTextBox_TextChanged);
+            // 
             // tbThirdName
             // 
             this.tbThirdName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -384,7 +407,7 @@
             this.tbLastName.Name = "tbLastName";
             this.tbLastName.Size = new System.Drawing.Size(217, 27);
             this.tbLastName.TabIndex = 43;
-            
+            this.tbLastName.TextChanged += new System.EventHandler(this.AllTextBox_TextChanged);
             // 
             // tbFirstName
             // 
@@ -393,7 +416,8 @@
             this.tbFirstName.Name = "tbFirstName";
             this.tbFirstName.Size = new System.Drawing.Size(190, 27);
             this.tbFirstName.TabIndex = 1;
-           
+            this.tbFirstName.TextChanged += new System.EventHandler(this.AllTextBox_TextChanged);
+            // 
             // pictureBox6
             // 
             this.pictureBox6.Image = global::FrontEnd.Properties.Resources.Address_32;
@@ -498,13 +522,17 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // ofdSetImage
+            // 
+            this.ofdSetImage.FileName = "ofdSetImage";
+            // 
             // AddOrEditPersonControllers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Name = "AddOrEditPersonControllers";
-            this.Size = new System.Drawing.Size(1169, 458);
+            this.Size = new System.Drawing.Size(1186, 458);
             this.Load += new System.EventHandler(this.AddOrEditPersonControllers_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -543,7 +571,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.RadioButton rbFemale;
-        private System.Windows.Forms.RadioButton rdMale;
+        private System.Windows.Forms.RadioButton rbMale;
         private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.TextBox tbNationalNo;
         private System.Windows.Forms.Label label9;
@@ -556,7 +584,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbCountries;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.RichTextBox rtbAddress;
         private System.Windows.Forms.PictureBox pbPersonPicture;
@@ -564,5 +592,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.OpenFileDialog ofdSetImage;
+        private System.Windows.Forms.LinkLabel linklblRemove;
     }
 }

@@ -134,9 +134,11 @@ namespace FrontEnd.Forms
 
         private void btnAddNewPerson_Click(object sender, EventArgs e)
         {
-           
-           
-          
+            frmAddOrEditPerson frmAddNewPerson = new frmAddOrEditPerson(-1);
+            frmAddNewPerson.ShowDialog();
+
+
+
         }
 
         private void tsmSendEmail_Click(object sender, EventArgs e)
@@ -160,6 +162,12 @@ namespace FrontEnd.Forms
                 frmPersonInfo.ShowDialog();
             }
            
+        }
+
+        private void tsmAddNewPerson_Click(object sender, EventArgs e)
+        {
+            frmAddOrEditPerson frmAddNewPerson = new frmAddOrEditPerson(-1);
+            frmAddNewPerson.ShowDialog();
         }
     }
 }

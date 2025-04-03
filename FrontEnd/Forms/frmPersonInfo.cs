@@ -26,5 +26,18 @@ namespace FrontEnd.Forms
             
         }
 
+        
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void personInfoController1_OnClicklinklblEditPerson_1()
+        {
+            frmAddOrEditPerson frmEditPerson = new frmAddOrEditPerson(this._PersonID);
+            frmEditPerson.ShowDialog();
+            personInfoController1.ShowPersonInfo();
+        }
     }
 }

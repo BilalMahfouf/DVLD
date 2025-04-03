@@ -158,7 +158,7 @@ namespace DataAccesLayer
             command.Parameters.AddWithValue("@NationalNo", NationalNo);
             command.Parameters.AddWithValue("@FirstName", FirstName);
             command.Parameters.AddWithValue("@SecondName", SecondName);
-            if (ThirdName != null)
+            if (ThirdName == null)
             {
                 command.Parameters.AddWithValue("@ThirdName", System.DBNull.Value);
             }
@@ -171,7 +171,7 @@ namespace DataAccesLayer
             command.Parameters.AddWithValue("@Gender", Gender);
             command.Parameters.AddWithValue("@Address", Address);
             command.Parameters.AddWithValue("@Phone", Phone);
-            if (ThirdName != null)
+            if (ThirdName == null)
             {
                 command.Parameters.AddWithValue("@Email", System.DBNull.Value);
             }

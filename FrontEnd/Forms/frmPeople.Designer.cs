@@ -88,7 +88,7 @@
             this.tsmSendEmail,
             this.tsmPhoneCall});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(242, 272);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(242, 244);
             // 
             // tsmShowDetails
             // 

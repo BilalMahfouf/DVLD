@@ -44,6 +44,7 @@
             this.btnClose.TabIndex = 3;
             this.btnClose.Text = "   Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lblPersonDetails
             // 
@@ -63,6 +64,7 @@
             this.personInfoController1.Name = "personInfoController1";
             this.personInfoController1.Size = new System.Drawing.Size(1405, 372);
             this.personInfoController1.TabIndex = 0;
+            this.personInfoController1.OnClicklinklblEditPerson += new System.Action(this.personInfoController1_OnClicklinklblEditPerson_1);
             // 
             // frmPersonInfo
             // 

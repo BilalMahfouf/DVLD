@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogicLayer;
 using FrontEnd.Classes;
+using System.IO;
 
 namespace FrontEnd.Controllers
 {
@@ -46,7 +47,17 @@ namespace FrontEnd.Controllers
                     lblGender.Text = "Female";
                     pbPersonPicture.Image = Properties.Resources.Female_512;
                 }
+
+                //if (File.Exists(Person.ImagePath))
+                //{
+                //    pbPersonPicture.Image= Image.FromFile(Person.ImagePath);
+
+                //}
             }
+        }
+        public void ShowPersonInfo()
+        {
+            _ShowPersonInfo();
         }
 
         private void PersonInfoController_Load(object sender, EventArgs e)
@@ -54,7 +65,7 @@ namespace FrontEnd.Controllers
             _ShowPersonInfo();
         }
 
-        public Action OnClicklinklblEditPerson;
+        public event Action OnClicklinklblEditPerson;
 
         protected virtual void ClicklinklblEditPerson()
         {

@@ -57,16 +57,37 @@ namespace DataAccesLayer
             command.Parameters.AddWithValue("@NationalNo", NationalNo);
             command.Parameters.AddWithValue("@FirstName", FirstName);
             command.Parameters.AddWithValue("@SecondName", SecondName);
-            command.Parameters.AddWithValue("@ThirdName", ThirdName);
+            if(ThirdName != null)
+            {
+                command.Parameters.AddWithValue("@ThirdName", System.DBNull.Value);
+            }
+            else
+            {
+                command.Parameters.AddWithValue("@ThirdName", ThirdName);
+            }
             command.Parameters.AddWithValue("@LastName", LastName);
             command.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
             command.Parameters.AddWithValue("@Gender", Gender);
             command.Parameters.AddWithValue("@Address", Address);
             command.Parameters.AddWithValue("@Phone", Phone);
-            command.Parameters.AddWithValue("@Email", Email);
+            if (ThirdName != null)
+            {
+                command.Parameters.AddWithValue("@Email", System.DBNull.Value);
+            }
+            else
+            {
+                command.Parameters.AddWithValue("@Email", Email);
+            }
             
             command.Parameters.AddWithValue("@NationalityCountryID", NationalityCountryID);
-            command.Parameters.AddWithValue("@ImagePath", ImagePath);
+            if(ImagePath==null)
+            {
+                command.Parameters.AddWithValue("@ImagePath", System.DBNull.Value);
+            }
+            else
+            {
+                command.Parameters.AddWithValue("@ImagePath", ImagePath);
+            }
 
             int PersonID = -1;
             try
@@ -137,15 +158,38 @@ namespace DataAccesLayer
             command.Parameters.AddWithValue("@NationalNo", NationalNo);
             command.Parameters.AddWithValue("@FirstName", FirstName);
             command.Parameters.AddWithValue("@SecondName", SecondName);
-            command.Parameters.AddWithValue("@ThirdName", ThirdName);
+            if (ThirdName != null)
+            {
+                command.Parameters.AddWithValue("@ThirdName", System.DBNull.Value);
+            }
+            else
+            {
+                command.Parameters.AddWithValue("@ThirdName", ThirdName);
+            }
             command.Parameters.AddWithValue("@LastName", LastName);
             command.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
             command.Parameters.AddWithValue("@Gender", Gender);
             command.Parameters.AddWithValue("@Address", Address);
             command.Parameters.AddWithValue("@Phone", Phone);
-            command.Parameters.AddWithValue("@Email", Email);
+            if (ThirdName != null)
+            {
+                command.Parameters.AddWithValue("@Email", System.DBNull.Value);
+            }
+            else
+            {
+                command.Parameters.AddWithValue("@Email", Email);
+            }
+
             command.Parameters.AddWithValue("@NationalityCountryID", NationalityCountryID);
-            command.Parameters.AddWithValue("@ImagePath", ImagePath);
+            if (ImagePath == null)
+            {
+                command.Parameters.AddWithValue("@ImagePath", System.DBNull.Value);
+            }
+            else
+            {
+                command.Parameters.AddWithValue("@ImagePath", ImagePath);
+            }
+
             command.Parameters.AddWithValue("@PersonID", PersonID);
 
 
@@ -356,6 +400,7 @@ namespace DataAccesLayer
 
         }
         
+        // Fuck Single Responsibility Principle
         public static DataTable GetAllPeopleWithCountryName()
         {
             DataTable dt = new DataTable();

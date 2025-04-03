@@ -26,9 +26,5 @@ namespace FrontEnd.Forms
             
         }
 
-        private void personInfoController1_Load(object sender, EventArgs e)
-        {
-            
-        }
     }
 }

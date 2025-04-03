@@ -123,6 +123,7 @@
             this.tsmEdit.Name = "tsmEdit";
             this.tsmEdit.Size = new System.Drawing.Size(241, 38);
             this.tsmEdit.Text = "Edit";
+            this.tsmEdit.Click += new System.EventHandler(this.tsmEdit_Click);
             // 
             // tsmDelete
             // 
@@ -132,6 +133,7 @@
             this.tsmDelete.Name = "tsmDelete";
             this.tsmDelete.Size = new System.Drawing.Size(241, 38);
             this.tsmDelete.Text = "Delete";
+            this.tsmDelete.Click += new System.EventHandler(this.tsmDelete_Click);
             // 
             // toolStripSeparator2
             // 

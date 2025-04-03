@@ -63,8 +63,7 @@
             this.personInfoController1.Name = "personInfoController1";
             this.personInfoController1.Size = new System.Drawing.Size(1405, 372);
             this.personInfoController1.TabIndex = 0;
-            this.personInfoController1.Load += new System.EventHandler(this.personInfoController1_Load);
-            // 
+            
             // frmPersonInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);

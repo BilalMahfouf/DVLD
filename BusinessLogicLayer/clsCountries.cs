@@ -35,5 +35,15 @@ namespace BusinessLogicLayer
             return null;
         }
 
+        public static clsCountries Find(string CountryName)
+        {
+            int CountryID = -1;
+            if (clsCountriesData.Find(ref CountryID,  CountryName))
+            {
+                return new clsCountries(CountryID, CountryName);
+            }
+            return null;
+        }
+
     }
 }

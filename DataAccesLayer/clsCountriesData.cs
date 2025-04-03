@@ -70,6 +70,37 @@ namespace DataAccesLayer
 
         }
 
+        static public bool Find(ref int CountryID,  string CountryName)
+        {
+            bool isFound = false;
+            SqlConnection connection = new SqlConnection(clsDataConnection.connection_string);
+            string query = @"select * from Countries where CountryName=@CountryName";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@CountryName", CountryName);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    isFound = true;
+                    CountryID = (int)reader["CountryID"];
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return isFound;
+
+        }
+
 
     }
 }

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogicLayer;
+using FrontEnd.Classes;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FrontEnd.Forms
@@ -136,6 +137,7 @@ namespace FrontEnd.Forms
         {
             frmAddOrEditPerson frmAddNewPerson = new frmAddOrEditPerson(-1);
             frmAddNewPerson.ShowDialog();
+            _Refresh();
 
 
 
@@ -168,6 +170,41 @@ namespace FrontEnd.Forms
         {
             frmAddOrEditPerson frmAddNewPerson = new frmAddOrEditPerson(-1);
             frmAddNewPerson.ShowDialog();
+            _Refresh();
+        }
+
+        private void tsmDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvPeople.CurrentRow != null)
+            {
+                int PersonID = Convert.ToInt32(dgvPeople.CurrentRow.Cells["PersonID"].Value);
+                string ImagePath = clsPerson.Find(PersonID).ImagePath;
+                if(clsPerson.DeletePerson(PersonID))
+                {
+                    MessageBox.Show("Person deleted successfully", "", MessageBoxButtons.OK,
+                        MessageBoxIcon.Asterisk);
+                    
+                    frmAddOrEditPerson frmAddOrEditPerson = new frmAddOrEditPerson(PersonID);
+                    frmAddOrEditPerson.RemoveImage(ImagePath);
+                }
+                else
+                {
+                    MessageBox.Show("Person cannot be deleted becuase it has relation is the system"
+                        , "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                _Refresh();
+            }
+        }
+
+        private void tsmEdit_Click(object sender, EventArgs e)
+        {
+            if(dgvPeople.CurrentRow != null)
+            {
+                int PersonID = Convert.ToInt32(dgvPeople.CurrentRow.Cells["PersonID"].Value);
+                frmAddOrEditPerson frmAddOrEditPerson = new frmAddOrEditPerson(PersonID);
+                frmAddOrEditPerson.ShowDialog();
+                _Refresh();
+            }
         }
     }
 }

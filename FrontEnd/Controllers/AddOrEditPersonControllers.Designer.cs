@@ -38,7 +38,7 @@
             this.rtbAddress = new System.Windows.Forms.RichTextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.cbCountries = new System.Windows.Forms.ComboBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tbPhone = new System.Windows.Forms.TextBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -94,7 +94,7 @@
             this.groupBox1.Controls.Add(this.rtbAddress);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.cbCountries);
-            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.tbPhone);
             this.groupBox1.Controls.Add(this.pictureBox9);
             this.groupBox1.Controls.Add(this.pictureBox8);
             this.groupBox1.Controls.Add(this.pictureBox7);
@@ -185,7 +185,7 @@
             // 
             this.pbPersonPicture.BackColor = System.Drawing.SystemColors.Control;
             this.pbPersonPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbPersonPicture.Image = global::FrontEnd.Properties.Resources.Female_512;
+            this.pbPersonPicture.Image = global::FrontEnd.Properties.Resources.Male_512;
             this.pbPersonPicture.Location = new System.Drawing.Point(918, 100);
             this.pbPersonPicture.Name = "pbPersonPicture";
             this.pbPersonPicture.Size = new System.Drawing.Size(217, 202);
@@ -221,14 +221,14 @@
             this.cbCountries.Size = new System.Drawing.Size(190, 33);
             this.cbCountries.TabIndex = 65;
             // 
-            // textBox6
+            // tbPhone
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(704, 147);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(190, 27);
-            this.textBox6.TabIndex = 64;
-            this.textBox6.TextChanged += new System.EventHandler(this.AllTextBox_TextChanged);
+            this.tbPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPhone.Location = new System.Drawing.Point(704, 147);
+            this.tbPhone.Name = "tbPhone";
+            this.tbPhone.Size = new System.Drawing.Size(190, 27);
+            this.tbPhone.TabIndex = 64;
+            this.tbPhone.TextChanged += new System.EventHandler(this.AllTextBox_TextChanged);
             // 
             // pictureBox9
             // 
@@ -312,10 +312,12 @@
             this.rbFemale.Tag = "1";
             this.rbFemale.Text = "Female";
             this.rbFemale.UseVisualStyleBackColor = true;
+            this.rbFemale.CheckedChanged += new System.EventHandler(this.rbFemale_CheckedChanged);
             // 
             // rbMale
             // 
             this.rbMale.AutoSize = true;
+            this.rbMale.Checked = true;
             this.rbMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbMale.Location = new System.Drawing.Point(243, 149);
             this.rbMale.Name = "rbMale";
@@ -325,6 +327,7 @@
             this.rbMale.Tag = "0";
             this.rbMale.Text = "Male";
             this.rbMale.UseVisualStyleBackColor = true;
+            this.rbMale.CheckedChanged += new System.EventHandler(this.rbMale_CheckedChanged);
             // 
             // tbEmail
             // 
@@ -585,7 +588,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox cbCountries;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tbPhone;
         private System.Windows.Forms.RichTextBox rtbAddress;
         private System.Windows.Forms.PictureBox pbPersonPicture;
         private System.Windows.Forms.LinkLabel linklblSetImage;

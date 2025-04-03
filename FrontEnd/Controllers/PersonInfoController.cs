@@ -54,6 +54,23 @@ namespace FrontEnd.Controllers
             _ShowPersonInfo();
         }
 
-        
+        public Action OnClicklinklblEditPerson;
+
+        protected virtual void ClicklinklblEditPerson()
+        {
+            Action handler= OnClicklinklblEditPerson;
+            if (handler != null)
+            {
+                handler();
+            }
+        }
+
+        private void lbEditPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if(OnClicklinklblEditPerson != null)
+            {
+                ClicklinklblEditPerson();
+            }
+        }
     }
 }

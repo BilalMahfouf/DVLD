@@ -75,13 +75,15 @@ namespace DataAccesLayer
         }
 
         public static bool Find(ref int UserID, ref int PersonID,string UserName,
-           ref string Password, ref bool isActive)
+            string Password, ref bool isActive)
         {
             bool isFound = false;
             SqlConnection connection = new SqlConnection(clsDataConnection.connection_string);
-            string query = @"select * from Users where UserName=@UserName";
+            string query = @"select * from Users where UserName=@UserName and Password=@Password";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@UserName", UserName);
+            command.Parameters.AddWithValue("@Password", Password);
+
 
             try
             {
@@ -92,7 +94,6 @@ namespace DataAccesLayer
                     isFound = true;
                     UserID = (int)reader["UserID"];
                     PersonID = (int)reader["PersonID"];
-                    Password = (string)reader["Password"];
                     isActive = (bool)reader["isActive"];
                 }
                 reader.Close();
@@ -112,7 +113,7 @@ namespace DataAccesLayer
         {
             int UserID = -1;
             SqlConnection connection = new SqlConnection(clsDataConnection.connection_string);
-            string query= @"INSERT INTO People
+            string query= @"INSERT INTO Users
                             (PersonID,UserName,Password,IsActive)
                             VALUES (@PersonID,@UserName,@Password,@IsActive)
 
@@ -196,7 +197,7 @@ namespace DataAccesLayer
 
         }
 
-        public static bool 
+       
 
 
     }

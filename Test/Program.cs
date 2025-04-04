@@ -9,19 +9,21 @@ public static class clsPersonTest
     {
         Console.WriteLine("=== Running Person Tests ===\n");
 
-        TestConstructorDefaults();
-        TestFindPersonByID(1);        // Existing ID
-        TestFindPersonByID(-999);     // Non-existent ID
-        TestFindPersonByNationalNo("TEST-123");  // Existing
-        TestFindPersonByNationalNo("INVALID_NAT"); // Non-existent
-        TestAddNewPerson();
-        TestUpdatePerson();
-        TestDeletePerson();
-        TestGetAllPeople();
-        TestIsExistByID(1);             // Test with existing ID
-        TestIsExistByID(-999);          // Test with non-existent ID
-        TestIsExistByNationalNo("N1");  // Existing national number
-        TestIsExistByNationalNo("INVALID-123"); //
+        TestFindPersonByID(1);
+
+        //TestConstructorDefaults();
+        //       // Existing ID
+        //TestFindPersonByID(-999);     // Non-existent ID
+        //TestFindPersonByNationalNo("TEST-123");  // Existing
+        //TestFindPersonByNationalNo("INVALID_NAT"); // Non-existent
+        //TestAddNewPerson();
+        //TestUpdatePerson();
+        //TestDeletePerson();
+        //TestGetAllPeople();
+        //TestIsExistByID(1);             // Test with existing ID
+        //TestIsExistByID(-999);          // Test with non-existent ID
+        //TestIsExistByNationalNo("N1");  // Existing national number
+        //TestIsExistByNationalNo("INVALID-123"); //
 
         Console.WriteLine("\n=== Person Tests Completed ===");
     }
@@ -264,8 +266,6 @@ public static class clsPersonTest
 
 }
 
-
-
     public static class clsCountriesTest
     {
         public static void RunAllTests()
@@ -309,16 +309,218 @@ public static class clsPersonTest
         }
     }
 
+public static class clsUserTest
+{
+    public static void RunAllTests()
+    {
+        Console.WriteLine("=== Running User Tests ===\n");
+
+        TestGetAllUsers();
+        TestFindUserByID();
+        TestFindUserByCredentials();
+        TestAddNewUser();
+        TestUpdateUser();
+        TestDeleteUser();
+
+        Console.WriteLine("\n=== User Tests Completed ===");
+    }
+
+    public static void TestGetAllUsers()
+    {
+        Console.WriteLine("\n[Test] GetAllUsers()");
+
+        try
+        {
+            DataTable usersTable = clsUser.GetAllUsers();
+            Console.WriteLine($"Result: Success ({usersTable.Rows.Count} users found)");
+
+            if (usersTable.Rows.Count > 0)
+            {
+                Console.WriteLine("\nSample Data:");
+                for (int i = 0; i < Math.Min(3, usersTable.Rows.Count); i++)
+                {
+                    DataRow row = usersTable.Rows[i];
+                    Console.WriteLine($"UserID: {row["UserID"]} | UserName: {row["UserName"]} | PersonID: {row["PersonID"]} | IsActive: {row["IsActive"]}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Warning: No users found in database");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+            Console.WriteLine("FAILED");
+        }
+    }
+
+    public static void TestFindUserByID()
+    {
+        Console.WriteLine("\n[Test] Find(int userID)");
+
+        try
+        {
+            // Replace with valid ID in your DB
+            clsUser user = clsUser.Find(17);
+
+            if (user != null)
+            {
+                DisplayUserData(user);
+            }
+            else
+            {
+                Console.WriteLine("User not found.");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+            Console.WriteLine("FAILED");
+        }
+    }
+
+    public static void TestFindUserByCredentials()
+    {
+        Console.WriteLine("\n[Test] Find(string username, string password)");
+
+        try
+        {
+            string username = "Msaqer77";   // Replace with valid username
+            string password = "1234";   // Replace with correct password
+            clsUser user = clsUser.Find(username, password);
+
+            if (user != null)
+            {
+                DisplayUserData(user);
+            }
+            else
+            {
+                Console.WriteLine("Invalid credentials or user not found.");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+            Console.WriteLine("FAILED");
+        }
+    }
+
+    public static void TestAddNewUser()
+    {
+        Console.WriteLine("\n[Test] Add New User (Save with AddNew mode)");
+
+        try
+        {
+            clsUser newUser = new clsUser
+            {
+                PersonID = 1091, // Replace with valid PersonID from DB
+                UserName = "TestUser_" + Guid.NewGuid().ToString().Substring(0, 5),
+                Password = "123456",
+                IsActive = true
+            };
+
+            bool result = newUser.Save();
+
+            Console.WriteLine(result
+                ? $"New user added successfully. UserID = {newUser.UserID}"
+                : "Failed to add new user.");
+
+            if (result) DisplayUserData(newUser);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+            Console.WriteLine("FAILED");
+        }
+    }
+
+    public static void TestUpdateUser()
+    {
+        Console.WriteLine("\n[Test] Update User (Save with Update mode)");
+
+        try
+        {
+            clsUser user =  clsUser.Find(17); // Replace with valid ID
+            if (user == null)
+            {
+                Console.WriteLine("User not found for update.");
+                return;
+            }
+
+            user.UserName = "_Updated";
+            user.Password = "newpass";
+            user.IsActive = !user.IsActive;
+
+            bool result = user.Save();
+
+            Console.WriteLine(result
+                ? $"User updated successfully."
+                : "Failed to update user.");
+
+            if (result) DisplayUserData(user);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+            Console.WriteLine("FAILED");
+        }
+    }
+
+    public static void TestDeleteUser()
+    {
+        Console.WriteLine("\n[Test] Delete User");
+
+        try
+        {
+            // First, create a test user to delete
+            clsUser tempUser = new clsUser
+            {
+                PersonID = 1092, // Replace with valid PersonID
+                UserName = "ToDelete_" + Guid.NewGuid().ToString().Substring(0, 5),
+                Password = "temp",
+                IsActive = true
+            };
+
+            if (!tempUser.Save())
+            {
+                Console.WriteLine("Could not create user to delete.");
+                return;
+            }
+
+            Console.WriteLine("Created user for deletion:");
+            DisplayUserData(tempUser);
+
+            bool deleted = clsUser.DeleteUser(tempUser.UserID);
+
+            Console.WriteLine(deleted
+                ? $"User deleted successfully. ID = {tempUser.UserID}"
+                : "Failed to delete user.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+            Console.WriteLine("FAILED");
+        }
+    }
+
+    private static void DisplayUserData(clsUser user)
+    {
+        Console.WriteLine("User Data:");
+        Console.WriteLine($"UserID   : {user.UserID}");
+        Console.WriteLine($"PersonID : {user.PersonID}");
+        Console.WriteLine($"UserName : {user.UserName}");
+        Console.WriteLine($"Password : {user.Password}");
+        Console.WriteLine($"IsActive : {user.IsActive}");
+        Console.WriteLine($"Mode     : {user.Mode}");
+    }
+}
 
 class clsPersonTester
 {
     static void Main()
     {
-        string str = "Person ID";
-        Console.WriteLine(str);
-        str = str.Replace(" ", "");
-        Console.WriteLine(str);
-
+        clsUserTest.TestUpdateUser();
     }
 
 

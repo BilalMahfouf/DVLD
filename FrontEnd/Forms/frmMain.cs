@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FrontEnd.Forms.User_Forms;
 
 namespace FrontEnd.Forms
 {
@@ -26,6 +27,12 @@ namespace FrontEnd.Forms
         {
             frmManagePeople frmManagePeople = new frmManagePeople();
             frmManagePeople.ShowDialog();
+        }
+
+        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmManageUsers frmManageUsers = new frmManageUsers();
+            frmManageUsers.ShowDialog();
         }
     }
 }

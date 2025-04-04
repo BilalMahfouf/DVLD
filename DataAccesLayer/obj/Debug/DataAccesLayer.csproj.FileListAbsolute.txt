@@ -1,0 +1,6 @@
+D:\Users\ALEM\source\repos\C#\DVLD\DataAccesLayer\bin\Debug\DataAccesLayer.dll
+D:\Users\ALEM\source\repos\C#\DVLD\DataAccesLayer\bin\Debug\DataAccesLayer.pdb
+D:\Users\ALEM\source\repos\C#\DVLD\DataAccesLayer\obj\Debug\DataAccesLayer.csproj.AssemblyReference.cache
+D:\Users\ALEM\source\repos\C#\DVLD\DataAccesLayer\obj\Debug\DataAccesLayer.csproj.CoreCompileInputs.cache
+D:\Users\ALEM\source\repos\C#\DVLD\DataAccesLayer\obj\Debug\DataAccesLayer.dll
+D:\Users\ALEM\source\repos\C#\DVLD\DataAccesLayer\obj\Debug\DataAccesLayer.pdb

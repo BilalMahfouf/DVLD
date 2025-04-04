@@ -198,6 +198,33 @@ namespace DataAccesLayer
         }
 
        
+        public static DataTable GetAllUsersWithFullName()
+        {
+            DataTable result = new DataTable();
+            SqlConnection connection = new SqlConnection(clsDataConnection.connection_string);
+            string query = @"select Users.UserID,People.PersonID, 
+         (People.FirstName+' '+People.SecondName+' '+People.ThirdName+' '+People.LastName) as FullName,
+        Users.UserName, Users.IsActive from Users Inner join People on Users.PersonID=People.PersonID
+                        ";
+            SqlCommand command = new SqlCommand(query, connection);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if(reader.HasRows)
+                {
+                    result.Load(reader);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally { connection.Close(); }
+            return result;
+        }
 
 
     }

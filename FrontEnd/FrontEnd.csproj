@@ -59,10 +59,16 @@
     <Compile Include="Controllers\PersonInfoController.Designer.cs">
       <DependentUpon>PersonInfoController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmAddOrEditPerson.cs">
+    <Compile Include="Forms\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmAddOrEditPerson.Designer.cs">
+    <Compile Include="Forms\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Person Forms\frmAddOrEditPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Person Forms\frmAddOrEditPerson.Designer.cs">
       <DependentUpon>frmAddOrEditPerson.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmMain.cs">
@@ -71,17 +77,23 @@
     <Compile Include="Forms\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmPeople.cs">
+    <Compile Include="Forms\Person Forms\frmPeople.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmPeople.Designer.cs">
+    <Compile Include="Forms\Person Forms\frmPeople.Designer.cs">
       <DependentUpon>frmPeople.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmPersonInfo.cs">
+    <Compile Include="Forms\Person Forms\frmPersonInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmPersonInfo.Designer.cs">
+    <Compile Include="Forms\Person Forms\frmPersonInfo.Designer.cs">
       <DependentUpon>frmPersonInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User Forms\frmManageUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User Forms\frmManageUsers.Designer.cs">
+      <DependentUpon>frmManageUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -91,17 +103,23 @@
     <EmbeddedResource Include="Controllers\PersonInfoController.resx">
       <DependentUpon>PersonInfoController.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmAddOrEditPerson.resx">
+    <EmbeddedResource Include="Forms\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Person Forms\frmAddOrEditPerson.resx">
       <DependentUpon>frmAddOrEditPerson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmPeople.resx">
+    <EmbeddedResource Include="Forms\Person Forms\frmPeople.resx">
       <DependentUpon>frmPeople.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmPersonInfo.resx">
+    <EmbeddedResource Include="Forms\Person Forms\frmPersonInfo.resx">
       <DependentUpon>frmPersonInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User Forms\frmManageUsers.resx">
+      <DependentUpon>frmManageUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -528,5 +546,6 @@
       <Name>BusinessLogicLayer</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

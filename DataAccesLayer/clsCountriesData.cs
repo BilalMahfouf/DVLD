@@ -22,11 +22,12 @@ namespace DataAccesLayer
             {
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
-                if(reader.Read())
+                if(reader.HasRows)
                 {
                     result.Load(reader);
-                    reader.Close();
+                    
                 }
+                reader.Close();
             }
             catch (Exception ex)
             {

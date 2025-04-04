@@ -21,6 +21,19 @@ namespace FrontEnd.Controllers
             InitializeComponent();
             
         }
+        private void _RemovePersonImageFromScreen()
+        {
+            if (pbPersonPicture.Image != null)
+            {
+                pbPersonPicture.Image.Dispose();
+                pbPersonPicture.Image = null;
+                pbPersonPicture.ImageLocation = null;
+            }
+        }
+        public void RemovePersonImageFromScreen()
+        {
+            _RemovePersonImageFromScreen();
+        }
 
         private void _ShowPersonInfo()
         {
@@ -48,11 +61,11 @@ namespace FrontEnd.Controllers
                     pbPersonPicture.Image = Properties.Resources.Female_512;
                 }
 
-                //if (File.Exists(Person.ImagePath))
-                //{
-                //    pbPersonPicture.Image= Image.FromFile(Person.ImagePath);
+                if (File.Exists(Person.ImagePath))
+                {
+                    pbPersonPicture.Image = Image.FromFile(Person.ImagePath);
 
-                //}
+                }
             }
         }
         public void ShowPersonInfo()

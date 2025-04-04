@@ -134,9 +134,15 @@ namespace FrontEnd.Controllers
                 // Generate a new image name with the original extension
                 Guid ImageNewName = Guid.NewGuid();
                 string destinationFolder = @"C:\DVLD Photos\";
+                string FolderName = "C:\\DVLD Photos";
                 string fileExtension = Path.GetExtension(ImagePath);
                 string newFilePath = Path.Combine(destinationFolder, ImageNewName.ToString() + fileExtension);
-
+                
+                if(File.Exists(ImagePath) && Path.GetDirectoryName(ImagePath)== FolderName)
+                {
+                    return;
+                }
+               
                 // Ensure the destination folder exists
                 if (!Directory.Exists(destinationFolder))
                 {
@@ -182,10 +188,10 @@ namespace FrontEnd.Controllers
 
             if (ofdSetImage.ShowDialog() == DialogResult.OK)
             {
+                _RemoveImage(pbPersonPicture.ImageLocation);
                 pbPersonPicture.Image = Image.FromFile(ofdSetImage.FileName);
                 pbPersonPicture.ImageLocation = ofdSetImage.FileName;
                 linklblRemove.Visible = true;
-                // _SaveImage(ofdSetImage.FileName);
             }
         }
 

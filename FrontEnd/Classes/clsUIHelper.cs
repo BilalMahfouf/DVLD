@@ -72,36 +72,33 @@ namespace FrontEnd.Classes
             }
         }
 
-        //public static void DeleteImageFromFile(string ImagePath)
-        //{
-        //    if (!string.IsNullOrEmpty(ImagePath) && File.Exists(ImagePath))
-        //    {
-        //        try
-        //        {
-        //            // Get the folder path
-        //            string allowedFolder = @"C:\DVLD Photos";
-        //            string imageDirectory = Path.GetDirectoryName(ImagePath);
+        public static void DeleteImageFromFile(string ImagePath)
+        {
+            if (!string.IsNullOrEmpty(ImagePath) && File.Exists(ImagePath))
+            {
+                try
+                {
+                    // Get the folder path
+                    string allowedFolder = @"C:\DVLD Photos";
+                    string imageDirectory = Path.GetDirectoryName(ImagePath);
 
-        //            // Check if the file is inside "C:\DVLD Photos"
-        //            if (string.Equals(imageDirectory, allowedFolder, StringComparison.OrdinalIgnoreCase))
-        //            {
+                    // Check if the file is inside "C:\DVLD Photos"
+                    if (string.Equals(imageDirectory, allowedFolder, StringComparison.OrdinalIgnoreCase))
+                    {
 
-        //                // Force garbage collection to fully release the file
+                        // Delete the file
+                        File.Delete(ImagePath);
+                    }
 
-
-        //                // Delete the file
-        //                File.Delete(ImagePath);
-        //            }
-
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            MessageBox.Show("Error deleting old image: " + ex.Message);
-        //        }
-        //    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error deleting old image: " + ex.Message);
+                }
+            }
 
 
-        //}
+        }
 
 
 

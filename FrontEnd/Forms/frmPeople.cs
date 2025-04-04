@@ -181,6 +181,7 @@ namespace FrontEnd.Forms
                 string ImagePath = clsPerson.Find(PersonID).ImagePath;
                 if(clsPerson.DeletePerson(PersonID))
                 {
+                   
                     MessageBox.Show("Person deleted successfully", "", MessageBoxButtons.OK,
                         MessageBoxIcon.Asterisk);
                     

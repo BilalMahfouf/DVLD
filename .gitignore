@@ -1,0 +1,71 @@
+# Ignore Visual Studio user-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore build outputs
+bin/
+obj/
+Debug/
+Release/
+
+# Ignore package-related files
+*.nupkg
+*.snupkg
+packages/
+!packages/repositories.config  # Keep NuGet package config
+
+# Ignore NuGet restore
+project.lock.json
+project.assets.json
+packages.lock.json
+
+# Ignore compiled DLLs and executables
+*.exe
+*.dll
+*.pdb
+*.cache
+*.ilk
+*.log
+*.csv
+*.swp
+*.bak
+*.orig
+*.sdf
+*.sqlite
+
+# Ignore Resharper and Rider settings
+.idea/
+*.DotSettings.user
+
+# Ignore Visual Studio Code settings
+.vscode/
+
+# Ignore temporary files
+*.tmp
+*.diff
+*.patch
+~$*
+*.dbmdl
+*.jfm
+
+# Ignore test results
+TestResults/
+*.trx
+*.coverage
+.coverage*
+
+# Ignore Publish artifacts
+.publish/
+publish/
+
+# Ignore Windows Thumbs.db and DS_Store (Mac)
+Thumbs.db
+.DS_Store
+
+# Ignore auto-generated AssemblyInfo
+Properties/AssemblyInfo.cs
+
+# Ignore EF migrations history
+Migrations/

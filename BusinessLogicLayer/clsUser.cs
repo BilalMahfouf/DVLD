@@ -108,5 +108,10 @@ namespace BusinessLogicLayer
             return false;
 
         }
+
+        public static DataTable GetAllUsersWithFullName()
+        {
+            return clsUsersData.GetAllUsersWithFullName();
+        }
     }
 }

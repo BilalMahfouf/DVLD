@@ -69,3 +69,14 @@ Properties/AssemblyInfo.cs
 
 # Ignore EF migrations history
 Migrations/
+
+# Ignore Visual Studio generated folders
+.vs/
+FrontEnd/.vs/
+
+# Ignore MSBuild/Visual Studio generated cache files
+*.csproj.FileListAbsolute.txt
+*.csproj.AssemblyReference.cache
+*.csproj.GenerateResource.cache
+*.csproj.CoreCompileInputs.cache
+DesignTimeResolveAssemblyReferences.cache

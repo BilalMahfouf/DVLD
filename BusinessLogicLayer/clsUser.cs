@@ -113,5 +113,10 @@ namespace BusinessLogicLayer
         {
             return clsUsersData.GetAllUsersWithFullName();
         }
+
+        public static bool IsExist(int PersonID)
+        {
+            return clsUsersData.IsExist(PersonID);
+        }
     }
 }

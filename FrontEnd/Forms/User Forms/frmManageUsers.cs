@@ -23,9 +23,9 @@ namespace FrontEnd.Forms.User_Forms
 
         private void _Refresh()
         {
-            _Users= clsUser.GetAllUsersWithFullName();
+            _Users = clsUser.GetAllUsersWithFullName();
             dgvUsers.DataSource = _Users;
-            lblRecords.Text="#Records: "+ _Users.Rows.Count.ToString();
+            lblRecords.Text = "#Records: " + _Users.Rows.Count.ToString();
         }
         private void dgvUesrsDesigned()
         {
@@ -91,7 +91,7 @@ namespace FrontEnd.Forms.User_Forms
             }
             if (cbFilterBy.SelectedIndex > 0)
             {
-               
+
                 mtbSearch.Visible = true;
                 if (cbFilterBy.SelectedItem != null && cbFilterBy.SelectedItem.ToString() == "Person ID"
                     || cbFilterBy.SelectedItem != null && cbFilterBy.SelectedItem.ToString() == "User ID")
@@ -114,7 +114,7 @@ namespace FrontEnd.Forms.User_Forms
 
         private void mtbSearch_TextChanged(object sender, EventArgs e)
         {
-           
+
             if (!_SearchForUserBy(cbFilterBy.Text, mtbSearch.Text))
             {
                 DataTable temp = _Users.Clone();
@@ -126,30 +126,30 @@ namespace FrontEnd.Forms.User_Forms
         private void _IsActiveFilter(bool IsActive)
         {
             // don't touch this func its logic is complicated but it work
-            DataTable newUsers=new DataTable();
-            
+            DataTable newUsers = new DataTable();
+
             newUsers = _Users.Clone(); // this insure that newUsers has the same
                                        // schema as _Users so that  newUsers.ImportRow(row) work
             foreach (DataRow row in _Users.Rows)
             {
-                if(IsActive && (bool)row["IsActive"])
+                if (IsActive && (bool)row["IsActive"])
                 {
                     newUsers.ImportRow(row);
                 }
                 else if (!IsActive)
                 {
-                    if(!(bool)row["IsActive"])
+                    if (!(bool)row["IsActive"])
                     {
                         newUsers.ImportRow(row);
                     }
                 }
 
             }
-            if(newUsers.Rows.Count > 0)
+            if (newUsers.Rows.Count > 0)
             {
                 dgvUsers.DataSource = newUsers;
             }
-            
+
         }
         private void _IsActiveSearch(string Choice)
         {
@@ -172,6 +172,83 @@ namespace FrontEnd.Forms.User_Forms
         private void cbIsActiveFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             _IsActiveSearch(cbIsActiveFilter.Text);
+        }
+
+        private void tsmSendEmail_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This feature is not implementing yet",
+              "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void tsmPhoneCall_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This feature is not implementing yet",
+              "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void tsmDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvUsers.CurrentRow != null)
+            {
+                int UserID = Convert.ToInt32(dgvUsers.CurrentRow.Cells["UserID"].Value);
+                if (clsUser.DeleteUser(UserID))
+                {
+                    MessageBox.Show("User deleted successfully",
+              "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Can't delete this user because it " +
+                        "has relation in the system",
+             "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            _Refresh();
+        }
+
+        private void tsmShowDetails_Click(object sender, EventArgs e)
+        {
+            if(dgvUsers.CurrentRow != null)
+            {
+                int PersonID = Convert.ToInt32(dgvUsers.CurrentRow.Cells["PersonID"].Value);
+                int UserID = Convert.ToInt32(dgvUsers.CurrentRow.Cells["UserID"].Value);
+
+                frmUserInformation frmUserInformation = new frmUserInformation(UserID, PersonID);
+                frmUserInformation.ShowDialog();
+            }
+            
+        }
+
+        private void tsmChangePassword_Click(object sender, EventArgs e)
+        {
+            if (dgvUsers.CurrentRow != null)
+            {
+                int UserID = Convert.ToInt32(dgvUsers.CurrentRow.Cells["UserID"].Value);
+
+                frmChangePassword frmChangePassword = new frmChangePassword(UserID);
+                frmChangePassword.ShowDialog();
+            }
+        }
+
+        private void btnAddNewUser_Click(object sender, EventArgs e)
+        {
+
+            frmAddOrEditUser frmAddNewUser = new frmAddOrEditUser(-1);
+            frmAddNewUser.ShowDialog();
+        }
+
+        private void tsmAddNewUser_Click(object sender, EventArgs e)
+        {
+
+            frmAddOrEditUser frmAddNewUser = new frmAddOrEditUser(-1);
+            frmAddNewUser.ShowDialog();
+        }
+
+        private void tsmEdit_Click(object sender, EventArgs e)
+        {
+            int UserID = Convert.ToInt32(dgvUsers.CurrentRow.Cells["UserID"].Value);
+            frmAddOrEditUser frmEditUser = new frmAddOrEditUser(UserID);
+            frmEditUser.ShowDialog();
         }
     }
 }

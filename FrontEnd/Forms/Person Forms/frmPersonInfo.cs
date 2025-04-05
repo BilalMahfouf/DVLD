@@ -35,10 +35,7 @@ namespace FrontEnd.Forms
 
         private void personInfoController1_OnClicklinklblEditPerson_1()
         {
-            personInfoController1.RemovePersonImageFromScreen();
-            frmAddOrEditPerson frmEditPerson = new frmAddOrEditPerson(this._PersonID);
-            frmEditPerson.ShowDialog();
-            personInfoController1.ShowPersonInfo();
+            
             
         }
     }

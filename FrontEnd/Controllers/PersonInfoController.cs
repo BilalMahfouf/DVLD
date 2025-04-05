@@ -10,9 +10,11 @@ using System.Windows.Forms;
 using BusinessLogicLayer;
 using FrontEnd.Classes;
 using System.IO;
+using FrontEnd.Forms;
 
 namespace FrontEnd.Controllers
 {
+    // write once use every where
     public partial class PersonInfoController : UserControl
     {
         public  int PersonID;
@@ -67,6 +69,21 @@ namespace FrontEnd.Controllers
 
                 }
             }
+            else
+            {
+                lblPersonID.Text = "???";
+                lblName.Text = "???";
+                lblNantionalNo.Text = "???";
+                lblPersonID.Text = "???";
+                lblEmail.Text = "???";
+                lblAddress.Text = "???";
+                lblDateOfBirth.Text = "???";
+                lblPhone.Text = "???";
+                lblCountry.Text = "???";
+                    lblGender.Text = "???";
+                pbPersonPicture.Image = Properties.Resources.Male_512;
+
+            }
         }
         public void ShowPersonInfo()
         {
@@ -95,6 +112,15 @@ namespace FrontEnd.Controllers
             {
                 ClicklinklblEditPerson();
             }
+            _RemovePersonImageFromScreen();
+            frmAddOrEditPerson frmEditPerson = new frmAddOrEditPerson(this.PersonID);
+            frmEditPerson.ShowDialog();
+            _ShowPersonInfo();
+        }
+
+        private void gbPersonInfo_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -197,7 +197,30 @@ namespace DataAccesLayer
 
         }
 
-       
+        public static bool IsExist(int PersonID)
+        {
+            bool isFound = false;
+            SqlConnection connection = new SqlConnection(clsDataConnection.connection_string);
+            string query = @"select isFound=1 from Users where PersonID=@PersonID";
+            SqlCommand command = new SqlCommand (query, connection);
+            command.Parameters.AddWithValue("@PersonID", PersonID);
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                isFound = reader.HasRows;
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally { connection.Close(); }
+            return isFound;
+
+        }
+
+       // Fuck Single Responsibility Principle (again)
         public static DataTable GetAllUsersWithFullName()
         {
             DataTable result = new DataTable();

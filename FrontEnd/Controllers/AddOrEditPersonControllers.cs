@@ -34,20 +34,7 @@ namespace FrontEnd.Controllers
         private Image FemaleImage = Properties.Resources.Female_512;
 
 
-        private void SetErrorProvider(Control C)
-        {
-            if (C is TextBox || C is RichTextBox) // Ensure it's a text input control
-            {
-                if (string.IsNullOrWhiteSpace(C.Text))
-                {
-                    errorProvider1.SetError(C, "This field cannot be empty.");
-                }
-                else
-                {
-                    errorProvider1.SetError(C, ""); // Clear error if valid
-                }
-            }
-        }
+       
 
         private void _SetCountries()
         {
@@ -98,7 +85,7 @@ namespace FrontEnd.Controllers
 
         private void AllTextBox_TextChanged(object sender, EventArgs e)
         {
-            SetErrorProvider((Control)sender);
+            clsUIHelper.SetErrorProvider((Control)sender,errorProvider1);
         }
 
 

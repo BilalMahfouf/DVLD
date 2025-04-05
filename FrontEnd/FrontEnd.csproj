@@ -53,6 +53,18 @@
     <Compile Include="Controllers\AddOrEditPersonControllers.Designer.cs">
       <DependentUpon>AddOrEditPersonControllers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\FindUserController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controllers\FindUserController.Designer.cs">
+      <DependentUpon>FindUserController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\LoginInformationController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controllers\LoginInformationController.Designer.cs">
+      <DependentUpon>LoginInformationController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\PersonInfoController.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -89,16 +101,40 @@
     <Compile Include="Forms\Person Forms\frmPersonInfo.Designer.cs">
       <DependentUpon>frmPersonInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\User Forms\frmAddNewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User Forms\frmAddNewUser.Designer.cs">
+      <DependentUpon>frmAddNewUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User Forms\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User Forms\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\User Forms\frmManageUsers.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\User Forms\frmManageUsers.Designer.cs">
       <DependentUpon>frmManageUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\User Forms\frmUserInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User Forms\frmUserInformation.Designer.cs">
+      <DependentUpon>frmUserInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controllers\AddOrEditPersonControllers.resx">
       <DependentUpon>AddOrEditPersonControllers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\FindUserController.resx">
+      <DependentUpon>FindUserController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\LoginInformationController.resx">
+      <DependentUpon>LoginInformationController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controllers\PersonInfoController.resx">
       <DependentUpon>PersonInfoController.cs</DependentUpon>
@@ -118,8 +154,17 @@
     <EmbeddedResource Include="Forms\Person Forms\frmPersonInfo.resx">
       <DependentUpon>frmPersonInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User Forms\frmAddNewUser.resx">
+      <DependentUpon>frmAddNewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User Forms\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\User Forms\frmManageUsers.resx">
       <DependentUpon>frmManageUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User Forms\frmUserInformation.resx">
+      <DependentUpon>frmUserInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -100,6 +100,20 @@ namespace FrontEnd.Classes
 
         }
 
+        public static void SetErrorProvider(Control C, ErrorProvider errorProvider)
+        {
+            if (C is TextBox || C is RichTextBox) // Ensure it's a text input control
+            {
+                if (string.IsNullOrWhiteSpace(C.Text))
+                {
+                    errorProvider.SetError(C, "This field cannot be empty.");
+                }
+                else
+                {
+                    errorProvider.SetError(C, ""); // Clear error if valid
+                }
+            }
+        }
 
 
 

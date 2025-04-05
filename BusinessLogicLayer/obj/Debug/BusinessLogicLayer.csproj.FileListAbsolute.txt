@@ -1,9 +1,0 @@
-D:\Users\ALEM\source\repos\C#\DVLD\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll
-D:\Users\ALEM\source\repos\C#\DVLD\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
-D:\Users\ALEM\source\repos\C#\DVLD\BusinessLogicLayer\bin\Debug\DataAccesLayer.dll
-D:\Users\ALEM\source\repos\C#\DVLD\BusinessLogicLayer\bin\Debug\DataAccesLayer.pdb
-D:\Users\ALEM\source\repos\C#\DVLD\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.AssemblyReference.cache
-D:\Users\ALEM\source\repos\C#\DVLD\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CoreCompileInputs.cache
-D:\Users\ALEM\source\repos\C#\DVLD\BusinessLogicLayer\obj\Debug\Business.450209FB.Up2Date
-D:\Users\ALEM\source\repos\C#\DVLD\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
-D:\Users\ALEM\source\repos\C#\DVLD\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb

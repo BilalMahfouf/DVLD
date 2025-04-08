@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogicLayer;
+using FrontEnd.Forms.ApplicationTypes_Forms;
 using FrontEnd.Forms.User_Forms;
 
 namespace FrontEnd.Forms
@@ -53,6 +54,12 @@ namespace FrontEnd.Forms
         {
             this.Close();
 
+        }
+
+        private void tsmManageApplicationsTypes_Click(object sender, EventArgs e)
+        {
+            frmManageApplicationTypes frmManageApplicationTypes = new frmManageApplicationTypes();  
+            frmManageApplicationTypes.ShowDialog();
         }
     }
 }

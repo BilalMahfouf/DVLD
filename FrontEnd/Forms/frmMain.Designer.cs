@@ -267,6 +267,7 @@
             this.tsmManageApplicationsTypes.Name = "tsmManageApplicationsTypes";
             this.tsmManageApplicationsTypes.Size = new System.Drawing.Size(440, 70);
             this.tsmManageApplicationsTypes.Text = "Manage Applications Types";
+            this.tsmManageApplicationsTypes.Click += new System.EventHandler(this.tsmManageApplicationsTypes_Click);
             // 
             // tsmManageTestTypes
             // 

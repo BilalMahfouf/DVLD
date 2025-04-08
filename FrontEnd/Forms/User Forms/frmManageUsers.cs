@@ -130,6 +130,7 @@ namespace FrontEnd.Forms.User_Forms
 
             newUsers = _Users.Clone(); // this insure that newUsers has the same
                                        // schema as _Users so that  newUsers.ImportRow(row) work
+        
             foreach (DataRow row in _Users.Rows)
             {
                 if (IsActive && (bool)row["IsActive"])
@@ -145,10 +146,8 @@ namespace FrontEnd.Forms.User_Forms
                 }
 
             }
-            if (newUsers.Rows.Count > 0)
-            {
-                dgvUsers.DataSource = newUsers;
-            }
+               dgvUsers.DataSource = newUsers;
+            
 
         }
         private void _IsActiveSearch(string Choice)
@@ -210,10 +209,9 @@ namespace FrontEnd.Forms.User_Forms
         {
             if(dgvUsers.CurrentRow != null)
             {
-                int PersonID = Convert.ToInt32(dgvUsers.CurrentRow.Cells["PersonID"].Value);
                 int UserID = Convert.ToInt32(dgvUsers.CurrentRow.Cells["UserID"].Value);
 
-                frmUserInformation frmUserInformation = new frmUserInformation(UserID, PersonID);
+                frmUserInformation frmUserInformation = new frmUserInformation(UserID);
                 frmUserInformation.ShowDialog();
             }
             
@@ -227,6 +225,8 @@ namespace FrontEnd.Forms.User_Forms
 
                 frmChangePassword frmChangePassword = new frmChangePassword(UserID);
                 frmChangePassword.ShowDialog();
+              
+
             }
         }
 
@@ -235,6 +235,8 @@ namespace FrontEnd.Forms.User_Forms
 
             frmAddOrEditUser frmAddNewUser = new frmAddOrEditUser(-1);
             frmAddNewUser.ShowDialog();
+            _Refresh();
+
         }
 
         private void tsmAddNewUser_Click(object sender, EventArgs e)
@@ -242,6 +244,8 @@ namespace FrontEnd.Forms.User_Forms
 
             frmAddOrEditUser frmAddNewUser = new frmAddOrEditUser(-1);
             frmAddNewUser.ShowDialog();
+            _Refresh();
+
         }
 
         private void tsmEdit_Click(object sender, EventArgs e)
@@ -249,6 +253,7 @@ namespace FrontEnd.Forms.User_Forms
             int UserID = Convert.ToInt32(dgvUsers.CurrentRow.Cells["UserID"].Value);
             frmAddOrEditUser frmEditUser = new frmAddOrEditUser(UserID);
             frmEditUser.ShowDialog();
+            _Refresh();
         }
     }
 }

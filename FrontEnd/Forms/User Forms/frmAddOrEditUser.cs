@@ -44,6 +44,7 @@ namespace FrontEnd.Forms.User_Forms
             if (_UserID>0)
             {
                 lblMode.Text = "Update User";
+                findUserController1.Enabled = false;
                 _Refresh();
             }
             else

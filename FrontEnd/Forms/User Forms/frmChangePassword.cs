@@ -60,6 +60,7 @@ namespace FrontEnd.Forms.User_Forms
             {
                 MessageBox.Show("Password Updated successfully","",
                     MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                this.Close();
             }
             else
             {

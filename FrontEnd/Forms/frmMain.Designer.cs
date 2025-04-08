@@ -326,6 +326,7 @@
             this.tsmCurrentUserInfo.Name = "tsmCurrentUserInfo";
             this.tsmCurrentUserInfo.Size = new System.Drawing.Size(277, 38);
             this.tsmCurrentUserInfo.Text = "Current User Info";
+            this.tsmCurrentUserInfo.Click += new System.EventHandler(this.tsmCurrentUserInfo_Click);
             // 
             // tsmChangePassword
             // 
@@ -335,6 +336,7 @@
             this.tsmChangePassword.Name = "tsmChangePassword";
             this.tsmChangePassword.Size = new System.Drawing.Size(277, 38);
             this.tsmChangePassword.Text = "Change Password";
+            this.tsmChangePassword.Click += new System.EventHandler(this.tsmChangePassword_Click);
             // 
             // tsmSignOut
             // 
@@ -344,6 +346,7 @@
             this.tsmSignOut.Name = "tsmSignOut";
             this.tsmSignOut.Size = new System.Drawing.Size(277, 38);
             this.tsmSignOut.Text = "Sign Out ";
+            this.tsmSignOut.Click += new System.EventHandler(this.tsmSignOut_Click);
             // 
             // frmMain
             // 

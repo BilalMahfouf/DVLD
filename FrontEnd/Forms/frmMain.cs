@@ -7,17 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessLogicLayer;
 using FrontEnd.Forms.User_Forms;
 
 namespace FrontEnd.Forms
 {
     public partial class frmMain : Form
     {
-        public frmMain()
+        public frmMain(int  UserID)
         {
             InitializeComponent();
+            this._UserID = UserID;
         }
-
+        private int _UserID;
         private void applicationToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -33,6 +35,24 @@ namespace FrontEnd.Forms
         {
             frmManageUsers frmManageUsers = new frmManageUsers();
             frmManageUsers.ShowDialog();
+        }
+
+        private void tsmCurrentUserInfo_Click(object sender, EventArgs e)
+        {
+            frmUserInformation frmUserInformation = new frmUserInformation(_UserID);
+            frmUserInformation.ShowDialog();
+        }
+
+        private void tsmChangePassword_Click(object sender, EventArgs e)
+        {
+            frmChangePassword frmChangePassword = new frmChangePassword(_UserID);
+            frmChangePassword.ShowDialog();
+        }
+
+        private void tsmSignOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
         }
     }
 }

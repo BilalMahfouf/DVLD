@@ -307,45 +307,43 @@ public static class clsPersonTest
                 Console.WriteLine("FAILED");
             }
         }
-    }
+}
 
-public static class clsUserTest
+public static class clsApplicationTypesTest
 {
     public static void RunAllTests()
     {
-        Console.WriteLine("=== Running User Tests ===\n");
+        Console.WriteLine("=== Running Application Types Tests ===\n");
 
-        TestGetAllUsers();
-        TestFindUserByID();
-        TestFindUserByCredentials();
-        TestAddNewUser();
-        TestUpdateUser();
-        TestDeleteUser();
+        TestGetAllApplicationTypes();
+        TestFindApplicationType();
+        //TestSaveApplicationType();
 
-        Console.WriteLine("\n=== User Tests Completed ===");
+        Console.WriteLine("\n=== Application Types Tests Completed ===");
     }
 
-    public static void TestGetAllUsers()
+    public static void TestGetAllApplicationTypes()
     {
-        Console.WriteLine("\n[Test] GetAllUsers()");
+        Console.WriteLine("\n[Test] GetAllApplicationTypes()");
 
         try
         {
-            DataTable usersTable = clsUser.GetAllUsers();
-            Console.WriteLine($"Result: Success ({usersTable.Rows.Count} users found)");
+            DataTable appTypesTable = clsApplicationType.GetAllApplicationTypes();
 
-            if (usersTable.Rows.Count > 0)
+            Console.WriteLine($"Result: Success ({appTypesTable.Rows.Count} application types found)");
+
+            if (appTypesTable.Rows.Count > 0)
             {
                 Console.WriteLine("\nSample Data:");
-                for (int i = 0; i < Math.Min(3, usersTable.Rows.Count); i++)
+                for (int i = 0; i < Math.Min(3, appTypesTable.Rows.Count); i++)
                 {
-                    DataRow row = usersTable.Rows[i];
-                    Console.WriteLine($"UserID: {row["UserID"]} | UserName: {row["UserName"]} | PersonID: {row["PersonID"]} | IsActive: {row["IsActive"]}");
+                    DataRow row = appTypesTable.Rows[i];
+                    Console.WriteLine($"ID: {row["ApplicationTypeID"]} | Title: {row["ApplicationTypeTitle"]} | Fee: {row["ApplicationFees"]}");
                 }
             }
             else
             {
-                Console.WriteLine("Warning: No users found in database");
+                Console.WriteLine("Warning: No application types found in database");
             }
         }
         catch (Exception ex)
@@ -355,22 +353,23 @@ public static class clsUserTest
         }
     }
 
-    public static void TestFindUserByID()
+    public static void TestFindApplicationType()
     {
-        Console.WriteLine("\n[Test] Find(int userID)");
+        Console.WriteLine("\n[Test] Find(int ApplicationTypeID)");
 
         try
         {
-            // Replace with valid ID in your DB
-            clsUser user = clsUser.Find(17);
+            int testID = 1; // <-- make sure this ID exists in your database
+            clsApplicationType appType = clsApplicationType.Find(testID);
 
-            if (user != null)
+            if (appType != null)
             {
-                DisplayUserData(user);
+                Console.WriteLine($"Result: Found");
+                Console.WriteLine($"ID: {appType.ApplicationTypeID} | Title: {appType.ApplicationTitle}");
             }
             else
             {
-                Console.WriteLine("User not found.");
+                Console.WriteLine($"Result: Not Found (No record with ID = {testID})");
             }
         }
         catch (Exception ex)
@@ -380,149 +379,242 @@ public static class clsUserTest
         }
     }
 
-    public static void TestFindUserByCredentials()
+    public static void TestSaveApplicationType()
     {
-        Console.WriteLine("\n[Test] Find(string username, string password)");
+        Console.WriteLine("\n[Test] Save() — Update ApplicationType");
 
-        try
+        clsApplicationType a = clsApplicationType.Find(1);
+        if (a != null)
         {
-            string username = "Msaqer77";   // Replace with valid username
-            string password = "1234";   // Replace with correct password
-            clsUser user = clsUser.Find(username, password);
-
-            if (user != null)
+            a.ApplicationFee = 15;
+            a.ApplicationTitle= "New Local Driving License Service";
+            if (a.Save())
             {
-                DisplayUserData(user);
+                Console.WriteLine(1);
             }
             else
             {
-                Console.WriteLine("Invalid credentials or user not found.");
+                Console.WriteLine(0);
             }
         }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error: {ex.Message}");
-            Console.WriteLine("FAILED");
-        }
     }
 
-    public static void TestAddNewUser()
+
+    public static class clsUserTest
     {
-        Console.WriteLine("\n[Test] Add New User (Save with AddNew mode)");
-
-        try
+        public static void RunAllTests()
         {
-            clsUser newUser = new clsUser
-            {
-                PersonID = 1091, // Replace with valid PersonID from DB
-                UserName = "TestUser_" + Guid.NewGuid().ToString().Substring(0, 5),
-                Password = "123456",
-                IsActive = true
-            };
+            Console.WriteLine("=== Running User Tests ===\n");
 
-            bool result = newUser.Save();
+            TestGetAllUsers();
+            TestFindUserByID();
+            TestFindUserByCredentials();
+            TestAddNewUser();
+            TestUpdateUser();
+            TestDeleteUser();
 
-            Console.WriteLine(result
-                ? $"New user added successfully. UserID = {newUser.UserID}"
-                : "Failed to add new user.");
-
-            if (result) DisplayUserData(newUser);
+            Console.WriteLine("\n=== User Tests Completed ===");
         }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error: {ex.Message}");
-            Console.WriteLine("FAILED");
-        }
-    }
 
-    public static void TestUpdateUser()
-    {
-        Console.WriteLine("\n[Test] Update User (Save with Update mode)");
-
-        try
+        public static void TestGetAllUsers()
         {
-            clsUser user =  clsUser.Find(17); // Replace with valid ID
-            if (user == null)
+            Console.WriteLine("\n[Test] GetAllUsers()");
+
+            try
             {
-                Console.WriteLine("User not found for update.");
-                return;
+                DataTable usersTable = clsUser.GetAllUsers();
+                Console.WriteLine($"Result: Success ({usersTable.Rows.Count} users found)");
+
+                if (usersTable.Rows.Count > 0)
+                {
+                    Console.WriteLine("\nSample Data:");
+                    for (int i = 0; i < Math.Min(3, usersTable.Rows.Count); i++)
+                    {
+                        DataRow row = usersTable.Rows[i];
+                        Console.WriteLine($"UserID: {row["UserID"]} | UserName: {row["UserName"]} | PersonID: {row["PersonID"]} | IsActive: {row["IsActive"]}");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Warning: No users found in database");
+                }
             }
-
-            user.UserName = "_Updated";
-            user.Password = "newpass";
-            user.IsActive = !user.IsActive;
-
-            bool result = user.Save();
-
-            Console.WriteLine(result
-                ? $"User updated successfully."
-                : "Failed to update user.");
-
-            if (result) DisplayUserData(user);
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error: {ex.Message}");
-            Console.WriteLine("FAILED");
-        }
-    }
-
-    public static void TestDeleteUser()
-    {
-        Console.WriteLine("\n[Test] Delete User");
-
-        try
-        {
-            // First, create a test user to delete
-            clsUser tempUser = new clsUser
+            catch (Exception ex)
             {
-                PersonID = 1092, // Replace with valid PersonID
-                UserName = "ToDelete_" + Guid.NewGuid().ToString().Substring(0, 5),
-                Password = "temp",
-                IsActive = true
-            };
-
-            if (!tempUser.Save())
-            {
-                Console.WriteLine("Could not create user to delete.");
-                return;
+                Console.WriteLine($"Error: {ex.Message}");
+                Console.WriteLine("FAILED");
             }
-
-            Console.WriteLine("Created user for deletion:");
-            DisplayUserData(tempUser);
-
-            bool deleted = clsUser.DeleteUser(tempUser.UserID);
-
-            Console.WriteLine(deleted
-                ? $"User deleted successfully. ID = {tempUser.UserID}"
-                : "Failed to delete user.");
         }
-        catch (Exception ex)
+
+        public static void TestFindUserByID()
         {
-            Console.WriteLine($"Error: {ex.Message}");
-            Console.WriteLine("FAILED");
+            Console.WriteLine("\n[Test] Find(int userID)");
+
+            try
+            {
+                // Replace with valid ID in your DB
+                clsUser user = clsUser.Find(17);
+
+                if (user != null)
+                {
+                    DisplayUserData(user);
+                }
+                else
+                {
+                    Console.WriteLine("User not found.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                Console.WriteLine("FAILED");
+            }
+        }
+
+        public static void TestFindUserByCredentials()
+        {
+            Console.WriteLine("\n[Test] Find(string username, string password)");
+
+            try
+            {
+                string username = "Msaqer77";   // Replace with valid username
+                string password = "1234";   // Replace with correct password
+                clsUser user = clsUser.Find(username, password);
+
+                if (user != null)
+                {
+                    DisplayUserData(user);
+                }
+                else
+                {
+                    Console.WriteLine("Invalid credentials or user not found.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                Console.WriteLine("FAILED");
+            }
+        }
+
+        public static void TestAddNewUser()
+        {
+            Console.WriteLine("\n[Test] Add New User (Save with AddNew mode)");
+
+            try
+            {
+                clsUser newUser = new clsUser
+                {
+                    PersonID = 1091, // Replace with valid PersonID from DB
+                    UserName = "TestUser_" + Guid.NewGuid().ToString().Substring(0, 5),
+                    Password = "123456",
+                    IsActive = true
+                };
+
+                bool result = newUser.Save();
+
+                Console.WriteLine(result
+                    ? $"New user added successfully. UserID = {newUser.UserID}"
+                    : "Failed to add new user.");
+
+                if (result) DisplayUserData(newUser);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                Console.WriteLine("FAILED");
+            }
+        }
+
+        public static void TestUpdateUser()
+        {
+            Console.WriteLine("\n[Test] Update User (Save with Update mode)");
+
+            try
+            {
+                clsUser user = clsUser.Find(17); // Replace with valid ID
+                if (user == null)
+                {
+                    Console.WriteLine("User not found for update.");
+                    return;
+                }
+
+                user.UserName = "_Updated";
+                user.Password = "newpass";
+                user.IsActive = !user.IsActive;
+
+                bool result = user.Save();
+
+                Console.WriteLine(result
+                    ? $"User updated successfully."
+                    : "Failed to update user.");
+
+                if (result) DisplayUserData(user);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                Console.WriteLine("FAILED");
+            }
+        }
+
+        public static void TestDeleteUser()
+        {
+            Console.WriteLine("\n[Test] Delete User");
+
+            try
+            {
+                // First, create a test user to delete
+                clsUser tempUser = new clsUser
+                {
+                    PersonID = 1092, // Replace with valid PersonID
+                    UserName = "ToDelete_" + Guid.NewGuid().ToString().Substring(0, 5),
+                    Password = "temp",
+                    IsActive = true
+                };
+
+                if (!tempUser.Save())
+                {
+                    Console.WriteLine("Could not create user to delete.");
+                    return;
+                }
+
+                Console.WriteLine("Created user for deletion:");
+                DisplayUserData(tempUser);
+
+                bool deleted = clsUser.DeleteUser(tempUser.UserID);
+
+                Console.WriteLine(deleted
+                    ? $"User deleted successfully. ID = {tempUser.UserID}"
+                    : "Failed to delete user.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                Console.WriteLine("FAILED");
+            }
+        }
+
+        private static void DisplayUserData(clsUser user)
+        {
+            Console.WriteLine("User Data:");
+            Console.WriteLine($"UserID   : {user.UserID}");
+            Console.WriteLine($"PersonID : {user.PersonID}");
+            Console.WriteLine($"UserName : {user.UserName}");
+            Console.WriteLine($"Password : {user.Password}");
+            Console.WriteLine($"IsActive : {user.IsActive}");
+            Console.WriteLine($"Mode     : {user.Mode}");
         }
     }
 
-    private static void DisplayUserData(clsUser user)
+    class clsPersonTester
     {
-        Console.WriteLine("User Data:");
-        Console.WriteLine($"UserID   : {user.UserID}");
-        Console.WriteLine($"PersonID : {user.PersonID}");
-        Console.WriteLine($"UserName : {user.UserName}");
-        Console.WriteLine($"Password : {user.Password}");
-        Console.WriteLine($"IsActive : {user.IsActive}");
-        Console.WriteLine($"Mode     : {user.Mode}");
+        static void Main()
+        {
+            clsApplicationTypesTest.TestSaveApplicationType();
+        }
+
+
+
     }
-}
-
-class clsPersonTester
-{
-    static void Main()
-    {
-        clsUserTest.TestUpdateUser();
-    }
-
-
-
 }

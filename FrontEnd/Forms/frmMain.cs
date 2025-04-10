@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogicLayer;
 using FrontEnd.Forms.ApplicationTypes_Forms;
+using FrontEnd.Forms.Driving_Licenses_Services_Forms;
 using FrontEnd.Forms.TestTypes_Forms;
 using FrontEnd.Forms.User_Forms;
 
@@ -67,6 +68,13 @@ namespace FrontEnd.Forms
         {
             frmManageTestTypes frmManageTestTypes = new frmManageTestTypes();
             frmManageTestTypes.ShowDialog();
+        }
+
+        private void tsmLocalLincense_Click(object sender, EventArgs e)
+        {
+            frmNewDrivingLicense_Local frmNewDrivingLicense_Local=
+                new frmNewDrivingLicense_Local();
+            frmNewDrivingLicense_Local .ShowDialog();
         }
     }
 }

@@ -134,6 +134,7 @@
             this.tsmLocalLincense.Name = "tsmLocalLincense";
             this.tsmLocalLincense.Size = new System.Drawing.Size(273, 38);
             this.tsmLocalLincense.Text = "Local Lincense";
+            this.tsmLocalLincense.Click += new System.EventHandler(this.tsmLocalLincense_Click);
             // 
             // tsmInternationalLicense
             // 

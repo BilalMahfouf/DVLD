@@ -387,7 +387,7 @@ public static class clsApplicationTypesTest
         if (a != null)
         {
             a.ApplicationFee = 15;
-            a.ApplicationTitle= "New Local Driving License Service";
+            a.ApplicationTitle = "New Local Driving License Service";
             if (a.Save())
             {
                 Console.WriteLine(1);
@@ -399,7 +399,7 @@ public static class clsApplicationTypesTest
         }
     }
 
-
+}
     public static class clsUserTest
     {
         public static void RunAllTests()
@@ -605,16 +605,117 @@ public static class clsApplicationTypesTest
             Console.WriteLine($"IsActive : {user.IsActive}");
             Console.WriteLine($"Mode     : {user.Mode}");
         }
+}
+
+public static class clsTestTypesTest
+{
+    public static void RunAllTests()
+    {
+        Console.WriteLine("=== Running Test Types Tests ===\n");
+
+        TestGetAllTestTypes();
+        TestFindTestType();
+       // TestSaveTestType();
+
+        Console.WriteLine("\n=== Test Types Tests Completed ===");
     }
 
-    class clsPersonTester
+    public static void TestGetAllTestTypes()
+    {
+        Console.WriteLine("\n[Test] GetAllTestTypes()");
+
+        try
+        {
+            DataTable testTypesTable = clsTestType.GetAllTestTypes();
+
+            Console.WriteLine($"Result: Success ({testTypesTable.Rows.Count} test types found)");
+
+            if (testTypesTable.Rows.Count > 0)
+            {
+                Console.WriteLine("\nSample Data:");
+                for (int i = 0; i < Math.Min(3, testTypesTable.Rows.Count); i++)
+                {
+                    DataRow row = testTypesTable.Rows[i];
+                    Console.WriteLine($"ID: {row["TestTypeID"]} | Title: {row["TestTypeTitle"]} | Fees: {row["TestTypeFees"]}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Warning: No test types found in database");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+            Console.WriteLine("FAILED");
+        }
+    }
+
+    public static void TestFindTestType()
+    {
+        Console.WriteLine("\n[Test] Find(int TestTypeID)");
+
+        try
+        {
+            int testID = 1; // Make sure this ID exists in your DB
+            clsTestType testType = clsTestType.Find(testID);
+
+            if (testType != null)
+            {
+                Console.WriteLine("Result: Found");
+                Console.WriteLine($"ID: {testType.TestTypeID} | Title: {testType.TestTypeTitle} | Fees: {testType.TestTypeFees}");
+            }
+            else
+            {
+                Console.WriteLine($"Result: Not Found (No record with ID = {testID})");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+            Console.WriteLine("FAILED");
+        }
+    }
+
+    public static void TestSaveTestType()
+    {
+        Console.WriteLine("\n[Test] Save() — Update TestType");
+
+        try
+        {
+            clsTestType testTestType = clsTestType.Find(1);
+            testTestType.TestTypeTitle = "Vision Test";
+            testTestType.TestTypeFees = 10;
+
+
+
+            bool result = testTestType.Save();
+
+            if (result)
+            {
+                Console.WriteLine("Result: Success (Test type updated)");
+            }
+            else
+            {
+                Console.WriteLine("Result: FAILED to update test type.");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+            Console.WriteLine("FAILED");
+        }
+    }
+}
+
+
+class clsPersonTester
     {
         static void Main()
         {
-            clsApplicationTypesTest.TestSaveApplicationType();
+        clsTestTypesTest.TestSaveTestType();
         }
 
 
 
     }
-}

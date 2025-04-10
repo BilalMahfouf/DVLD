@@ -276,6 +276,7 @@
             this.tsmManageTestTypes.Name = "tsmManageTestTypes";
             this.tsmManageTestTypes.Size = new System.Drawing.Size(440, 70);
             this.tsmManageTestTypes.Text = "Manage Test Types";
+            this.tsmManageTestTypes.Click += new System.EventHandler(this.tsmManageTestTypes_Click);
             // 
             // peopleToolStripMenuItem
             // 

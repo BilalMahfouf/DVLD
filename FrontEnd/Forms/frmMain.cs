@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogicLayer;
 using FrontEnd.Forms.ApplicationTypes_Forms;
+using FrontEnd.Forms.TestTypes_Forms;
 using FrontEnd.Forms.User_Forms;
 
 namespace FrontEnd.Forms
@@ -60,6 +61,12 @@ namespace FrontEnd.Forms
         {
             frmManageApplicationTypes frmManageApplicationTypes = new frmManageApplicationTypes();  
             frmManageApplicationTypes.ShowDialog();
+        }
+
+        private void tsmManageTestTypes_Click(object sender, EventArgs e)
+        {
+            frmManageTestTypes frmManageTestTypes = new frmManageTestTypes();
+            frmManageTestTypes.ShowDialog();
         }
     }
 }

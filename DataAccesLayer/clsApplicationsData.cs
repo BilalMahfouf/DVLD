@@ -54,5 +54,34 @@ namespace DataAccesLayer
             return ApplicationID;
 
         }
+
+        public static bool isExist(int ApplicantPersonID)
+        {
+            bool isFound = false;
+            SqlConnection connection = new SqlConnection(clsDataConnection.connection_string);
+            string query = @"select isfound=1 from Applications 
+                            where ApplicantPersonID=@ApplicantPersonID";
+            SqlCommand command= new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@ApplicantPersonID", ApplicantPersonID);
+            
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                isFound = reader.HasRows;
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return isFound;
+        
+        }
+
     }
 }

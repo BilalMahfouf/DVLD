@@ -45,5 +45,36 @@ namespace DataAccesLayer
 
         }
 
+        public static bool isExist(int ApplicationID, int LicenseClassID)
+        {
+            bool isFound = false;
+            SqlConnection connection = new SqlConnection(clsDataConnection.connection_string);
+            string query = @"select isfound=1 from LocalDrivingLicenseApplications
+                            where ApplicationID=@ApplicationID and LicenseClassID=@LicenseClassID";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
+            command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                isFound = reader.HasRows;
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return isFound;
+
+        }
     }
+            
+
+    
 }

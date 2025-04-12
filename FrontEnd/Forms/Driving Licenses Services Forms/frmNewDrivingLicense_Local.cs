@@ -29,6 +29,7 @@ namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
             {
                 personInfoController1.PersonID = PersonID;
                 personInfoController1.ShowPersonInfo();
+                btnNext.Enabled = true;
             }
         }
 

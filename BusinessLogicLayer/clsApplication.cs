@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
@@ -77,6 +78,11 @@ namespace BusinessLogicLayer
             }
             return false;
 
+        }
+
+        public static bool IsExist(int applicantPersonID)
+        {
+            return clsApplicationsData.isExist(applicantPersonID);
         }
 
     }

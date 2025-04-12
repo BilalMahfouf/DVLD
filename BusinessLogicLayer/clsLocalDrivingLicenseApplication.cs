@@ -57,5 +57,11 @@ namespace BusinessLogicLayer
             return false;
         }
 
+        public static bool IsExist(int ApplicationID, int licenseClassID)
+        {
+            return clsLocalDrivingLicenseApplicationsData.isExist(ApplicationID, licenseClassID);
+        }
+
+
     }
 }

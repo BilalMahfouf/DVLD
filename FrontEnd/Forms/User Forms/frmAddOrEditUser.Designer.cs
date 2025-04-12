@@ -31,6 +31,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpPersonInfo = new System.Windows.Forms.TabPage();
             this.btnNext = new System.Windows.Forms.Button();
+            this.personInfoController1 = new FrontEnd.Controllers.PersonInfoController();
+            this.findUserController1 = new FrontEnd.Controllers.FindPersonController();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.pUserInfo = new System.Windows.Forms.Panel();
             this.lblUserID = new System.Windows.Forms.Label();
@@ -48,8 +50,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.personInfoController1 = new FrontEnd.Controllers.PersonInfoController();
-            this.findUserController1 = new FrontEnd.Controllers.FindPersonController();
             this.lblMode = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tpPersonInfo.SuspendLayout();
@@ -98,6 +98,24 @@
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // personInfoController1
+            // 
+            this.personInfoController1.Location = new System.Drawing.Point(7, 163);
+            this.personInfoController1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.personInfoController1.Name = "personInfoController1";
+            this.personInfoController1.Size = new System.Drawing.Size(1177, 368);
+            this.personInfoController1.TabIndex = 4;
+            this.personInfoController1.Load += new System.EventHandler(this.personInfoController1_Load);
+            // 
+            // findUserController1
+            // 
+            this.findUserController1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.findUserController1.Location = new System.Drawing.Point(-6, 33);
+            this.findUserController1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.findUserController1.Name = "findUserController1";
+            this.findUserController1.Size = new System.Drawing.Size(1174, 130);
+            this.findUserController1.TabIndex = 2;
             // 
             // tabPage2
             // 
@@ -283,23 +301,6 @@
             this.btnClose.Text = "   Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
-            // 
-            // personInfoController1
-            // 
-            this.personInfoController1.Location = new System.Drawing.Point(7, 163);
-            this.personInfoController1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.personInfoController1.Name = "personInfoController1";
-            this.personInfoController1.Size = new System.Drawing.Size(1177, 368);
-            this.personInfoController1.TabIndex = 4;
-            // 
-            // findUserController1
-            // 
-            this.findUserController1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.findUserController1.Location = new System.Drawing.Point(-6, 33);
-            this.findUserController1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.findUserController1.Name = "findUserController1";
-            this.findUserController1.Size = new System.Drawing.Size(1174, 130);
-            this.findUserController1.TabIndex = 2;
             // 
             // lblMode
             // 

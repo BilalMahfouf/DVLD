@@ -15,8 +15,26 @@ namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
         public frmNewDrivingLicense_Local()
         {
             InitializeComponent();
+            findUserController1.SendPersonID += frmNewDrivingLicense_SendPersonID;
         }
 
-        
+        private void frmNewDrivingLicense_Local_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmNewDrivingLicense_SendPersonID(object sender,int PersonID)
+        {
+            if(PersonID > 0)
+            {
+                personInfoController1.PersonID = PersonID;
+                personInfoController1.ShowPersonInfo();
+            }
+        }
+
+        private void personInfoController1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

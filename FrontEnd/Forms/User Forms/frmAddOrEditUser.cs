@@ -165,5 +165,10 @@ namespace FrontEnd.Forms.User_Forms
 
             }
         }
+
+        private void personInfoController1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

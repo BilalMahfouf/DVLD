@@ -36,7 +36,7 @@ namespace BusinessLogicLayer
         private bool _AddNew()
         {
             this.LocalDrivingLicenseApplicationID =
-                clsLocalDrivingLicenseApplicationsData.AddNewLDLA(this.ApplicationID, this.LicenseClassID);
+                clsManageLocalDrivingApplicationsData.AddNewLDLA(this.ApplicationID, this.LicenseClassID);
             return this.LocalDrivingLicenseApplicationID > 0;
         }
 
@@ -59,7 +59,7 @@ namespace BusinessLogicLayer
 
         public static bool IsExist(int ApplicationID, int licenseClassID)
         {
-            return clsLocalDrivingLicenseApplicationsData.isExist(ApplicationID, licenseClassID);
+            return clsManageLocalDrivingApplicationsData.isExist(ApplicationID, licenseClassID);
         }
 
 

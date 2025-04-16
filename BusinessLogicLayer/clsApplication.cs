@@ -85,5 +85,24 @@ namespace BusinessLogicLayer
             return clsApplicationsData.isExist(applicantPersonID);
         }
 
+        public static clsApplication Find(int ApplicantPersonID)
+        {
+            int applicationID=0;
+            DateTime applicationDate=new DateTime(), lastStatusDate= new DateTime();
+            int applicationTypeID=0 ;
+            byte applicationStatus=0;
+            decimal paidFees=0;
+            int createdByUserID=0;
+            if(clsApplicationsData.Find(ref applicationID, ApplicantPersonID,
+                ref applicationDate,ref applicationTypeID, ref applicationStatus
+                ,ref lastStatusDate,ref paidFees,ref createdByUserID))
+            {
+                return new clsApplication(applicationID, ApplicantPersonID,
+                applicationDate, applicationTypeID, applicationStatus
+                , lastStatusDate, paidFees, createdByUserID);
+            }
+            return null;
+        }
+
     }
 }

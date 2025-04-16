@@ -41,7 +41,7 @@ namespace DataAccesLayer
 
         public static bool Find(ref int LicenseClassID, string ClassName, ref string ClassDescription
             , ref byte MinimumAllowedAge, ref byte DefaultValidityLength,
-            ref decimal ClassMoney)
+            ref decimal ClassFees)
         {
             bool isFound=false;
             SqlConnection connection= new SqlConnection(clsDataConnection.connection_string);
@@ -60,7 +60,7 @@ namespace DataAccesLayer
                     ClassDescription = (string)reader["ClassDescription"];
                     MinimumAllowedAge = (byte)reader["MinimumAllowedAge"];
                     DefaultValidityLength = (byte)reader["DefaultValidityLength"];
-                    ClassMoney = (decimal)reader["ClassMoney"];
+                    ClassFees = (decimal)reader["ClassFees"];
                 }
                 reader.Close();
             }

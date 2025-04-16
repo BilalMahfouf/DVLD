@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\clsUIHelper.cs" />
-    <Compile Include="Classes\clsUserInfo.cs" />
+    <Compile Include="Classes\clsCurrentUser.cs" />
     <Compile Include="Controllers\AddOrEditPersonControllers.cs">
       <SubType>UserControl</SubType>
     </Compile>

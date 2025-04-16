@@ -26,7 +26,7 @@ namespace DataAccesLayer
 
             try
             {
-                connection.Close();
+                connection.Open();
                 object result = command.ExecuteScalar();
                 if (result != null && int.TryParse(result.ToString(),out int insertedID))
                 {

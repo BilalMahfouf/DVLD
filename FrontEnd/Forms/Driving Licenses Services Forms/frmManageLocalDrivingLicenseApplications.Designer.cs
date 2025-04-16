@@ -39,9 +39,12 @@
             this.lblFilterBy = new System.Windows.Forms.Label();
             this.lblRecords1 = new System.Windows.Forms.Label();
             this.btnClose1 = new System.Windows.Forms.Button();
+            this.pbAddNewLocalDrivingApplication = new System.Windows.Forms.PictureBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvApplications)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAddNewLocalDrivingApplication)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -82,7 +85,7 @@
             this.dgvApplications.AllowUserToDeleteRows = false;
             this.dgvApplications.BackgroundColor = System.Drawing.Color.White;
             this.dgvApplications.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvApplications.Location = new System.Drawing.Point(12, 362);
+            this.dgvApplications.Location = new System.Drawing.Point(12, 357);
             this.dgvApplications.Name = "dgvApplications";
             this.dgvApplications.ReadOnly = true;
             this.dgvApplications.RowHeadersWidth = 51;
@@ -173,11 +176,24 @@
             this.btnClose1.UseVisualStyleBackColor = true;
             this.btnClose1.Click += new System.EventHandler(this.btnClose1_Click);
             // 
+            // pbAddNewLocalDrivingApplication
+            // 
+            this.pbAddNewLocalDrivingApplication.BackColor = System.Drawing.Color.White;
+            this.pbAddNewLocalDrivingApplication.Image = global::FrontEnd.Properties.Resources.New_Application_64;
+            this.pbAddNewLocalDrivingApplication.Location = new System.Drawing.Point(1400, 268);
+            this.pbAddNewLocalDrivingApplication.Name = "pbAddNewLocalDrivingApplication";
+            this.pbAddNewLocalDrivingApplication.Size = new System.Drawing.Size(93, 85);
+            this.pbAddNewLocalDrivingApplication.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbAddNewLocalDrivingApplication.TabIndex = 17;
+            this.pbAddNewLocalDrivingApplication.TabStop = false;
+            this.pbAddNewLocalDrivingApplication.Click += new System.EventHandler(this.pbAddNewLocalDrivingApplication_Click);
+            // 
             // frmManageLocalDrivingLicenseApplications
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1505, 853);
+            this.Controls.Add(this.pbAddNewLocalDrivingApplication);
             this.Controls.Add(this.btnClose1);
             this.Controls.Add(this.lblRecords1);
             this.Controls.Add(this.mtbSearch);
@@ -197,6 +213,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvApplications)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAddNewLocalDrivingApplication)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,5 +232,7 @@
         private System.Windows.Forms.Label lblFilterBy;
         private System.Windows.Forms.Label lblRecords1;
         private System.Windows.Forms.Button btnClose1;
+        private System.Windows.Forms.PictureBox pbAddNewLocalDrivingApplication;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace DataAccesLayer
 {
+    // to do later delete function that don't be used in the program 4/16/2025
     public static  class clsApplicationsData
     {
         public static int AddNewApplication(int ApplicantPersonID, DateTime ApplicationDate
@@ -81,6 +83,47 @@ namespace DataAccesLayer
             }
             return isFound;
         
+        }
+
+
+        public static bool Find(ref int ApplicationID, int ApplicantPersonID,
+                ref DateTime ApplicationDate,ref int ApplicationType,ref byte 
+            ApplicationStatus,ref DateTime LastStatusDate,ref decimal PaidFees,
+                ref int CreatedByUserID)
+        {
+            bool isFound = false;
+            SqlConnection connection = new SqlConnection(clsDataConnection.connection_string);
+            string query = @"select * from Applications 
+                            where ApplicantPersonID=@ApplicantPersonID";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@ApplicantPersonID", ApplicantPersonID);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if(reader.Read())
+                {
+                    isFound = true;
+                    ApplicationID = (int)reader["ApplicationID"];
+                    ApplicationDate = (DateTime)reader["ApplicationDate"];
+                    ApplicationType = (int)reader["ApplicationType"];
+                    ApplicationStatus = (byte)reader["ApplicationStatus"];
+                    LastStatusDate = (DateTime)reader["LastStatusDate"];
+                    PaidFees = (byte)reader["PaidFees"];
+                    CreatedByUserID = (int)reader["CreatedByUserID"];
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return isFound;
         }
 
     }

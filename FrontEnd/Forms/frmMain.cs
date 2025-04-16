@@ -42,13 +42,13 @@ namespace FrontEnd.Forms
 
         private void tsmCurrentUserInfo_Click(object sender, EventArgs e)
         {
-            frmUserInformation frmUserInformation = new frmUserInformation(clsUserInfo.UserID);
+            frmUserInformation frmUserInformation = new frmUserInformation(clsCurrentUser.UserID);
             frmUserInformation.ShowDialog();
         }
 
         private void tsmChangePassword_Click(object sender, EventArgs e)
         {
-            frmChangePassword frmChangePassword = new frmChangePassword(clsUserInfo.UserID);
+            frmChangePassword frmChangePassword = new frmChangePassword(clsCurrentUser.UserID);
             frmChangePassword.ShowDialog();
         }
 

@@ -47,10 +47,17 @@ namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
 
         }
 
+        private void _SetcbFilterByDesigned()
+        {
+            cbfilterBy.SelectedIndex = 0;
+        }
+
+
         private void frmManageLocalDrivingLicenseApplications_Load(object sender, EventArgs e)
         {
             _Refresh();
             SetdgvDesigned();
+            _SetcbFilterByDesigned();
         }
 
         private string _ReplaceString(string str)
@@ -117,6 +124,12 @@ namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
         private void btnClose1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void pbAddNewLocalDrivingApplication_Click(object sender, EventArgs e)
+        {
+            frmNewDrivingLicense_Local frm = new frmNewDrivingLicense_Local();
+            frm.ShowDialog();
         }
     }
 }

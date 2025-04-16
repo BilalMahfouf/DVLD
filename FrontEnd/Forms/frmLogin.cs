@@ -38,8 +38,8 @@ namespace FrontEnd.Forms
             clsUser User = clsUser.Find(tbUserName.Text, tbPassword.Text);
             if (User != null)
             {
-                clsUserInfo.UserName = User.UserName;
-                clsUserInfo.UserID = User.UserID;
+                clsCurrentUser.UserName = User.UserName;
+                clsCurrentUser.UserID = User.UserID;
 
                 frmMain frmMain = new frmMain();
                 frmMain.ShowDialog();

@@ -11,10 +11,7 @@ namespace BusinessLogicLayer
     public class clsLicenseClasses
     {
 
-        //ref int LicenseClassID, string ClassName, ref string ClassDescription
-        //    , ref byte MinimumAllowedAge, ref byte DefaultValidityLength,
-        //    ref decimal ClassMoney
-
+        
         public int LicenseClassID { get; private set; }
         public string ClassName { get; set; }
         public string ClassDescription { get; set; }

@@ -7,7 +7,7 @@ using BusinessLogicLayer;
 
 namespace FrontEnd.Classes
 {
-    public static  class clsUserInfo
+    public static  class clsCurrentUser
     {
         public static int UserID { get;  set; }
         public static string UserName { get; set; }

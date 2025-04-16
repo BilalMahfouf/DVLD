@@ -31,6 +31,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpPersonInfo = new System.Windows.Forms.TabPage();
             this.btnNext = new System.Windows.Forms.Button();
+            this.personInfoController1 = new FrontEnd.Controllers.PersonInfoController();
+            this.findUserController1 = new FrontEnd.Controllers.FindPersonController();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.pApplicationInfo = new System.Windows.Forms.Panel();
             this.cbLicenseClass = new System.Windows.Forms.ComboBox();
@@ -51,8 +53,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.lblMode = new System.Windows.Forms.Label();
-            this.personInfoController1 = new FrontEnd.Controllers.PersonInfoController();
-            this.findUserController1 = new FrontEnd.Controllers.FindPersonController();
             this.tabControl1.SuspendLayout();
             this.tpPersonInfo.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -101,6 +101,24 @@
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // personInfoController1
+            // 
+            this.personInfoController1.Location = new System.Drawing.Point(7, 163);
+            this.personInfoController1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.personInfoController1.Name = "personInfoController1";
+            this.personInfoController1.Size = new System.Drawing.Size(1177, 368);
+            this.personInfoController1.TabIndex = 4;
+            this.personInfoController1.Load += new System.EventHandler(this.personInfoController1_Load);
+            // 
+            // findUserController1
+            // 
+            this.findUserController1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.findUserController1.Location = new System.Drawing.Point(-6, 33);
+            this.findUserController1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.findUserController1.Name = "findUserController1";
+            this.findUserController1.Size = new System.Drawing.Size(1174, 130);
+            this.findUserController1.TabIndex = 2;
             // 
             // tabPage2
             // 
@@ -305,6 +323,7 @@
             this.btnSave.TabIndex = 73;
             this.btnSave.Text = "   Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClose
             // 
@@ -330,24 +349,6 @@
             this.lblMode.Size = new System.Drawing.Size(598, 54);
             this.lblMode.TabIndex = 74;
             this.lblMode.Text = "New Local Driving License";
-            // 
-            // personInfoController1
-            // 
-            this.personInfoController1.Location = new System.Drawing.Point(7, 163);
-            this.personInfoController1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.personInfoController1.Name = "personInfoController1";
-            this.personInfoController1.Size = new System.Drawing.Size(1177, 368);
-            this.personInfoController1.TabIndex = 4;
-            this.personInfoController1.Load += new System.EventHandler(this.personInfoController1_Load);
-            // 
-            // findUserController1
-            // 
-            this.findUserController1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.findUserController1.Location = new System.Drawing.Point(-6, 33);
-            this.findUserController1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.findUserController1.Name = "findUserController1";
-            this.findUserController1.Size = new System.Drawing.Size(1174, 130);
-            this.findUserController1.TabIndex = 2;
             // 
             // frmNewDrivingLicense_Local
             // 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogicLayer;
+using FrontEnd.Classes;
 
 namespace FrontEnd.Forms
 {
@@ -37,7 +38,10 @@ namespace FrontEnd.Forms
             clsUser User = clsUser.Find(tbUserName.Text, tbPassword.Text);
             if (User != null)
             {
-                frmMain frmMain = new frmMain(User.UserID);
+                clsUserInfo.UserName = User.UserName;
+                clsUserInfo.UserID = User.UserID;
+
+                frmMain frmMain = new frmMain();
                 frmMain.ShowDialog();
             }
             else

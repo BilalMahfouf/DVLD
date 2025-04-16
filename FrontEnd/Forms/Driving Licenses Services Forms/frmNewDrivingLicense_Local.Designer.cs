@@ -31,10 +31,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpPersonInfo = new System.Windows.Forms.TabPage();
             this.btnNext = new System.Windows.Forms.Button();
-            this.personInfoController1 = new FrontEnd.Controllers.PersonInfoController();
-            this.findUserController1 = new FrontEnd.Controllers.FindPersonController();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.pUserInfo = new System.Windows.Forms.Panel();
+            this.pApplicationInfo = new System.Windows.Forms.Panel();
             this.cbLicenseClass = new System.Windows.Forms.ComboBox();
             this.lblCreatedBy = new System.Windows.Forms.Label();
             this.lblApplicationFees = new System.Windows.Forms.Label();
@@ -53,10 +51,12 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.lblMode = new System.Windows.Forms.Label();
+            this.personInfoController1 = new FrontEnd.Controllers.PersonInfoController();
+            this.findUserController1 = new FrontEnd.Controllers.FindPersonController();
             this.tabControl1.SuspendLayout();
             this.tpPersonInfo.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.pUserInfo.SuspendLayout();
+            this.pApplicationInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -100,28 +100,11 @@
             this.btnNext.TabIndex = 9;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
-            // 
-            // personInfoController1
-            // 
-            this.personInfoController1.Location = new System.Drawing.Point(7, 163);
-            this.personInfoController1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.personInfoController1.Name = "personInfoController1";
-            this.personInfoController1.Size = new System.Drawing.Size(1177, 368);
-            this.personInfoController1.TabIndex = 4;
-            this.personInfoController1.Load += new System.EventHandler(this.personInfoController1_Load);
-            // 
-            // findUserController1
-            // 
-            this.findUserController1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.findUserController1.Location = new System.Drawing.Point(-6, 33);
-            this.findUserController1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.findUserController1.Name = "findUserController1";
-            this.findUserController1.Size = new System.Drawing.Size(1174, 130);
-            this.findUserController1.TabIndex = 2;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.pUserInfo);
+            this.tabPage2.Controls.Add(this.pApplicationInfo);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -130,36 +113,44 @@
             this.tabPage2.Text = "Application Info";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // pUserInfo
+            // pApplicationInfo
             // 
-            this.pUserInfo.Controls.Add(this.cbLicenseClass);
-            this.pUserInfo.Controls.Add(this.lblCreatedBy);
-            this.pUserInfo.Controls.Add(this.lblApplicationFees);
-            this.pUserInfo.Controls.Add(this.lblApplicationDate);
-            this.pUserInfo.Controls.Add(this.lblApplicationID);
-            this.pUserInfo.Controls.Add(this.pictureBox5);
-            this.pUserInfo.Controls.Add(this.pictureBox4);
-            this.pUserInfo.Controls.Add(this.pictureBox3);
-            this.pUserInfo.Controls.Add(this.pictureBox2);
-            this.pUserInfo.Controls.Add(this.pictureBox1);
-            this.pUserInfo.Controls.Add(this.label5);
-            this.pUserInfo.Controls.Add(this.label4);
-            this.pUserInfo.Controls.Add(this.label3);
-            this.pUserInfo.Controls.Add(this.label2);
-            this.pUserInfo.Controls.Add(this.label1);
-            this.pUserInfo.Enabled = false;
-            this.pUserInfo.Location = new System.Drawing.Point(6, 28);
-            this.pUserInfo.Name = "pUserInfo";
-            this.pUserInfo.Size = new System.Drawing.Size(1178, 545);
-            this.pUserInfo.TabIndex = 72;
+            this.pApplicationInfo.Controls.Add(this.cbLicenseClass);
+            this.pApplicationInfo.Controls.Add(this.lblCreatedBy);
+            this.pApplicationInfo.Controls.Add(this.lblApplicationFees);
+            this.pApplicationInfo.Controls.Add(this.lblApplicationDate);
+            this.pApplicationInfo.Controls.Add(this.lblApplicationID);
+            this.pApplicationInfo.Controls.Add(this.pictureBox5);
+            this.pApplicationInfo.Controls.Add(this.pictureBox4);
+            this.pApplicationInfo.Controls.Add(this.pictureBox3);
+            this.pApplicationInfo.Controls.Add(this.pictureBox2);
+            this.pApplicationInfo.Controls.Add(this.pictureBox1);
+            this.pApplicationInfo.Controls.Add(this.label5);
+            this.pApplicationInfo.Controls.Add(this.label4);
+            this.pApplicationInfo.Controls.Add(this.label3);
+            this.pApplicationInfo.Controls.Add(this.label2);
+            this.pApplicationInfo.Controls.Add(this.label1);
+            this.pApplicationInfo.Enabled = false;
+            this.pApplicationInfo.Location = new System.Drawing.Point(6, 28);
+            this.pApplicationInfo.Name = "pApplicationInfo";
+            this.pApplicationInfo.Size = new System.Drawing.Size(1178, 545);
+            this.pApplicationInfo.TabIndex = 72;
             // 
             // cbLicenseClass
             // 
-            this.cbLicenseClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLicenseClass.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLicenseClass.FormattingEnabled = true;
+            this.cbLicenseClass.Items.AddRange(new object[] {
+            "Class 1 - Small Motorcycle",
+            "Class 2 - Heavy Motorcycle License",
+            "Class 3 - Ordinary driving license",
+            "Class 4 - Commercial",
+            "Class 5 - Agricultural",
+            "Class 6 - Small and medium bus",
+            "Class 7 - Truck and heavy vehicle"});
             this.cbLicenseClass.Location = new System.Drawing.Point(325, 231);
             this.cbLicenseClass.Name = "cbLicenseClass";
-            this.cbLicenseClass.Size = new System.Drawing.Size(315, 30);
+            this.cbLicenseClass.Size = new System.Drawing.Size(315, 33);
             this.cbLicenseClass.TabIndex = 14;
             // 
             // lblCreatedBy
@@ -304,6 +295,7 @@
             // 
             // btnSave
             // 
+            this.btnSave.Enabled = false;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Image = global::FrontEnd.Properties.Resources.Save_32;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -325,6 +317,7 @@
             this.btnClose.TabIndex = 72;
             this.btnClose.Text = "   Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lblMode
             // 
@@ -337,6 +330,24 @@
             this.lblMode.Size = new System.Drawing.Size(598, 54);
             this.lblMode.TabIndex = 74;
             this.lblMode.Text = "New Local Driving License";
+            // 
+            // personInfoController1
+            // 
+            this.personInfoController1.Location = new System.Drawing.Point(7, 163);
+            this.personInfoController1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.personInfoController1.Name = "personInfoController1";
+            this.personInfoController1.Size = new System.Drawing.Size(1177, 368);
+            this.personInfoController1.TabIndex = 4;
+            this.personInfoController1.Load += new System.EventHandler(this.personInfoController1_Load);
+            // 
+            // findUserController1
+            // 
+            this.findUserController1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.findUserController1.Location = new System.Drawing.Point(-6, 33);
+            this.findUserController1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.findUserController1.Name = "findUserController1";
+            this.findUserController1.Size = new System.Drawing.Size(1174, 130);
+            this.findUserController1.TabIndex = 2;
             // 
             // frmNewDrivingLicense_Local
             // 
@@ -355,8 +366,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tpPersonInfo.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            this.pUserInfo.ResumeLayout(false);
-            this.pUserInfo.PerformLayout();
+            this.pApplicationInfo.ResumeLayout(false);
+            this.pApplicationInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -375,7 +386,7 @@
         private Controllers.PersonInfoController personInfoController1;
         private Controllers.FindPersonController findUserController1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Panel pUserInfo;
+        private System.Windows.Forms.Panel pApplicationInfo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;

@@ -38,5 +38,9 @@ namespace DataAccesLayer
             }
             return dataTable;
         }
+
+        //public static bool Find(ref int LicenseClass,string ClassName,ref string ClassDescription
+        //    ,byte Minu)
+
     }
 }

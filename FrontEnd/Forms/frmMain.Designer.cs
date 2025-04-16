@@ -211,6 +211,7 @@
             this.tsmLocalDrivingLicenseApplication.Name = "tsmLocalDrivingLicenseApplication";
             this.tsmLocalDrivingLicenseApplication.Size = new System.Drawing.Size(427, 38);
             this.tsmLocalDrivingLicenseApplication.Text = "Local Driving License Application";
+            this.tsmLocalDrivingLicenseApplication.Click += new System.EventHandler(this.tsmLocalDrivingLicenseApplication_Click);
             // 
             // tsmInternationalLicenseApplication
             // 
@@ -360,6 +361,7 @@
             this.Name = "frmMain";
             this.Text = "frmMain";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

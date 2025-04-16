@@ -50,6 +50,18 @@ namespace BusinessLogicLayer
             return null;
         }
 
+        public static clsApplicationType Find(string ApplicationTypeTitle)
+        {
+            int ApplicationTypeID = 0;
+            decimal ApplicationFee = 0;
+            if (clsApplicationTypesData.Find(ref ApplicationTypeID,  ApplicationTypeTitle
+                , ref ApplicationFee))
+            {
+                return new clsApplicationType(ApplicationTypeID, ApplicationTypeTitle, ApplicationFee);
+            }
+            return null;
+        }
+
 
 
     }

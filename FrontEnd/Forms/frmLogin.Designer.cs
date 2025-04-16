@@ -91,6 +91,7 @@
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.Size = new System.Drawing.Size(269, 27);
             this.tbUserName.TabIndex = 5;
+            this.tbUserName.Text = "Bilal";
             // 
             // pictureBox2
             // 
@@ -145,6 +146,7 @@
             this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(269, 27);
             this.tbPassword.TabIndex = 10;
+            this.tbPassword.Text = "2501";
             // 
             // frmLogin
             // 

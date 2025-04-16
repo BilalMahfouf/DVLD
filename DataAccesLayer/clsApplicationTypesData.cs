@@ -101,6 +101,40 @@ namespace DataAccesLayer
            return isFound;
         }
 
+        public static bool Find(ref int ApplicationTypeID,  string ApplicationTypeTitle
+            , ref decimal ApplicationFees)
+        {
+            DataTable dt = new DataTable();
+            SqlConnection connection = new SqlConnection(clsDataConnection.connection_string);
+            string query = @"select * from ApplicationTypes 
+                where ApplicationTypeTitle=@ApplicationTypeTitle";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("ApplicationTypeID", ApplicationTypeID);
+            bool isFound = false;
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+
+                    ApplicationTypeID = (int)reader["ApplicationTypeID"];
+                    ApplicationFees = (decimal)reader["ApplicationFees"];
+                    isFound = true;
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return isFound;
+        }
+
 
 
     }

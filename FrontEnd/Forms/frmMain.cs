@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogicLayer;
+using FrontEnd.Classes;
 using FrontEnd.Forms.ApplicationTypes_Forms;
 using FrontEnd.Forms.Driving_Licenses_Services_Forms;
 using FrontEnd.Forms.TestTypes_Forms;
@@ -17,12 +18,11 @@ namespace FrontEnd.Forms
 {
     public partial class frmMain : Form
     {
-        public frmMain(int  UserID)
+        public frmMain()
         {
             InitializeComponent();
-            this._UserID = UserID;
         }
-        private int _UserID;
+        
         private void applicationToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -42,13 +42,13 @@ namespace FrontEnd.Forms
 
         private void tsmCurrentUserInfo_Click(object sender, EventArgs e)
         {
-            frmUserInformation frmUserInformation = new frmUserInformation(_UserID);
+            frmUserInformation frmUserInformation = new frmUserInformation(clsUserInfo.UserID);
             frmUserInformation.ShowDialog();
         }
 
         private void tsmChangePassword_Click(object sender, EventArgs e)
         {
-            frmChangePassword frmChangePassword = new frmChangePassword(_UserID);
+            frmChangePassword frmChangePassword = new frmChangePassword(clsUserInfo.UserID);
             frmChangePassword.ShowDialog();
         }
 
@@ -75,6 +75,17 @@ namespace FrontEnd.Forms
             frmNewDrivingLicense_Local frmNewDrivingLicense_Local=
                 new frmNewDrivingLicense_Local();
             frmNewDrivingLicense_Local .ShowDialog();
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmLocalDrivingLicenseApplication_Click(object sender, EventArgs e)
+        {
+            frmManageLocalDrivingLicenseApplications frm = new frmManageLocalDrivingLicenseApplications();
+            frm.ShowDialog();
         }
     }
 }

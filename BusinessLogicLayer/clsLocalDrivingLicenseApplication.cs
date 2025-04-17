@@ -40,6 +40,12 @@ namespace BusinessLogicLayer
             return this.LocalDrivingLicenseApplicationID > 0;
         }
 
+        private bool _Update()
+        {
+            return clsLocalDrivingLicenseApplicationsData.Update(
+                this.LocalDrivingLicenseApplicationID, this.LicenseClassID);
+        }
+
         public bool Save()
         {
             switch(this.Mode)
@@ -53,6 +59,10 @@ namespace BusinessLogicLayer
                         }
                         break;
                     }
+                    case enMode.Update:
+                    {
+                        return _Update();
+                    }
             }
             return false;
         }
@@ -60,6 +70,18 @@ namespace BusinessLogicLayer
         public static bool IsExist(int ApplicationID, int licenseClassID)
         {
             return clsLocalDrivingLicenseApplicationsData.isExist(ApplicationID, licenseClassID);
+        }
+
+        public static clsLocalDrivingLicenseApplication Find(int LocalDrivingLicenseApplicationID)
+        {
+            int ApplicationID=0, licenseClassID=0;
+            if(clsLocalDrivingLicenseApplicationsData.Find(LocalDrivingLicenseApplicationID,
+                ref ApplicationID,ref licenseClassID))
+            {
+                return new clsLocalDrivingLicenseApplication(LocalDrivingLicenseApplicationID,
+                    ApplicationID, licenseClassID);
+            }
+            return null;
         }
 
 

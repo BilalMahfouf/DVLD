@@ -128,7 +128,7 @@ namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
 
         private void pbAddNewLocalDrivingApplication_Click(object sender, EventArgs e)
         {
-            frmNewDrivingLicense_Local frm = new frmNewDrivingLicense_Local();
+            frmNewOrEditDrivingLicense_Local frm = new frmNewOrEditDrivingLicense_Local(-1);
             frm.ShowDialog();
         }
     }

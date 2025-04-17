@@ -126,5 +126,35 @@ namespace DataAccesLayer
             return isFound;
         }
 
+        public static bool Update(int ApplicationID, byte ApplicationStatus, 
+            DateTime LastStatusDate)
+        {
+            SqlConnection connection = new SqlConnection(clsDataConnection.connection_string);
+            string query = @"UPDATE [dbo].[Applications]
+             SET [ApplicationStatus] = @ApplicationStatus
+                ,[LastStatusDate] = @LastStatusDate
+             WHERE ApplicationID = @ApplicationID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
+            command.Parameters.AddWithValue("@ApplicationStatus", ApplicationStatus);
+            command.Parameters.AddWithValue("@LastStatusDate", LastStatusDate);
+            int rowAffected = 0;
+            try
+            {
+                connection.Open();
+                rowAffected = command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return rowAffected > 0;
+        }
+
     }
 }

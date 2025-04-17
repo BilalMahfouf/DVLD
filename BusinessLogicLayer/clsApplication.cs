@@ -61,6 +61,12 @@ namespace BusinessLogicLayer
             return this.ApplicationID > 0;
         }
 
+        private bool _Update()
+        {
+            return clsApplicationsData.Update(this.ApplicationID, this.ApplicationStatus
+                , this.LastStatusDate);
+        }
+
         public bool Save()
         {
             switch (this.Mode)
@@ -74,6 +80,10 @@ namespace BusinessLogicLayer
                             return true;
                         }
                         break;
+                    }
+                    case enMode.Update:
+                    {
+                        return _Update();
                     }
             }
             return false;

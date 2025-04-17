@@ -90,11 +90,11 @@
     <Compile Include="Forms\Driving Licenses Services Forms\frmManageLocalDrivingLicenseApplications.Designer.cs">
       <DependentUpon>frmManageLocalDrivingLicenseApplications.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Driving Licenses Services Forms\frmNewDrivingLicense_Local.cs">
+    <Compile Include="Forms\Driving Licenses Services Forms\frmNewOrEditDrivingLicense_Local.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Driving Licenses Services Forms\frmNewDrivingLicense_Local.Designer.cs">
-      <DependentUpon>frmNewDrivingLicense_Local.cs</DependentUpon>
+    <Compile Include="Forms\Driving Licenses Services Forms\frmNewOrEditDrivingLicense_Local.Designer.cs">
+      <DependentUpon>frmNewOrEditDrivingLicense_Local.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmLogin.cs">
       <SubType>Form</SubType>
@@ -185,8 +185,8 @@
     <EmbeddedResource Include="Forms\Driving Licenses Services Forms\frmManageLocalDrivingLicenseApplications.resx">
       <DependentUpon>frmManageLocalDrivingLicenseApplications.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Driving Licenses Services Forms\frmNewDrivingLicense_Local.resx">
-      <DependentUpon>frmNewDrivingLicense_Local.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Driving Licenses Services Forms\frmNewOrEditDrivingLicense_Local.resx">
+      <DependentUpon>frmNewOrEditDrivingLicense_Local.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

@@ -72,8 +72,8 @@ namespace FrontEnd.Forms
 
         private void tsmLocalLincense_Click(object sender, EventArgs e)
         {
-            frmNewDrivingLicense_Local frmNewDrivingLicense_Local=
-                new frmNewDrivingLicense_Local();
+            frmNewOrEditDrivingLicense_Local frmNewDrivingLicense_Local=
+                new frmNewOrEditDrivingLicense_Local(-1);
             frmNewDrivingLicense_Local .ShowDialog();
         }
 

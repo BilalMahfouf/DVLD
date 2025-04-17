@@ -12,18 +12,43 @@ using FrontEnd.Classes;
 
 namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
 {
-    public partial class frmNewDrivingLicense_Local : Form
+    public partial class frmNewOrEditDrivingLicense_Local : Form
     {
-        public frmNewDrivingLicense_Local()
+        public frmNewOrEditDrivingLicense_Local(int LocalDrivingLicenseApplicationID)
         {
             InitializeComponent();
             findUserController1.SendPersonID += frmNewDrivingLicense_SendPersonID;
+            _LocalDrivingLicenseApplicationID= LocalDrivingLicenseApplicationID;
         }
 
-       
+
+        private clsLocalDrivingLicenseApplication _LocalDrivingLicenseApplication;
+        private int _LocalDrivingLicenseApplicationID;
+        private enum enMode { AddNew,Update};
+        enMode _Mode;
+
+        private void _SetMode()
+        {
+            if (_LocalDrivingLicenseApplicationID > 0)
+            {
+                _LocalDrivingLicenseApplication =
+            clsLocalDrivingLicenseApplication.Find(_LocalDrivingLicenseApplicationID);
+                lblMode.Text = "Update Local Driving License ";
+                findUserController1.Enabled = false;
+                _Mode = enMode.Update;
+            }
+            else
+            {
+                _LocalDrivingLicenseApplication = null;
+                lblMode.Text = "New Local Driving License";
+                _Mode = enMode.Update;
+                findUserController1.Enabled = true;
+            }
+        }
+
         private void _SetcbLicenseClassesIndex()
         {
-            cbLicenseClass.SelectedIndex = 0;
+            cbLicenseClass.SelectedIndex = 2;
         }
 
         private void _SetApplicationInfo()
@@ -36,6 +61,7 @@ namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
 
         private void frmNewDrivingLicense_Local_Load(object sender, EventArgs e)
         {
+            _SetMode();
             _SetcbLicenseClassesIndex();
             _SetApplicationInfo();
         }
@@ -67,7 +93,7 @@ namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
             this.Close();
         }
 
-        private bool _SaveApplication(clsApplication Application)
+        private bool _AddNewApplication(clsApplication Application)
         {
             Application.ApplicantPersonID = personInfoController1.PersonID;
             Application.ApplicationDate = Convert.ToDateTime(lblApplicationDate.Text);
@@ -79,7 +105,7 @@ namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
             return Application.Save();
         }
 
-        private bool _Save()
+        private bool _AddNew()
         {
             if(clsApplication.IsExist(personInfoController1.PersonID))
             {
@@ -95,7 +121,7 @@ namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
             else
             {
                 clsApplication Application = new clsApplication();
-                if (_SaveApplication(Application))
+                if (_AddNewApplication(Application))
                 {
                     clsLocalDrivingLicenseApplication LocalDrivingLicenseApplication
                         = new clsLocalDrivingLicenseApplication();
@@ -111,11 +137,13 @@ namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if(_Save())
+            if(_AddNew())
             {
                 MessageBox.Show("Data saved successfully", "", MessageBoxButtons.OK
                     , MessageBoxIcon.Information);
             }
         }
+
+        
     }
 }

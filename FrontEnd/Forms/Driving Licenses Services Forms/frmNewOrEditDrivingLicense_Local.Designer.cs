@@ -1,6 +1,6 @@
 ﻿namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
 {
-    partial class frmNewDrivingLicense_Local
+    partial class frmNewOrEditDrivingLicense_Local
     {
         /// <summary>
         /// Required designer variable.
@@ -349,8 +349,9 @@
             this.lblMode.Size = new System.Drawing.Size(598, 54);
             this.lblMode.TabIndex = 74;
             this.lblMode.Text = "New Local Driving License";
+            
             // 
-            // frmNewDrivingLicense_Local
+            // frmNewOrEditDrivingLicense_Local
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -360,7 +361,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Name = "frmNewDrivingLicense_Local";
+            this.Name = "frmNewOrEditDrivingLicense_Local";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New Driving License_Local";
             this.Load += new System.EventHandler(this.frmNewDrivingLicense_Local_Load);

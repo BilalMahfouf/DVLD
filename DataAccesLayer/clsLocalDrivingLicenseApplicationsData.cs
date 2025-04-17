@@ -73,6 +73,54 @@ namespace DataAccesLayer
             return isFound;
 
         }
+
+        public static bool Update(int LocalDrivingLicenseApplicationID
+            , int LicenseClassID)
+        {
+            int rowAffected = 0;
+            SqlConnection connection = new SqlConnection(clsDataConnection.connection_string);
+            string query = @"UPDATE LocalDrivingLicenseApplications
+                            SET LicenseClassID= @LicenseClassID
+ WHERE LocalDrivingLicenseApplicationID=@LocalDrivingLicenseApplicationID";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
+            command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
+
+            try
+            {
+                connection.Open();
+                rowAffected = command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {  connection.Close(); }
+            return rowAffected > 0;
+
+        }
+
+        public static bool Find(int LocalDrivingLicenseApplicationID, ref int ApplicationID
+            ,ref int LicenseClass)
+        {
+            int rowAffected = 0;
+            SqlConnection connection = new SqlConnection(clsDataConnection.connection_string);
+            string query = @"select * from LocalDrivingLicenseApplications 
+                                where LocalDrivingLicenseApplicationID=@LocalDrivingLicenseApplicationID";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID",
+                LocalDrivingLicenseApplicationID);
+
+            try
+            {
+                connection.Open();
+                rowAffected = command.ExecuteNonQuery();
+            }
+            catch (Exception ex) { }
+            finally {  connection.Close(); }
+            return rowAffected > 0;
+        }
     }
             
 

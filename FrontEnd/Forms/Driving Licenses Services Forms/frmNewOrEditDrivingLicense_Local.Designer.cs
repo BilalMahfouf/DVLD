@@ -39,7 +39,7 @@
             this.lblCreatedBy = new System.Windows.Forms.Label();
             this.lblApplicationFees = new System.Windows.Forms.Label();
             this.lblApplicationDate = new System.Windows.Forms.Label();
-            this.lblApplicationID = new System.Windows.Forms.Label();
+            this.lblDLApplicationID = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -137,7 +137,7 @@
             this.pApplicationInfo.Controls.Add(this.lblCreatedBy);
             this.pApplicationInfo.Controls.Add(this.lblApplicationFees);
             this.pApplicationInfo.Controls.Add(this.lblApplicationDate);
-            this.pApplicationInfo.Controls.Add(this.lblApplicationID);
+            this.pApplicationInfo.Controls.Add(this.lblDLApplicationID);
             this.pApplicationInfo.Controls.Add(this.pictureBox5);
             this.pApplicationInfo.Controls.Add(this.pictureBox4);
             this.pApplicationInfo.Controls.Add(this.pictureBox3);
@@ -201,15 +201,15 @@
             this.lblApplicationDate.TabIndex = 11;
             this.lblApplicationDate.Text = "???";
             // 
-            // lblApplicationID
+            // lblDLApplicationID
             // 
-            this.lblApplicationID.AutoSize = true;
-            this.lblApplicationID.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApplicationID.Location = new System.Drawing.Point(337, 55);
-            this.lblApplicationID.Name = "lblApplicationID";
-            this.lblApplicationID.Size = new System.Drawing.Size(44, 31);
-            this.lblApplicationID.TabIndex = 10;
-            this.lblApplicationID.Text = "???";
+            this.lblDLApplicationID.AutoSize = true;
+            this.lblDLApplicationID.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDLApplicationID.Location = new System.Drawing.Point(337, 55);
+            this.lblDLApplicationID.Name = "lblDLApplicationID";
+            this.lblDLApplicationID.Size = new System.Drawing.Size(44, 31);
+            this.lblDLApplicationID.TabIndex = 10;
+            this.lblDLApplicationID.Text = "???";
             // 
             // pictureBox5
             // 
@@ -349,7 +349,6 @@
             this.lblMode.Size = new System.Drawing.Size(598, 54);
             this.lblMode.TabIndex = 74;
             this.lblMode.Text = "New Local Driving License";
-            
             // 
             // frmNewOrEditDrivingLicense_Local
             // 
@@ -403,7 +402,7 @@
         private System.Windows.Forms.Label lblCreatedBy;
         private System.Windows.Forms.Label lblApplicationFees;
         private System.Windows.Forms.Label lblApplicationDate;
-        private System.Windows.Forms.Label lblApplicationID;
+        private System.Windows.Forms.Label lblDLApplicationID;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label lblMode;

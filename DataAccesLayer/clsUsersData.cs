@@ -220,7 +220,7 @@ namespace DataAccesLayer
 
         }
 
-       // Fuck Single Responsibility Principle (again)
+       //  Single Responsibility Principle suck (again)
         public static DataTable GetAllUsersWithFullName()
         {
             DataTable result = new DataTable();

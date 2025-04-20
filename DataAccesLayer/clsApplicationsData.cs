@@ -87,7 +87,7 @@ namespace DataAccesLayer
 
 
         public static bool Find(ref int ApplicationID, int ApplicantPersonID,
-                ref DateTime ApplicationDate,ref int ApplicationType,ref byte 
+                ref DateTime ApplicationDate,ref int ApplicationTypeID, ref byte 
             ApplicationStatus,ref DateTime LastStatusDate,ref decimal PaidFees,
                 ref int CreatedByUserID)
         {
@@ -107,10 +107,10 @@ namespace DataAccesLayer
                     isFound = true;
                     ApplicationID = (int)reader["ApplicationID"];
                     ApplicationDate = (DateTime)reader["ApplicationDate"];
-                    ApplicationType = (int)reader["ApplicationType"];
+                    ApplicationTypeID = (int)reader["ApplicationTypeID"];
                     ApplicationStatus = (byte)reader["ApplicationStatus"];
                     LastStatusDate = (DateTime)reader["LastStatusDate"];
-                    PaidFees = (byte)reader["PaidFees"];
+                    PaidFees = (decimal)reader["PaidFees"];
                     CreatedByUserID = (int)reader["CreatedByUserID"];
                 }
                 reader.Close();
@@ -156,5 +156,44 @@ namespace DataAccesLayer
             return rowAffected > 0;
         }
 
+        public static bool Find( int ApplicationID, ref int ApplicantPersonID,
+                ref DateTime ApplicationDate, ref int ApplicationTypeID, ref byte
+            ApplicationStatus, ref DateTime LastStatusDate, ref decimal PaidFees,
+                ref int CreatedByUserID)
+        {
+            bool isFound = false;
+            SqlConnection connection = new SqlConnection(clsDataConnection.connection_string);
+            string query = @"select * from Applications 
+                            where ApplicationID=@ApplicationID";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    isFound = true;
+                    ApplicantPersonID = (int)reader["ApplicantPersonID"];
+                    ApplicationDate = (DateTime)reader["ApplicationDate"];
+                    ApplicationTypeID = (int)reader["ApplicationTypeID"];
+                    ApplicationStatus = (byte)reader["ApplicationStatus"];
+                    LastStatusDate = (DateTime)reader["LastStatusDate"];
+                    PaidFees = (decimal)reader["PaidFees"];
+                    CreatedByUserID = (int)reader["CreatedByUserID"];
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return isFound;
+        }
     }
 }

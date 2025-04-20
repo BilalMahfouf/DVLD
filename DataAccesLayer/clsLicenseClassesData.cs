@@ -72,6 +72,39 @@ namespace DataAccesLayer
             return isFound;
         }
 
+        public static bool Find( int LicenseClassID, ref string ClassName, ref string ClassDescription
+           , ref byte MinimumAllowedAge, ref byte DefaultValidityLength,
+           ref decimal ClassFees)
+        {
+            bool isFound = false;
+            SqlConnection connection = new SqlConnection(clsDataConnection.connection_string);
+            string query = @"select * from LicenseClasses  where LicenseClassID=@LicenseClassID";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    isFound = true;
+                    ClassName = (string)reader["ClassName"];
+                    ClassDescription = (string)reader["ClassDescription"];
+                    MinimumAllowedAge = (byte)reader["MinimumAllowedAge"];
+                    DefaultValidityLength = (byte)reader["DefaultValidityLength"];
+                    ClassFees = (decimal)reader["ClassFees"];
+                }
+                reader.Close();
+            }
+            catch (Exception ex) { }
+            finally
+            {
+                connection.Close();
+            }
+            return isFound;
+        }
+
 
     }
 }

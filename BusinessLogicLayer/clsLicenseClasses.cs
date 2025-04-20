@@ -51,5 +51,28 @@ namespace BusinessLogicLayer
             return null;
     }
 
+        public static clsLicenseClasses Find(int ClassID)
+        {
+            string ClassName = string.Empty;
+            string ClassDescription = string.Empty;
+            byte MinimumAllowedAge = 0;
+            byte DefaultValidityLength = 0;
+            decimal ClassMoney = 0;
+            if (clsLicenseClassesData.Find( ClassID, ref ClassName, ref ClassDescription
+                , ref MinimumAllowedAge, ref DefaultValidityLength, ref ClassMoney))
+            {
+                return new clsLicenseClasses(ClassID, ClassName, ClassDescription
+                    , MinimumAllowedAge, DefaultValidityLength, ClassMoney);
+            }
+            return null;
+        }
+
+        public static int GetLicenseClassID(string ClassName)
+        {
+            return Find(ClassName).LicenseClassID;
+        }
+
+        
+
     }
 }

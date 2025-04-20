@@ -23,6 +23,7 @@ namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
             _ManageApplications = clsManageLocalDrivingApplications.GetAllLocalDrivingApplications();
             dgvApplications.DataSource = _ManageApplications;
             lblRecords1.Text = "Records: " + dgvApplications.Rows.Count.ToString();
+            _SetcbFilterByDesigned();
 
 
         }
@@ -130,6 +131,41 @@ namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
         {
             frmNewOrEditDrivingLicense_Local frm = new frmNewOrEditDrivingLicense_Local(-1);
             frm.ShowDialog();
+            _Refresh();
+        }
+
+
+
+        private void tsmEdit_Click(object sender, EventArgs e)
+        {
+            int LDLApplication = Convert.ToInt32(dgvApplications.CurrentRow.Cells[0].Value);
+            frmNewOrEditDrivingLicense_Local frm = new frmNewOrEditDrivingLicense_Local(LDLApplication);
+            frm.ShowDialog();
+            _Refresh();
+        }
+
+        private void tsmCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult result= MessageBox.Show("Are you sure to cancel this application", "Confirm",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
+            if (result == DialogResult.OK)
+            {
+                int LDLApplicationID = Convert.ToInt32
+                    (dgvApplications.CurrentRow.Cells[0].Value);
+                if(clsManageLocalDrivingApplications.CancelApplication(LDLApplicationID))
+                {
+                    MessageBox.Show("Application canceled successfully", "Cancel",
+                MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    _Refresh();
+                }
+                else
+                {
+                    MessageBox.Show("Can't perform this application", "Error",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+            }
+            
+            
         }
     }
 }

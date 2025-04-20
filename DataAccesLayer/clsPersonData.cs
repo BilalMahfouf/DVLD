@@ -400,7 +400,7 @@ namespace DataAccesLayer
 
         }
         
-        // Fuck Single Responsibility Principle
+        //  Single Responsibility Principle suck
         public static DataTable GetAllPeopleWithCountryName()
         {
             DataTable dt = new DataTable();

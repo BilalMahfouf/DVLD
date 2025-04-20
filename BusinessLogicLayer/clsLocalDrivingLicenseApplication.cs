@@ -84,6 +84,18 @@ namespace BusinessLogicLayer
             return null;
         }
 
+        public static clsLocalDrivingLicenseApplication FindByApplicationID(int ApplicationID)
+        {
+            int LocalDrivingLicenseApplicationID = 0, licenseClassID = 0;
+            if (clsLocalDrivingLicenseApplicationsData.FindByApplicationID(ref LocalDrivingLicenseApplicationID,
+                 ApplicationID, ref licenseClassID))
+            {
+                return new clsLocalDrivingLicenseApplication(LocalDrivingLicenseApplicationID,
+                    ApplicationID, licenseClassID);
+            }
+            return null;
+        }
+
 
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlTypes;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
@@ -95,7 +96,7 @@ namespace BusinessLogicLayer
             return clsApplicationsData.isExist(applicantPersonID);
         }
 
-        public static clsApplication Find(int ApplicantPersonID)
+        public static clsApplication FindByPersonID(int ApplicantPersonID)
         {
             int applicationID=0;
             DateTime applicationDate=new DateTime(), lastStatusDate= new DateTime();
@@ -112,6 +113,41 @@ namespace BusinessLogicLayer
                 , lastStatusDate, paidFees, createdByUserID);
             }
             return null;
+        }
+
+        public static clsApplication Find(int applicationID)
+        {
+            int ApplicantPersonID = 0;
+            DateTime applicationDate = new DateTime(), lastStatusDate = new DateTime();
+            int applicationTypeID = 0;
+            byte applicationStatus = 0;
+            decimal paidFees = 0;
+            int createdByUserID = 0;
+            if (clsApplicationsData.Find(applicationID, ref ApplicantPersonID,
+                ref applicationDate, ref applicationTypeID, ref applicationStatus
+                , ref lastStatusDate, ref paidFees, ref createdByUserID))
+            {
+                return new clsApplication(applicationID, ApplicantPersonID,
+                applicationDate, applicationTypeID, applicationStatus
+                , lastStatusDate, paidFees, createdByUserID);
+            }
+            return null;
+        }
+
+        public static int GetApplicationIDFromApplicantPersonID(int ApplicantPersonID)
+        {
+            return FindByPersonID(ApplicantPersonID).ApplicationID;
+        }
+
+        public static bool CancelApplication(int ApplicationID)
+        {
+           clsApplication Application = Find(ApplicationID);
+            if (Application != null)
+            {
+                Application.ApplicationStatus = 2;
+                return Application.Save();
+            }
+            return false;
         }
 
     }

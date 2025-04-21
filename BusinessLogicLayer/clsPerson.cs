@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
@@ -174,6 +175,14 @@ namespace BusinessLogicLayer
         public static DataTable GetAllPeopleWithCountryName()
         {
             return clsPersonData.GetAllPeopleWithCountryName();
+        }
+
+        public static string GetPersonFullName(int PersonID)
+        {
+            clsPerson p =clsPerson.Find(PersonID);
+            string fullName = p.FirstName + " " + p.SecondName + " " + p.ThirdName + " " +
+                p.LastName;
+            return fullName;
         }
 
 

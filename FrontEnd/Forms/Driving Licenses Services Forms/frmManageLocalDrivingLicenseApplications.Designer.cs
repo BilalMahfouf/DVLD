@@ -196,6 +196,7 @@
             this.tsmScheduleVisionTest.Name = "tsmScheduleVisionTest";
             this.tsmScheduleVisionTest.Size = new System.Drawing.Size(247, 38);
             this.tsmScheduleVisionTest.Text = "Schedule Vision Test";
+            this.tsmScheduleVisionTest.Click += new System.EventHandler(this.tsmScheduleVisionTest_Click);
             // 
             // tsmScheduleWrittenTest
             // 

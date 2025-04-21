@@ -54,6 +54,12 @@
     <Compile Include="Controllers\AddOrEditPersonControllers.Designer.cs">
       <DependentUpon>AddOrEditPersonControllers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\Application Controllers\ApplicationBasicInfoController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controllers\Application Controllers\ApplicationBasicInfoController.Designer.cs">
+      <DependentUpon>ApplicationBasicInfoController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\FindUserController.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -126,6 +132,12 @@
     <Compile Include="Forms\Person Forms\frmPersonInfo.Designer.cs">
       <DependentUpon>frmPersonInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Tests forms\frmTestAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tests forms\frmTestAppointment.Designer.cs">
+      <DependentUpon>frmTestAppointment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TestTypes Forms\frmEditTestTypes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +179,9 @@
     <EmbeddedResource Include="Controllers\AddOrEditPersonControllers.resx">
       <DependentUpon>AddOrEditPersonControllers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\Application Controllers\ApplicationBasicInfoController.resx">
+      <DependentUpon>ApplicationBasicInfoController.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controllers\FindUserController.resx">
       <DependentUpon>FindUserController.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Person Forms\frmPersonInfo.resx">
       <DependentUpon>frmPersonInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tests forms\frmTestAppointment.resx">
+      <DependentUpon>frmTestAppointment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TestTypes Forms\frmEditTestTypes.resx">
       <DependentUpon>frmEditTestTypes.cs</DependentUpon>

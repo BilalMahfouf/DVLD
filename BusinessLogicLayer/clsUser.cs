@@ -118,5 +118,10 @@ namespace BusinessLogicLayer
         {
             return clsUsersData.IsExist(PersonID);
         }
+
+        public static  string GetUserName(int UserID)
+        {
+            return clsUser.Find(UserID).UserName;
+        }
     }
 }

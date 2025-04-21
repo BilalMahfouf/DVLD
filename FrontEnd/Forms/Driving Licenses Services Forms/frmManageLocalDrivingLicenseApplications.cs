@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogicLayer;
+using FrontEnd.Forms.Tests_forms;
 
 namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
 {
@@ -166,6 +167,13 @@ namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
             }
             
             
+        }
+
+        private void tsmScheduleVisionTest_Click(object sender, EventArgs e)
+        {
+            int LDLApplicationID = Convert.ToInt32(dgvApplications.CurrentRow.Cells[0].Value);
+            frmTestAppointment frmVisionTest = new frmTestAppointment(LDLApplicationID,1);
+            frmVisionTest.ShowDialog();
         }
     }
 }

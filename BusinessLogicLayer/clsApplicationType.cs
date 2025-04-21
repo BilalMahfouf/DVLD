@@ -62,6 +62,11 @@ namespace BusinessLogicLayer
             return null;
         }
 
+        public static string GetApplicationTypeName(int ApplicationTypeID)
+        {
+            return clsApplicationType.Find(ApplicationTypeID).ApplicationTitle;
+        }
+
 
 
     }

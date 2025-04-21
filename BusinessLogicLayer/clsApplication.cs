@@ -150,5 +150,20 @@ namespace BusinessLogicLayer
             return false;
         }
 
+        public static string GetStatusName(byte ApplicationStatus)
+        {
+                switch (ApplicationStatus)
+                {
+                        case 1:
+                        return "New";
+                        case 2:
+                        return "Cancelled";
+                        case 3:
+                        return "Completed";
+                }
+                return string.Empty;          
+        }
+
+
     }
 }

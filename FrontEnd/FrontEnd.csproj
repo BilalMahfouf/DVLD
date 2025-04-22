@@ -60,6 +60,12 @@
     <Compile Include="Controllers\Application Controllers\ApplicationBasicInfoController.Designer.cs">
       <DependentUpon>ApplicationBasicInfoController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\Application Controllers\DrivingLicenseApplicationInfoCnotroller.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controllers\Application Controllers\DrivingLicenseApplicationInfoCnotroller.Designer.cs">
+      <DependentUpon>DrivingLicenseApplicationInfoCnotroller.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\FindUserController.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -77,6 +83,12 @@
     </Compile>
     <Compile Include="Controllers\PersonInfoController.Designer.cs">
       <DependentUpon>PersonInfoController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\TestControllers\ScheduleTestController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controllers\TestControllers\ScheduleTestController.Designer.cs">
+      <DependentUpon>ScheduleTestController.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ApplicationTypes Forms\frmEditApplicationType.cs">
       <SubType>Form</SubType>
@@ -182,6 +194,9 @@
     <EmbeddedResource Include="Controllers\Application Controllers\ApplicationBasicInfoController.resx">
       <DependentUpon>ApplicationBasicInfoController.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\Application Controllers\DrivingLicenseApplicationInfoCnotroller.resx">
+      <DependentUpon>DrivingLicenseApplicationInfoCnotroller.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controllers\FindUserController.resx">
       <DependentUpon>FindUserController.cs</DependentUpon>
     </EmbeddedResource>
@@ -190,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controllers\PersonInfoController.resx">
       <DependentUpon>PersonInfoController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\TestControllers\ScheduleTestController.resx">
+      <DependentUpon>ScheduleTestController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ApplicationTypes Forms\frmEditApplicationType.resx">
       <DependentUpon>frmEditApplicationType.cs</DependentUpon>

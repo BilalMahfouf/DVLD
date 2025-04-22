@@ -79,6 +79,34 @@ namespace DataAccesLayer
             return isFound;
         }
 
+        public static bool GetPassedTestCount(int LDLAppID,ref int PassedTestCount)
+        {
+            bool isFound=false;
+            SqlConnection connection = new SqlConnection(clsDataConnection.connection_string);
+            string query = @"select PassedTestCount from LocalDrivingLicenseApplications_View
+                            where LocalDrivingLicenseApplicationID=@LDLAppID";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@LDLAppID", LDLAppID);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if(reader.Read())
+                {
+                    isFound=true;
+                    PassedTestCount = (int)reader["PassedTestCount"];
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally {  connection.Close(); }
+            return isFound;
+        }
+
 
     }
 }

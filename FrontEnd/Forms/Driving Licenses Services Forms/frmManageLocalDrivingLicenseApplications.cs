@@ -55,6 +55,7 @@ namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
         }
 
 
+
         private void frmManageLocalDrivingLicenseApplications_Load(object sender, EventArgs e)
         {
             _Refresh();
@@ -172,8 +173,76 @@ namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
         private void tsmScheduleVisionTest_Click(object sender, EventArgs e)
         {
             int LDLApplicationID = Convert.ToInt32(dgvApplications.CurrentRow.Cells[0].Value);
-            frmTestAppointment frmVisionTest = new frmTestAppointment(LDLApplicationID,1);
+            frmTestAppointment frmVisionTest = new frmTestAppointment(LDLApplicationID
+                , 1);
             frmVisionTest.ShowDialog();
+        }
+
+        private void _SetTestType()
+        {
+            int TestType= Convert.ToInt32(dgvApplications.CurrentRow.Cells[5].Value);
+            string Status = dgvApplications.CurrentRow.Cells[6].Value.ToString();
+            if(Status == "Completed" || Status == "Cancelled")
+            {
+                tsmSechduleTests.Enabled = false;
+                return;
+            }
+            switch (TestType)
+            {
+                case 0:
+                    {
+                        tsmSechduleTests.Enabled = true;
+                            tsmScheduleVisionTest.Enabled = true;
+                        tsmScheduleWrittenTest.Enabled = false;
+                        tsmScheduleStreetTest.Enabled = false;
+
+
+                        break;
+                    }
+                    case 1:
+                    {
+                        tsmSechduleTests.Enabled = true;
+                        tsmScheduleVisionTest.Enabled = false;
+                        tsmScheduleWrittenTest.Enabled = true;
+                        tsmScheduleStreetTest.Enabled = false;
+                        break;
+                    }
+                    case 2:
+                    {
+                        tsmSechduleTests.Enabled = true;
+                        tsmScheduleVisionTest.Enabled = false;
+                        tsmScheduleWrittenTest.Enabled = false;
+                        tsmScheduleStreetTest.Enabled = true;
+                        break;
+                    }
+                    
+            }
+
+
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            _SetTestType();
+        }
+
+        
+
+        private void tsmScheduleWrittenTest_Click(object sender, EventArgs e)
+        {
+             int LDLApplicationID = Convert.ToInt32(dgvApplications.CurrentRow.Cells[0].Value);
+            frmTestAppointment frmWrittenTest = new frmTestAppointment(LDLApplicationID
+                , 2);
+            frmWrittenTest.ShowDialog();
+           
+        }
+
+        private void tsmScheduleStreetTest_Click(object sender, EventArgs e)
+        {
+            int LDLApplicationID = Convert.ToInt32(dgvApplications.CurrentRow.Cells[0].Value);
+            frmTestAppointment frmStreetTest = new frmTestAppointment(LDLApplicationID
+                , 3);
+            frmStreetTest.ShowDialog();
         }
     }
 }

@@ -95,6 +95,15 @@ namespace BusinessLogicLayer
             }
             return null;
         }
+
+        //public static int GetTestTypeIDFromLDLAppID()
+
+        public static int GetTestTrial(int LocalDrivingLicenseApplicationID,
+            int TestType)
+        {
+            return clsTestAppointmentData.GetTestTrial(LocalDrivingLicenseApplicationID,
+                TestType);
+        }
     
     }
 

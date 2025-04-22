@@ -163,5 +163,34 @@ namespace DataAccesLayer
             return isFound;
         }
 
+        public static int GetTestTrial(int LocalDrivingLicenseApplicationID,
+            int TestType)
+        {
+            int TestTrial = -1;
+            SqlConnection connection = new SqlConnection(clsDataConnection.connection_string);
+            string query = @"select count(RetakeTestApplicationID) as Trial 
+                                    from TestAppointments
+                            where LocalDrivingLicenseApplicationID=@LocalDrivingLicenseApplicationID 
+                                and TestTypeID=@TestTypeID";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID",
+                LocalDrivingLicenseApplicationID);
+            command.Parameters.AddWithValue("@TestType", TestType);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    TestTrial = (int)reader["TestTrial"];
+                }
+                reader.Close();
+            }
+            catch (Exception ex) { }
+            finally { connection.Close(); }
+            return TestTrial;
+        }
+
     }
 }

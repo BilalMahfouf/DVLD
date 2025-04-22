@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,9 +22,12 @@ namespace FrontEnd.Forms.Tests_forms
         }
         private int _LocalDrivingLicenseApplicationID;
         private int _TestTypeID;
+       
         private void frmTestAppointment_Load(object sender, EventArgs e)
         {
             LoadApplicationInfo();
+            LoadDLApplicationInfo();
+            _SetMode();
         }
         private void LoadApplicationInfo()
         {
@@ -33,6 +37,35 @@ namespace FrontEnd.Forms.Tests_forms
             applicationBasicInfoController1.LoadApplicationInfo();
             
         
+        }
+
+        private void _SetMode()
+        {
+            switch (_TestTypeID)
+            {
+            case 1:
+                    {
+                        lblTestApppointment.Text = "Vision Test Appointment";
+                        break;
+                    }
+                case 2:
+                    {
+                        lblTestApppointment.Text = "Written Test Appointment";
+                        break;
+                    }
+                    case 3:
+                    {
+                        lblTestApppointment.Text = "Street Test Appointment";
+                        break;
+                    }
+            }
+
+        }
+
+        private void LoadDLApplicationInfo()
+        {
+            drivingLicenseApplicationInfoCnotroller1.LDLAppID = _LocalDrivingLicenseApplicationID;
+            drivingLicenseApplicationInfoCnotroller1.LoadDLApplicationInfo();
         }
     }
 }

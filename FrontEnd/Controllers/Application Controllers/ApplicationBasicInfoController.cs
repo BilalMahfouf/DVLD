@@ -45,5 +45,9 @@ namespace FrontEnd.Controllers.Application_Controllers
             _LoadApplicationInfo();
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

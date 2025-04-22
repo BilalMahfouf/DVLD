@@ -99,6 +99,7 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Application Basic Info";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // linklblViewPersonInfo
             // 
@@ -357,7 +358,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Name = "ApplicationBasicInfoController";
-            this.Size = new System.Drawing.Size(1405, 330);
+            this.Size = new System.Drawing.Size(1332, 330);
             this.Load += new System.EventHandler(this.ApplicationBasicInfoController_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -72,6 +72,11 @@ namespace BusinessLogicLayer
             return Find(ClassName).LicenseClassID;
         }
 
+        public static string GetLicenseClassName(int licenseClassID)
+        {
+            return clsLicenseClasses.Find(licenseClassID).ClassName;
+        }
+
         
 
     }

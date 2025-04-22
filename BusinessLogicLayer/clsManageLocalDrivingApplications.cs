@@ -20,6 +20,17 @@ namespace BusinessLogicLayer
             return clsManageLocalDrivingApplicationsData.GetAllLocalDrivingApplications();
         }
 
+        public static int GetPassedTestCount(int LDLAppID)
+        {
+            int PassedTestCount = -1;
+            if(clsManageLocalDrivingApplicationsData.GetPassedTestCount(LDLAppID,
+                ref PassedTestCount))
+            {
+                return PassedTestCount;
+            }
+            return -1;
+        }
+
         public static int GetApplicationIDFromLDLApplicationID(int LDLApplicationID)
         {
             return clsLocalDrivingLicenseApplication.

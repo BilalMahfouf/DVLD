@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,6 +45,27 @@ namespace DataAccesLayer
             catch (Exception ex) { }
             finally { connection.Close(); } 
             return TestID;
+        }
+
+        public static bool IsPassedTest(int TestAppointmentID)
+        {
+            bool isfound=false;
+            SqlConnection connection = new SqlConnection(clsDataConnection.connection_string);
+            string query = @"select isFound=1 from Tests 
+                        where TestAppointmentID=@TestAppointmentID and TestResult=1";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@TestAppointmentID", TestAppointmentID);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                isfound = reader.HasRows;
+                reader.Close();
+            }
+            catch (Exception ex) { }
+            finally { connection.Close(); }
+            return isfound;
         }
 
 

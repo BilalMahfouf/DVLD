@@ -28,15 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblTestApppointment = new System.Windows.Forms.Label();
             this.lblRecords = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvTestAppointments = new System.Windows.Forms.DataGridView();
+            this.cmsTestOption = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmTakeTest = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.drivingLicenseApplicationInfoCnotroller1 = new FrontEnd.Controllers.Application_Controllers.DrivingLicenseApplicationInfoCnotroller();
             this.applicationBasicInfoController1 = new FrontEnd.Controllers.Application_Controllers.ApplicationBasicInfoController();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTestAppointments)).BeginInit();
+            this.cmsTestOption.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTestApppointment
@@ -72,16 +77,51 @@
             this.btnClose.TabIndex = 17;
             this.btnClose.Text = "   Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // dataGridView1
+            // dgvTestAppointments
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 586);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1315, 210);
-            this.dataGridView1.TabIndex = 18;
+            this.dgvTestAppointments.AllowUserToAddRows = false;
+            this.dgvTestAppointments.AllowUserToDeleteRows = false;
+            this.dgvTestAppointments.BackgroundColor = System.Drawing.Color.White;
+            this.dgvTestAppointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTestAppointments.ContextMenuStrip = this.cmsTestOption;
+            this.dgvTestAppointments.Location = new System.Drawing.Point(17, 586);
+            this.dgvTestAppointments.Name = "dgvTestAppointments";
+            this.dgvTestAppointments.ReadOnly = true;
+            this.dgvTestAppointments.RowHeadersWidth = 51;
+            this.dgvTestAppointments.RowTemplate.Height = 24;
+            this.dgvTestAppointments.Size = new System.Drawing.Size(1315, 210);
+            this.dgvTestAppointments.TabIndex = 18;
+            // 
+            // cmsTestOption
+            // 
+            this.cmsTestOption.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cmsTestOption.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmEdit,
+            this.tsmTakeTest});
+            this.cmsTestOption.Name = "cmsTestOption";
+            this.cmsTestOption.Size = new System.Drawing.Size(167, 80);
+            // 
+            // tsmEdit
+            // 
+            this.tsmEdit.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmEdit.Image = global::FrontEnd.Properties.Resources.edit_32;
+            this.tsmEdit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsmEdit.Name = "tsmEdit";
+            this.tsmEdit.Size = new System.Drawing.Size(166, 38);
+            this.tsmEdit.Text = "Edit";
+            this.tsmEdit.Click += new System.EventHandler(this.tsmEdit_Click);
+            // 
+            // tsmTakeTest
+            // 
+            this.tsmTakeTest.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmTakeTest.Image = global::FrontEnd.Properties.Resources.Test_32;
+            this.tsmTakeTest.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsmTakeTest.Name = "tsmTakeTest";
+            this.tsmTakeTest.Size = new System.Drawing.Size(166, 38);
+            this.tsmTakeTest.Text = "Take Test";
+            this.tsmTakeTest.Click += new System.EventHandler(this.tsmTakeTest_Click);
             // 
             // label1
             // 
@@ -93,15 +133,16 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Appointments:";
             // 
-            // button1
+            // btnAdd
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::FrontEnd.Properties.Resources.AddAppointment_32;
-            this.button1.Location = new System.Drawing.Point(1272, 524);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 59);
-            this.button1.TabIndex = 20;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Image = global::FrontEnd.Properties.Resources.AddAppointment_32;
+            this.btnAdd.Location = new System.Drawing.Point(1272, 524);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(60, 59);
+            this.btnAdd.TabIndex = 20;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // drivingLicenseApplicationInfoCnotroller1
             // 
@@ -124,9 +165,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1342, 874);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvTestAppointments);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblRecords);
             this.Controls.Add(this.lblTestApppointment);
@@ -137,7 +178,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TestAppointment";
             this.Load += new System.EventHandler(this.frmTestAppointment_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTestAppointments)).EndInit();
+            this.cmsTestOption.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,8 +192,11 @@
         private System.Windows.Forms.Label lblTestApppointment;
         private System.Windows.Forms.Label lblRecords;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvTestAppointments;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.ContextMenuStrip cmsTestOption;
+        private System.Windows.Forms.ToolStripMenuItem tsmEdit;
+        private System.Windows.Forms.ToolStripMenuItem tsmTakeTest;
     }
 }

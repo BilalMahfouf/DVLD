@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -70,16 +71,20 @@ namespace DataAccesLayer
             return TestAppointmentID;
         }
 
-        public static bool Update(int TestAppointmentID,DateTime AppointmentDate)
+        public static bool Update(int TestAppointmentID,DateTime AppointmentDate,
+            bool IsLocked)
         {
             SqlConnection connection = new SqlConnection(clsDataConnection.connection_string);
             string query = @"UPDATE TestAppointments
                             SET 
                            AppointmentDate = @AppointmentDate
+                           ,IsLocked=@IsLocked
                            WHERE TestAppointmentID=@TestAppointmentID";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@TestAppointmentID", TestAppointmentID);
             command.Parameters.AddWithValue("@AppointmentDate", AppointmentDate);
+            command.Parameters.AddWithValue("@IsLocked", IsLocked);
+
             int rowAffected = 0;
             try
             {
@@ -128,7 +133,7 @@ namespace DataAccesLayer
         {
             bool isFound = false;
             SqlConnection connection = new SqlConnection(clsDataConnection.connection_string);
-            string query = @"select * from TestAppointment
+            string query = @"select * from TestAppointments
                                 where TestAppointmentID=@TestAppointmentID";
             SqlCommand command = new SqlCommand(query,connection);
             command.Parameters.AddWithValue("@TestAppointmentID", TestAppointmentID);
@@ -140,7 +145,7 @@ namespace DataAccesLayer
                 if (reader.Read())
                 {
                     isFound = true;
-                    TestType = (int)reader["TestType"];
+                    TestType = (int)reader["TestTypeID"];
                     LocalDrivingLicenseApplicationID = (int)reader["LocalDrivingLicenseApplicationID"];
                     AppointmentDate = (DateTime)reader["AppointmentDate"];
                     PaidFees = (decimal)reader["PaidFees"];
@@ -164,18 +169,18 @@ namespace DataAccesLayer
         }
 
         public static int GetTestTrial(int LocalDrivingLicenseApplicationID,
-            int TestType)
+            int TestTypeID)
         {
-            int TestTrial = -1;
+            int TestTrial = 0;
             SqlConnection connection = new SqlConnection(clsDataConnection.connection_string);
-            string query = @"select count(RetakeTestApplicationID) as Trial 
+            string query = @"select count(*) as Trial 
                                     from TestAppointments
                             where LocalDrivingLicenseApplicationID=@LocalDrivingLicenseApplicationID 
-                                and TestTypeID=@TestTypeID";
+                                and TestTypeID=@TestTypeID and IsLocked=1";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID",
                 LocalDrivingLicenseApplicationID);
-            command.Parameters.AddWithValue("@TestType", TestType);
+            command.Parameters.AddWithValue("@TestTypeID", TestTypeID);
 
             try
             {
@@ -183,13 +188,41 @@ namespace DataAccesLayer
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
-                    TestTrial = (int)reader["TestTrial"];
+                    TestTrial = (int)reader["Trial"];
                 }
                 reader.Close();
             }
             catch (Exception ex) { }
             finally { connection.Close(); }
             return TestTrial;
+        }
+
+        public static DataTable GetAllTestAppointment(int LocalDrivingLicenseApplicationID,
+            int TestTypeID)
+        {
+            DataTable dataTable = new DataTable();
+            SqlConnection connection = new SqlConnection(clsDataConnection.connection_string);
+            string query = @"select TestAppointmentID,AppointmentDate,PaidFees,IsLocked from TestAppointments
+where LocalDrivingLicenseApplicationID=@LocalDrivingLicenseApplicationID
+and TestTypeID=@TestTypeID";
+            SqlCommand command = new SqlCommand(query,connection);
+            command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
+            command.Parameters.AddWithValue("@TestTypeID", TestTypeID);
+
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if(reader.HasRows)
+                {
+                    dataTable.Load(reader);
+                }
+                reader.Close();
+            }
+            catch (Exception ex) { }
+            finally { connection.Close(); }
+            return dataTable;
         }
 
     }

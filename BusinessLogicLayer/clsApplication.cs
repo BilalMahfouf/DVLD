@@ -164,6 +164,32 @@ namespace BusinessLogicLayer
                 return string.Empty;          
         }
 
+        public static int AddNewRetakeTestApplication(int ApplicantPersonID,DateTime
+            ApplicationDate,byte ApplicationStatus,DateTime LastStatusDate,decimal PaidFees,
+            int CreatedByUserID)
+        {
+            clsApplication newRetakeTestApplication=new clsApplication();
+            newRetakeTestApplication.ApplicantPersonID = ApplicantPersonID;
+            newRetakeTestApplication.ApplicationDate = ApplicationDate;
+            newRetakeTestApplication.ApplicationStatus = ApplicationStatus;
+            newRetakeTestApplication.LastStatusDate = LastStatusDate;
+            newRetakeTestApplication.PaidFees = PaidFees;
+            newRetakeTestApplication.CreatedByUserID = CreatedByUserID;
+            // 7 is the ApplicationTypeID for Retaketestapp
+            newRetakeTestApplication.ApplicationTypeID = 7;
+            if( newRetakeTestApplication.Save())
+            {
+                return newRetakeTestApplication.ApplicationID;
+            }
+            return 0;
+        }
+
+        public static bool CompleteApplication(int ApplicationID)
+        {
+            // 3 is application status completed
+            return clsApplicationsData.Update(ApplicationID, 3, DateTime.Now);
+        }
+
 
     }
 }

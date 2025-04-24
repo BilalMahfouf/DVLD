@@ -54,5 +54,10 @@ namespace BusinessLogicLayer
             return _Update();
         }
 
+        public static decimal GetTestFee(int TestTypeID)
+        {
+            return Find(TestTypeID).TestTypeFees;
+        }
+
     }
 }

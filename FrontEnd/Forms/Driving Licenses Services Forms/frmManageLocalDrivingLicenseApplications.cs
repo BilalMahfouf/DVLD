@@ -176,6 +176,7 @@ namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
             frmTestAppointment frmVisionTest = new frmTestAppointment(LDLApplicationID
                 , 1);
             frmVisionTest.ShowDialog();
+            _Refresh();
         }
 
         private void _SetTestType()
@@ -234,7 +235,9 @@ namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
             frmTestAppointment frmWrittenTest = new frmTestAppointment(LDLApplicationID
                 , 2);
             frmWrittenTest.ShowDialog();
-           
+            _Refresh();
+
+
         }
 
         private void tsmScheduleStreetTest_Click(object sender, EventArgs e)
@@ -243,6 +246,7 @@ namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
             frmTestAppointment frmStreetTest = new frmTestAppointment(LDLApplicationID
                 , 3);
             frmStreetTest.ShowDialog();
+            _Refresh();
         }
     }
 }

@@ -38,7 +38,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::FrontEnd.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(1295, 459);
+            this.btnClose.Location = new System.Drawing.Point(1044, 459);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(143, 44);
             this.btnClose.TabIndex = 3;
@@ -62,7 +62,7 @@
             // 
             this.personInfoController1.Location = new System.Drawing.Point(33, 88);
             this.personInfoController1.Name = "personInfoController1";
-            this.personInfoController1.Size = new System.Drawing.Size(1405, 372);
+            this.personInfoController1.Size = new System.Drawing.Size(1177, 372);
             this.personInfoController1.TabIndex = 0;
             this.personInfoController1.OnClicklinklblEditPerson += new System.Action(this.personInfoController1_OnClicklinklblEditPerson_1);
             // 
@@ -70,7 +70,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1447, 515);
+            this.ClientSize = new System.Drawing.Size(1203, 515);
             this.Controls.Add(this.lblPersonDetails);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.personInfoController1);

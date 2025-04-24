@@ -37,5 +37,25 @@ namespace BusinessLogicLayer
             return _AddNew();
         }
 
+        public static int AddNewTest(int TestAppointment,bool TestResult,
+            int CreatedByUserID, string Notes = "")
+        {
+            clsTest NewTest= new clsTest();
+            NewTest.TestAppointmentID = TestAppointment;
+            NewTest.TestResult = TestResult;
+            NewTest.Notes = Notes;
+            NewTest.CreatedByUserID = CreatedByUserID;
+            if(NewTest.Save())
+            {
+                return NewTest.TestID;
+            }
+            return 0;
+        }
+
+        public static bool IsPassedTest(int TestAppointmentID)
+        {
+            return clsTestsData.IsPassedTest(TestAppointmentID);
+        }
+
     }
 }

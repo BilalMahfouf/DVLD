@@ -90,6 +90,12 @@
     <Compile Include="Controllers\TestControllers\ScheduleTestController.Designer.cs">
       <DependentUpon>ScheduleTestController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\TestControllers\TestInfoController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controllers\TestControllers\TestInfoController.Designer.cs">
+      <DependentUpon>TestInfoController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ApplicationTypes Forms\frmEditApplicationType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,18 @@
     </Compile>
     <Compile Include="Forms\Person Forms\frmPersonInfo.Designer.cs">
       <DependentUpon>frmPersonInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tests forms\frmAddNewTestAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tests forms\frmAddNewTestAppointment.Designer.cs">
+      <DependentUpon>frmAddNewTestAppointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tests forms\frmTakeTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tests forms\frmTakeTest.Designer.cs">
+      <DependentUpon>frmTakeTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Tests forms\frmTestAppointment.cs">
       <SubType>Form</SubType>
@@ -209,6 +227,9 @@
     <EmbeddedResource Include="Controllers\TestControllers\ScheduleTestController.resx">
       <DependentUpon>ScheduleTestController.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\TestControllers\TestInfoController.resx">
+      <DependentUpon>TestInfoController.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ApplicationTypes Forms\frmEditApplicationType.resx">
       <DependentUpon>frmEditApplicationType.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,6 +256,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Person Forms\frmPersonInfo.resx">
       <DependentUpon>frmPersonInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tests forms\frmAddNewTestAppointment.resx">
+      <DependentUpon>frmAddNewTestAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tests forms\frmTakeTest.resx">
+      <DependentUpon>frmTakeTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tests forms\frmTestAppointment.resx">
       <DependentUpon>frmTestAppointment.cs</DependentUpon>

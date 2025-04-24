@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogicLayer;
+using FrontEnd.Forms;
 
 namespace FrontEnd.Controllers.Application_Controllers
 {
@@ -48,6 +49,13 @@ namespace FrontEnd.Controllers.Application_Controllers
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void linklblViewPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            int PersonID = clsApplication.Find(ApplicationID).ApplicantPersonID;
+            frmPersonInfo personInfo = new frmPersonInfo(PersonID);
+            personInfo.ShowDialog();
         }
     }
 }

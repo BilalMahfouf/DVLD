@@ -67,6 +67,11 @@ namespace BusinessLogicLayer
             return clsApplicationType.Find(ApplicationTypeID).ApplicationTitle;
         }
 
+        public static decimal GetApplicationFee(int ApplicationTypeID)
+        {
+            return Find(ApplicationTypeID).ApplicationFee;
+        }
+
 
 
     }

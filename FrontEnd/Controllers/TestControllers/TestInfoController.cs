@@ -38,7 +38,11 @@ namespace FrontEnd.Controllers.TestControllers
                     lblTrial.Text = clsTestAppointment.GetTestTrial(LDLApp.LocalDrivingLicenseApplicationID, TestAppointment.TestTypeID).ToString();
                     lblDate.Text = clsTestAppointment.Find(TestAppointmentID).AppointmentDate.ToString();
                     lblFees.Text = clsTestType.GetTestFee(TestAppointment.TestTypeID).ToString("F2");
-
+                    int TestID=clsTest.GetTestID(TestAppointmentID);
+                    if(TestID != 0)
+                    {
+                        lblTestID.Text = TestID.ToString();
+                    }
                 }
             }
             

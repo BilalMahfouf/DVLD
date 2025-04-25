@@ -52,6 +52,7 @@
             this.scheduleTestController1.Name = "scheduleTestController1";
             this.scheduleTestController1.Size = new System.Drawing.Size(621, 718);
             this.scheduleTestController1.TabIndex = 0;
+            this.scheduleTestController1.TestAppointmentID = 0;
             this.scheduleTestController1.TestTypeID = 0;
             this.scheduleTestController1.OnSaveRequested += new System.Action(this.scheduleTestController1_OnSaveRequested);
             this.scheduleTestController1.Load += new System.EventHandler(this.scheduleTestController1_Load);

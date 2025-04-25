@@ -60,6 +60,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblTestType = new System.Windows.Forms.Label();
             this.pbTestTypePicture = new System.Windows.Forms.PictureBox();
+            this.lblPassedTest1 = new System.Windows.Forms.Label();
             this.gbTestType.SuspendLayout();
             this.gbRetakeTestInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -76,6 +77,7 @@
             // 
             // gbTestType
             // 
+            this.gbTestType.Controls.Add(this.lblPassedTest1);
             this.gbTestType.Controls.Add(this.btnSave);
             this.gbTestType.Controls.Add(this.gbRetakeTestInfo);
             this.gbTestType.Controls.Add(this.dtpDate);
@@ -102,7 +104,7 @@
             this.gbTestType.Size = new System.Drawing.Size(606, 525);
             this.gbTestType.TabIndex = 0;
             this.gbTestType.TabStop = false;
-            this.gbTestType.Text = "Street Test";
+            this.gbTestType.Text = "Test";
             // 
             // btnSave
             // 
@@ -427,6 +429,17 @@
             this.pbTestTypePicture.TabIndex = 36;
             this.pbTestTypePicture.TabStop = false;
             // 
+            // lblPassedTest1
+            // 
+            this.lblPassedTest1.AutoSize = true;
+            this.lblPassedTest1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassedTest1.ForeColor = System.Drawing.Color.Red;
+            this.lblPassedTest1.Location = new System.Drawing.Point(12, 475);
+            this.lblPassedTest1.Name = "lblPassedTest1";
+            this.lblPassedTest1.Size = new System.Drawing.Size(39, 28);
+            this.lblPassedTest1.TabIndex = 76;
+            this.lblPassedTest1.Text = "???";
+            // 
             // ScheduleTestController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -490,5 +503,6 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Label lblPassedTest1;
     }
 }

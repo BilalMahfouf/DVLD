@@ -28,7 +28,7 @@ namespace FrontEnd.Controllers.Application_Controllers
                 lblDLAppID.Text = LDLApp.LocalDrivingLicenseApplicationID.ToString();
                 lblLicenseType.Text = clsLicenseClasses.GetLicenseClassName(LDLApp.LicenseClassID);
                 lblPassedTests.Text = clsManageLocalDrivingApplications.
-                    GetPassedTestCount(LDLApp.LocalDrivingLicenseApplicationID).ToString();           
+                    GetPassedTestCount(LDLApp.LocalDrivingLicenseApplicationID).ToString() + "/3";           
             }
         }
         public void LoadDLApplicationInfo()

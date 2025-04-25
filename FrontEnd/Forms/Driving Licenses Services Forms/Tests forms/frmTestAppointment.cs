@@ -133,12 +133,11 @@ namespace FrontEnd.Forms.Tests_forms
         private void tsmEdit_Click(object sender, EventArgs e)
         {
             int TestAppointment = Convert.ToInt32(dgvTestAppointments.CurrentRow.Cells[0].Value);
-            if(!(bool)dgvTestAppointments.CurrentRow.Cells[3].Value)
-            {
+            
                 frmAddNewTestAppointment frmUpdateTestAppointment = new frmAddNewTestAppointment
                                (_LocalDrivingLicenseApplicationID, _TestTypeID, TestAppointment);
                 frmUpdateTestAppointment.ShowDialog();
-            }
+            
             _LoadTestAppointment();
         }
 
@@ -158,10 +157,13 @@ namespace FrontEnd.Forms.Tests_forms
             frmTakeTest TakeTest = new frmTakeTest(TestAppointmentID);
             TakeTest.ShowDialog();
             _LoadTestAppointment();
-            if(_TestTypeID==3 && clsTest.IsPassedTest(TestAppointmentID))
-            {
-                CompleteApplication();
-            }
+
+            // Don't complete the application until the the driving license is issued
+
+            //if(_TestTypeID==3 && clsTest.IsPassedTest(TestAppointmentID))
+            //{
+            //    CompleteApplication();
+            //}
 
 
         }

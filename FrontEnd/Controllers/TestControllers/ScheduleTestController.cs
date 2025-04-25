@@ -49,7 +49,18 @@ namespace FrontEnd.Controllers.TestControllers
                 lblTrial.Text = clsTestAppointment.GetTestTrial(LDLAppID,TestTypeID).ToString();
                 dtpDate.Text = DateTime.Now.ToString();
                 lblFees.Text = clsTestType.GetTestFee(TestTypeID).ToString("F2");
-
+                if(clsTest.GetTestID(TestAppointmentID)>0)
+                {
+                    dtpDate.Enabled = false;
+                    lblPassedTest1.Text = "This Test Appointment is Locked";
+                    btnSave.Enabled = false;
+                }
+                else 
+                    {
+                    dtpDate.Enabled = true;
+                    btnSave.Enabled = true;
+                    lblPassedTest1.Text = "";
+                }
             }
         }
 

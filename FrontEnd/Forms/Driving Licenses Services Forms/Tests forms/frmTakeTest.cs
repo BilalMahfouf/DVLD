@@ -25,8 +25,28 @@ namespace FrontEnd.Forms.Tests_forms
         {
             testInfoController1.TestAppointmentID = _TestAppointmentID;
             testInfoController1.LoadTestInfo();
+            _IsTestTaken_ScreenLoad();
         }
 
+        private void _IsTestTaken_ScreenLoad()
+        {
+            if(clsTest.GetTestID(_TestAppointmentID)>0)
+            {
+                btnSave.Enabled = false;
+                rbFail.Enabled = false;
+                rbPass.Enabled = false;
+                rtbNotes.Enabled = false;
+                lblPassedTest1.Text = "This person has already taken this test";
+            }
+            else
+            {
+                btnSave.Enabled = true;
+                rbFail.Enabled = true;
+                rbPass.Enabled = true;
+                rtbNotes.Enabled = true;
+                lblPassedTest1.Text = "";
+            }
+        }
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -43,22 +63,29 @@ namespace FrontEnd.Forms.Tests_forms
             {
                 TestResult = true;
             }
-
-            int TestID = clsTest.AddNewTest(_TestAppointmentID, TestResult,
-                clsCurrentUser.UserID, rtbNotes.Text);
-            if( TestID > 0)
+            DialogResult result = MessageBox.Show(@"Are you sure you want to pass this
+test? after you put the result you can't change it", "Validation",
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if(result == DialogResult.OK)
             {
-                clsTestAppointment Testappointment = clsTestAppointment.Find(_TestAppointmentID);
-                if( Testappointment != null )
+                int TestID = clsTest.AddNewTest(_TestAppointmentID, TestResult,
+                                clsCurrentUser.UserID, rtbNotes.Text);
+                if (TestID > 0)
                 {
-                    Testappointment.IsLocked = true;
-                    if(Testappointment.RetakeTestApplicationID>0)
+                    clsTestAppointment Testappointment = clsTestAppointment.Find(_TestAppointmentID);
+                    if (Testappointment != null)
                     {
-                        clsApplication.CompleteApplication(Testappointment.RetakeTestApplicationID);
+                        Testappointment.IsLocked = true;
+                        if (Testappointment.RetakeTestApplicationID > 0)
+                        {
+                            clsApplication.CompleteApplication(Testappointment.RetakeTestApplicationID);
+                        }
+                        return Testappointment.Save();
                     }
-                    return Testappointment.Save();
                 }
             }
+
+            
             return false;
         }
 

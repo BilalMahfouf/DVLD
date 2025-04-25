@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -66,6 +67,42 @@ namespace DataAccesLayer
             catch (Exception ex) { }
             finally { connection.Close(); }
             return isfound;
+        }
+
+        public static bool Find(ref int TestID,int TestAppointmentID,ref bool TestResult,
+            ref string Notes,ref int CreatedByUserID)
+        {
+            bool isFound = false;
+            SqlConnection connection = new SqlConnection(clsDataConnection.connection_string);
+            string query = @"select * from Tests 
+                          where TestAppointmentID=@TestAppointmentID";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@TestAppointmentID", TestAppointmentID);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    isFound = true;
+                    TestID = (int)reader["TestID"];
+                    TestResult = (bool)reader["TestResult"];
+                    if (reader["Notes"] == DBNull.Value)
+                    {
+                        Notes = string.Empty;
+                    }
+                    else
+                    {
+                        Notes = (string)reader["Notes"];
+                    }
+                    CreatedByUserID = (int)reader["CreatedByUserID"];
+                }
+                reader.Close();
+            }
+            catch { }
+            finally { connection.Close(); }
+            return isFound;
         }
 
 

@@ -52,7 +52,6 @@
             this.cbfilterBy = new System.Windows.Forms.ComboBox();
             this.lblFilterBy = new System.Windows.Forms.Label();
             this.lblRecords1 = new System.Windows.Forms.Label();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.pbAddNewLocalDrivingApplication = new System.Windows.Forms.PictureBox();
             this.btnClose1 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -119,6 +118,7 @@
             this.tsmShowApplicationDetails.Name = "tsmShowApplicationDetails";
             this.tsmShowApplicationDetails.Size = new System.Drawing.Size(308, 38);
             this.tsmShowApplicationDetails.Text = "Show Application Details";
+            this.tsmShowApplicationDetails.Click += new System.EventHandler(this.tsmShowApplicationDetails_Click);
             // 
             // toolStripSeparator1
             // 
@@ -370,7 +370,6 @@
         private System.Windows.Forms.Label lblRecords1;
         private System.Windows.Forms.Button btnClose1;
         private System.Windows.Forms.PictureBox pbAddNewLocalDrivingApplication;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsmShowApplicationDetails;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;

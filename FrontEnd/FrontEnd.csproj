@@ -120,6 +120,12 @@
     <Compile Include="Forms\Driving Licenses Services Forms\frmNewOrEditDrivingLicense_Local.Designer.cs">
       <DependentUpon>frmNewOrEditDrivingLicense_Local.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Driving Licenses Services Forms\frmShowApplicationDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Driving Licenses Services Forms\frmShowApplicationDetails.Designer.cs">
+      <DependentUpon>frmShowApplicationDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,34 +156,34 @@
     <Compile Include="Forms\Person Forms\frmPersonInfo.Designer.cs">
       <DependentUpon>frmPersonInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Tests forms\frmAddNewTestAppointment.cs">
+    <Compile Include="Forms\Driving Licenses Services Forms\Tests forms\frmAddNewTestAppointment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Tests forms\frmAddNewTestAppointment.Designer.cs">
+    <Compile Include="Forms\Driving Licenses Services Forms\Tests forms\frmAddNewTestAppointment.Designer.cs">
       <DependentUpon>frmAddNewTestAppointment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Tests forms\frmTakeTest.cs">
+    <Compile Include="Forms\Driving Licenses Services Forms\Tests forms\frmTakeTest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Tests forms\frmTakeTest.Designer.cs">
+    <Compile Include="Forms\Driving Licenses Services Forms\Tests forms\frmTakeTest.Designer.cs">
       <DependentUpon>frmTakeTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Tests forms\frmTestAppointment.cs">
+    <Compile Include="Forms\Driving Licenses Services Forms\Tests forms\frmTestAppointment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Tests forms\frmTestAppointment.Designer.cs">
+    <Compile Include="Forms\Driving Licenses Services Forms\Tests forms\frmTestAppointment.Designer.cs">
       <DependentUpon>frmTestAppointment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\TestTypes Forms\frmEditTestTypes.cs">
+    <Compile Include="Forms\Driving Licenses Services Forms\TestTypes Forms\frmEditTestTypes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\TestTypes Forms\frmEditTestTypes.Designer.cs">
+    <Compile Include="Forms\Driving Licenses Services Forms\TestTypes Forms\frmEditTestTypes.Designer.cs">
       <DependentUpon>frmEditTestTypes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\TestTypes Forms\frmManageTestTypes.cs">
+    <Compile Include="Forms\Driving Licenses Services Forms\TestTypes Forms\frmManageTestTypes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\TestTypes Forms\frmManageTestTypes.Designer.cs">
+    <Compile Include="Forms\Driving Licenses Services Forms\TestTypes Forms\frmManageTestTypes.Designer.cs">
       <DependentUpon>frmManageTestTypes.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\User Forms\frmAddOrEditUser.cs">
@@ -242,6 +248,9 @@
     <EmbeddedResource Include="Forms\Driving Licenses Services Forms\frmNewOrEditDrivingLicense_Local.resx">
       <DependentUpon>frmNewOrEditDrivingLicense_Local.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Driving Licenses Services Forms\frmShowApplicationDetails.resx">
+      <DependentUpon>frmShowApplicationDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -257,19 +266,19 @@
     <EmbeddedResource Include="Forms\Person Forms\frmPersonInfo.resx">
       <DependentUpon>frmPersonInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Tests forms\frmAddNewTestAppointment.resx">
+    <EmbeddedResource Include="Forms\Driving Licenses Services Forms\Tests forms\frmAddNewTestAppointment.resx">
       <DependentUpon>frmAddNewTestAppointment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Tests forms\frmTakeTest.resx">
+    <EmbeddedResource Include="Forms\Driving Licenses Services Forms\Tests forms\frmTakeTest.resx">
       <DependentUpon>frmTakeTest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Tests forms\frmTestAppointment.resx">
+    <EmbeddedResource Include="Forms\Driving Licenses Services Forms\Tests forms\frmTestAppointment.resx">
       <DependentUpon>frmTestAppointment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TestTypes Forms\frmEditTestTypes.resx">
+    <EmbeddedResource Include="Forms\Driving Licenses Services Forms\TestTypes Forms\frmEditTestTypes.resx">
       <DependentUpon>frmEditTestTypes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TestTypes Forms\frmManageTestTypes.resx">
+    <EmbeddedResource Include="Forms\Driving Licenses Services Forms\TestTypes Forms\frmManageTestTypes.resx">
       <DependentUpon>frmManageTestTypes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\User Forms\frmAddOrEditUser.resx">

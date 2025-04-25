@@ -37,7 +37,9 @@
             this.rtbNotes = new System.Windows.Forms.RichTextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.lblPassedTest = new System.Windows.Forms.Label();
             this.testInfoController1 = new FrontEnd.Controllers.TestControllers.TestInfoController();
+            this.lblPassedTest1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -91,7 +93,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(48, 621);
+            this.label2.Location = new System.Drawing.Point(48, 638);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 28);
             this.label2.TabIndex = 12;
@@ -100,7 +102,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::FrontEnd.Properties.Resources.Notes_32;
-            this.pictureBox2.Location = new System.Drawing.Point(121, 621);
+            this.pictureBox2.Location = new System.Drawing.Point(121, 638);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(32, 32);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -109,7 +111,7 @@
             // 
             // rtbNotes
             // 
-            this.rtbNotes.Location = new System.Drawing.Point(174, 621);
+            this.rtbNotes.Location = new System.Drawing.Point(174, 638);
             this.rtbNotes.Name = "rtbNotes";
             this.rtbNotes.Size = new System.Drawing.Size(457, 105);
             this.rtbNotes.TabIndex = 14;
@@ -120,7 +122,7 @@
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Image = global::FrontEnd.Properties.Resources.Save_32;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(488, 732);
+            this.btnSave.Location = new System.Drawing.Point(488, 749);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(143, 44);
             this.btnSave.TabIndex = 71;
@@ -133,13 +135,23 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::FrontEnd.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(339, 732);
+            this.btnClose.Location = new System.Drawing.Point(339, 749);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(143, 44);
             this.btnClose.TabIndex = 72;
             this.btnClose.Text = "   Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // lblPassedTest
+            // 
+            this.lblPassedTest.AutoSize = true;
+            this.lblPassedTest.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassedTest.ForeColor = System.Drawing.Color.Red;
+            this.lblPassedTest.Location = new System.Drawing.Point(327, 567);
+            this.lblPassedTest.Name = "lblPassedTest";
+            this.lblPassedTest.Size = new System.Drawing.Size(0, 28);
+            this.lblPassedTest.TabIndex = 73;
             // 
             // testInfoController1
             // 
@@ -150,11 +162,24 @@
             this.testInfoController1.TestAppointmentID = 0;
             this.testInfoController1.Load += new System.EventHandler(this.testInfoController1_Load);
             // 
+            // lblPassedTest1
+            // 
+            this.lblPassedTest1.AutoSize = true;
+            this.lblPassedTest1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassedTest1.ForeColor = System.Drawing.Color.Red;
+            this.lblPassedTest1.Location = new System.Drawing.Point(61, 604);
+            this.lblPassedTest1.Name = "lblPassedTest1";
+            this.lblPassedTest1.Size = new System.Drawing.Size(39, 28);
+            this.lblPassedTest1.TabIndex = 74;
+            this.lblPassedTest1.Text = "???";
+            // 
             // frmTakeTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(639, 783);
+            this.ClientSize = new System.Drawing.Size(639, 796);
+            this.Controls.Add(this.lblPassedTest1);
+            this.Controls.Add(this.lblPassedTest);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.rtbNotes);
@@ -189,5 +214,7 @@
         private System.Windows.Forms.RichTextBox rtbNotes;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label lblPassedTest;
+        private System.Windows.Forms.Label lblPassedTest1;
     }
 }

@@ -222,9 +222,30 @@ namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
 
         }
 
+        private void _SetcmtForCancelledApp()
+        {
+            if (dgvApplications.CurrentRow.Cells[6].Value.ToString() == "Cancelled")
+            {
+                tsmCancel.Enabled = false;
+                tsmEdit.Enabled = false;
+                tsmDelete.Enabled = false;
+                tsmIssueDrivingLicenseFirstTime.Enabled = false;
+                tsmShowDrivingLicense.Enabled = false;
+            }
+            else
+            {
+                tsmCancel.Enabled = true;
+                tsmEdit.Enabled = true;
+                tsmDelete.Enabled = true;
+                tsmIssueDrivingLicenseFirstTime.Enabled = true;
+                tsmShowDrivingLicense.Enabled = true;
+            }
+        }
+
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
             _SetTestType();
+            _SetcmtForCancelledApp();
         }
 
         
@@ -247,6 +268,14 @@ namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
                 , 3);
             frmStreetTest.ShowDialog();
             _Refresh();
+        }
+
+        private void tsmShowApplicationDetails_Click(object sender, EventArgs e)
+        {
+            int LDLAppID = Convert.ToInt32(dgvApplications.CurrentRow.Cells[0].Value);
+            frmShowApplicationDetails showApplicationDetails =
+                new frmShowApplicationDetails(LDLAppID);
+            showApplicationDetails.ShowDialog();
         }
     }
 }

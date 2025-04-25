@@ -31,6 +31,10 @@
             this.pbTestTypePicture = new System.Windows.Forms.PictureBox();
             this.lblTestType = new System.Windows.Forms.Label();
             this.gbTestType = new System.Windows.Forms.GroupBox();
+            this.lblTestID = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
             this.lblFees = new System.Windows.Forms.Label();
             this.lblTrial = new System.Windows.Forms.Label();
             this.lblFullName = new System.Windows.Forms.Label();
@@ -48,19 +52,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.lblTestID = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbTestTypePicture)).BeginInit();
             this.gbTestType.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // pbTestTypePicture
@@ -114,7 +114,47 @@
             this.gbTestType.Size = new System.Drawing.Size(606, 371);
             this.gbTestType.TabIndex = 37;
             this.gbTestType.TabStop = false;
-            this.gbTestType.Text = "Street Test";
+            this.gbTestType.Text = "Test";
+            // 
+            // lblTestID
+            // 
+            this.lblTestID.AutoSize = true;
+            this.lblTestID.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTestID.Location = new System.Drawing.Point(191, 322);
+            this.lblTestID.Name = "lblTestID";
+            this.lblTestID.Size = new System.Drawing.Size(39, 28);
+            this.lblTestID.TabIndex = 74;
+            this.lblTestID.Text = "???";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::FrontEnd.Properties.Resources.Number_32;
+            this.pictureBox6.Location = new System.Drawing.Point(137, 322);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox6.TabIndex = 73;
+            this.pictureBox6.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(51, 322);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(79, 28);
+            this.label8.TabIndex = 72;
+            this.label8.Text = "Test ID:";
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Location = new System.Drawing.Point(191, 227);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(39, 28);
+            this.lblDate.TabIndex = 71;
+            this.lblDate.Text = "???";
             // 
             // lblFees
             // 
@@ -286,46 +326,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "D.L.App.ID:";
             // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(191, 227);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(39, 28);
-            this.lblDate.TabIndex = 71;
-            this.lblDate.Text = "???";
-            // 
-            // lblTestID
-            // 
-            this.lblTestID.AutoSize = true;
-            this.lblTestID.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTestID.Location = new System.Drawing.Point(191, 322);
-            this.lblTestID.Name = "lblTestID";
-            this.lblTestID.Size = new System.Drawing.Size(39, 28);
-            this.lblTestID.TabIndex = 74;
-            this.lblTestID.Text = "???";
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::FrontEnd.Properties.Resources.Number_32;
-            this.pictureBox6.Location = new System.Drawing.Point(137, 322);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox6.TabIndex = 73;
-            this.pictureBox6.TabStop = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(51, 322);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(79, 28);
-            this.label8.TabIndex = 72;
-            this.label8.Text = "Test ID:";
-            // 
             // TestInfoController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -339,13 +339,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbTestTypePicture)).EndInit();
             this.gbTestType.ResumeLayout(false);
             this.gbTestType.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

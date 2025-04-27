@@ -195,5 +195,15 @@ namespace DataAccesLayer
             }
             return isFound;
         }
+
+
+        public static bool Delete(int ApplicationID)
+        {
+            int RowAffected = 0;
+            SqlConnection connection = new SqlConnection(clsDataConnection.connection_string);
+            string query = "delete from Applications where ApplicationID=@ApplicationID";
+            SqlCommand command = new SqlCommand(query, connection);
+
+        }
     }
 }

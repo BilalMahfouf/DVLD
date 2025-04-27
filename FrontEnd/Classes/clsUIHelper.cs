@@ -115,7 +115,17 @@ namespace FrontEnd.Classes
             }
         }
 
-        
+       public  static void ShowErrorMessage()
+        {
+            MessageBox.Show("Can't Perform this operation", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public static void ShowNotImplementedYetMessage()
+        {
+            MessageBox.Show("This Feature is not implemented yet", "",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
 
 
 

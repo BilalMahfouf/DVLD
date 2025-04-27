@@ -77,6 +77,11 @@ namespace BusinessLogicLayer
             return clsLicenseClasses.Find(licenseClassID).ClassName;
         }
 
+        public static decimal GetLicenseClassFees(int LicenseClassID)
+        {
+            return clsLicenseClasses.Find(LicenseClassID).ClassMoney;
+        }
+
         
 
     }

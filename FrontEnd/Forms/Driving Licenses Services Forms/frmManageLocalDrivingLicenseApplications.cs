@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogicLayer;
+using FrontEnd.Forms.Driving_Licenses_Services_Forms.TestTypes_Forms;
 using FrontEnd.Forms.Tests_forms;
 
 namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
@@ -216,38 +218,79 @@ namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
                         tsmScheduleStreetTest.Enabled = true;
                         break;
                     }
-                    
+                case 3:
+                    tsmSechduleTests.Enabled = false;
+                    break;
+
             }
 
 
         }
 
-        private void _SetcmtForCancelledApp()
+        private void _SetcmtForCancelledAndCompletedApp()
         {
-            if (dgvApplications.CurrentRow.Cells[6].Value.ToString() == "Cancelled")
+            string ApplicationStatus = dgvApplications.CurrentRow.Cells[6].Value.ToString();
+            if (ApplicationStatus == "Cancelled" || ApplicationStatus=="Completed")
             {
                 tsmCancel.Enabled = false;
                 tsmEdit.Enabled = false;
                 tsmDelete.Enabled = false;
                 tsmIssueDrivingLicenseFirstTime.Enabled = false;
-                tsmShowDrivingLicense.Enabled = false;
+                
             }
             else
             {
                 tsmCancel.Enabled = true;
                 tsmEdit.Enabled = true;
                 tsmDelete.Enabled = true;
-                tsmIssueDrivingLicenseFirstTime.Enabled = true;
-                tsmShowDrivingLicense.Enabled = true;
+                
             }
         }
 
+        private void SetcmtForIssueDrivingLicense()
+        {
+            int LDLAppID = Convert.ToInt32(dgvApplications.CurrentRow.Cells[0].Value);
+            int ApplicationID = clsManageLocalDrivingApplications.
+                GetApplicationIDFromLDLApplicationID(LDLAppID);
+            int LicenseClassID = clsLicenseClasses.GetLicenseClassID
+                (dgvApplications.CurrentRow.Cells[1].Value.ToString());
+            if (clsLicense.IsExistByApplicationIDAndLicenseClassID(ApplicationID, LicenseClassID))
+            {
+                tsmIssueDrivingLicenseFirstTime.Enabled=false;
+             
+            }
+            if (Convert.ToInt32(dgvApplications.CurrentRow.Cells[5].Value)==3)
+            {
+                tsmIssueDrivingLicenseFirstTime.Enabled = true;
+            }
+            else tsmIssueDrivingLicenseFirstTime.Enabled = false;
+        }
+
+        private void SetcmtForShowDrivingLicense()
+        {
+            int LDLAppID = Convert.ToInt32(dgvApplications.CurrentRow.Cells[0].Value);
+            int ApplicationID = clsManageLocalDrivingApplications.
+                GetApplicationIDFromLDLApplicationID(LDLAppID);
+            int LicenseClassID = clsLicenseClasses.GetLicenseClassID
+                (dgvApplications.CurrentRow.Cells[1].Value.ToString());
+            if (clsLicense.IsExistByApplicationIDAndLicenseClassID(ApplicationID, LicenseClassID))
+            {
+                tsmShowDrivingLicense.Enabled=true;
+                return;
+            }
+            tsmShowDrivingLicense.Enabled = false;
+        }
+
+        
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
             _SetTestType();
-            _SetcmtForCancelledApp();
+            SetcmtForIssueDrivingLicense();
+            _SetcmtForCancelledAndCompletedApp();
+            SetcmtForShowDrivingLicense();
         }
 
+        
         
 
         private void tsmScheduleWrittenTest_Click(object sender, EventArgs e)
@@ -276,6 +319,30 @@ namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
             frmShowApplicationDetails showApplicationDetails =
                 new frmShowApplicationDetails(LDLAppID);
             showApplicationDetails.ShowDialog();
+        }
+
+        private void tsmIssueDrivingLicenseFirstTime_Click(object sender, EventArgs e)
+        {
+            int LDLAppID = Convert.ToInt32(dgvApplications.CurrentRow.Cells[0].Value);
+            frmIssueDriverLicenseForFirstTime issueDriverLicenseForFirstTime=
+                new frmIssueDriverLicenseForFirstTime(LDLAppID);
+            issueDriverLicenseForFirstTime.ShowDialog();
+            _Refresh();
+        }
+
+        private void tsmShowDrivingLicense_Click(object sender, EventArgs e)
+        {
+            int LDLAppID = Convert.ToInt32(dgvApplications.CurrentRow.Cells[0].Value);
+            int ApplicationID=clsManageLocalDrivingApplications.GetApplicationIDFromLDLApplicationID(LDLAppID);
+            int LicenseID=clsLicense.GetLicenseIDByApplicationID(ApplicationID);
+            frmShowLicenseInfo showLicenseInfo =
+                new frmShowLicenseInfo(LicenseID);
+            showLicenseInfo.ShowDialog();
+        }
+
+        private void tsmShowPersonLicenseHistory_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Not Implemented Yet", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
     }
 }

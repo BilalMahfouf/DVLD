@@ -76,6 +76,7 @@
             this.Controls.Add(this.personInfoController1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmPersonInfo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPersonInfo";
             this.Load += new System.EventHandler(this.frmPersonInfo_Load);
             this.ResumeLayout(false);

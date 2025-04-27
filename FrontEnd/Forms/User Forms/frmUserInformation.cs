@@ -19,7 +19,6 @@ namespace FrontEnd.Forms.User_Forms
           
             this._UserID = UserID;
         }
-        private int _PersonID;
         private int _UserID;
 
         private void frmUserInformation_Load(object sender, EventArgs e)

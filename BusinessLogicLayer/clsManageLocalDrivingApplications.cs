@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Security.Permissions;
@@ -101,6 +102,12 @@ namespace BusinessLogicLayer
         {
             int applicationID = GetApplicationIDFromLDLApplicationID(LDLApplicationID);
             return clsApplication.CancelApplication(applicationID);
+        }
+
+        public static int GetPersonIDFromLicenseID(int LicenseID)
+        {
+            int DriverID = clsLicense.Find(LicenseID).DriverID;
+            return clsDriver.Find(DriverID).PersonID;
         }
 
     }

@@ -20,7 +20,7 @@ namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
         public frmNewOrEditDrivingLicense_Local(int LocalDrivingLicenseApplicationID)
         {
             InitializeComponent();
-            findUserController1.SendPersonID += frmNewDrivingLicense_SendPersonID;
+            findPersonController1.SendPersonID += frmNewDrivingLicense_SendPersonID;
             _LocalDrivingLicenseApplicationID= LocalDrivingLicenseApplicationID;
         }
 
@@ -57,7 +57,7 @@ namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
             if (_LocalDrivingLicenseApplicationID > 0)
             {
                 _LoadApplicationInfo();
-                findUserController1.Enabled = false;
+                findPersonController1.Enabled = false;
                 pApplicationInfo.Enabled = true;
                 btnSave.Enabled = true;
                 btnNext.Enabled = true;
@@ -67,7 +67,7 @@ namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
                 _LocalDrivingLicenseApplication = null;
                 lblMode.Text = "New Local Driving License";
                 _Mode = enMode.AddNew;
-                findUserController1.Enabled = true;
+                findPersonController1.Enabled = true;
             }
         }
 

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using BusinessLogicLayer;
 using FrontEnd.Classes;
 using FrontEnd.Forms.ApplicationTypes_Forms;
+using FrontEnd.Forms.Drivers_Forms;
 using FrontEnd.Forms.Driving_Licenses_Services_Forms;
 using FrontEnd.Forms.TestTypes_Forms;
 using FrontEnd.Forms.User_Forms;
@@ -86,6 +87,12 @@ namespace FrontEnd.Forms
         {
             frmManageLocalDrivingLicenseApplications frm = new frmManageLocalDrivingLicenseApplications();
             frm.ShowDialog();
+        }
+
+        private void driversToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDrivers frmDrivers = new frmDrivers();
+            frmDrivers.ShowDialog();
         }
     }
 }

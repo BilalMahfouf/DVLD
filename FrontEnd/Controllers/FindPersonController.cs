@@ -77,6 +77,8 @@ namespace FrontEnd.Controllers
             }
             else
             {
+                MessageBox.Show("This Person Don't Exist", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 SendPersonID?.Invoke(this, -1);
             }
         }

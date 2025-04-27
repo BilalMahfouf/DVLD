@@ -208,6 +208,7 @@
             this.tsmIssueDrivingLicenseFirstTime.Name = "tsmIssueDrivingLicenseFirstTime";
             this.tsmIssueDrivingLicenseFirstTime.Size = new System.Drawing.Size(308, 38);
             this.tsmIssueDrivingLicenseFirstTime.Text = "Issue Driving License (First Time)";
+            this.tsmIssueDrivingLicenseFirstTime.Click += new System.EventHandler(this.tsmIssueDrivingLicenseFirstTime_Click);
             // 
             // toolStripSeparator4
             // 
@@ -221,6 +222,7 @@
             this.tsmShowDrivingLicense.Name = "tsmShowDrivingLicense";
             this.tsmShowDrivingLicense.Size = new System.Drawing.Size(308, 38);
             this.tsmShowDrivingLicense.Text = "Show Driving License";
+            this.tsmShowDrivingLicense.Click += new System.EventHandler(this.tsmShowDrivingLicense_Click);
             // 
             // toolStripSeparator5
             // 
@@ -234,6 +236,7 @@
             this.tsmShowPersonLicenseHistory.Name = "tsmShowPersonLicenseHistory";
             this.tsmShowPersonLicenseHistory.Size = new System.Drawing.Size(308, 38);
             this.tsmShowPersonLicenseHistory.Text = "Show Person License History";
+            this.tsmShowPersonLicenseHistory.Click += new System.EventHandler(this.tsmShowPersonLicenseHistory_Click);
             // 
             // mtbSearch
             // 

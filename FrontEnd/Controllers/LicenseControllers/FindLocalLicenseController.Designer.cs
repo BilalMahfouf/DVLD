@@ -33,8 +33,8 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.mtbLicenseID = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.licenseInfoController1 = new FrontEnd.Controllers.LicenseControllers.LicenseInfoController();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.licenseInfoController1 = new FrontEnd.Controllers.LicenseControllers.LicenseInfoController();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -82,17 +82,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "License ID:";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // licenseInfoController1
             // 
             this.licenseInfoController1.LicenseID = 0;
             this.licenseInfoController1.Location = new System.Drawing.Point(0, 121);
             this.licenseInfoController1.Name = "licenseInfoController1";
-            this.licenseInfoController1.Size = new System.Drawing.Size(1238, 471);
+            this.licenseInfoController1.Size = new System.Drawing.Size(1238, 404);
             this.licenseInfoController1.TabIndex = 2;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
             // 
             // FindLocalLicenseController
             // 
@@ -101,7 +101,7 @@
             this.Controls.Add(this.licenseInfoController1);
             this.Controls.Add(this.groupBox1);
             this.Name = "FindLocalLicenseController";
-            this.Size = new System.Drawing.Size(1239, 589);
+            this.Size = new System.Drawing.Size(1239, 520);
             this.Load += new System.EventHandler(this.FindLocalLicenseController_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

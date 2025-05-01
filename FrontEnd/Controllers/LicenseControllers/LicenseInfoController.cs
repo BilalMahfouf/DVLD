@@ -31,7 +31,7 @@ namespace FrontEnd.Controllers.LicenseControllers
                 clsPerson Person = clsPerson.Find(PersonID);
                 lblGender.Text = Person.Gender == 0 ? "Male" : "Female";
                 lblNantionalNo.Text = Person.NationalNo;
-                lblIssueDate.Text=License.IssueDate.ToString();
+                lblIssueDate.Text=License.IssueDate.ToString("dd/MM/yyyy");
                 lblIssueReason.Text = clsApplicationType.GetApplicationTypeName(License.IssueReason);
                 if (License.Notes=="")
                 {
@@ -42,9 +42,9 @@ namespace FrontEnd.Controllers.LicenseControllers
                     lblNotes.Text = License.Notes;
                 }
                 lblIsActive.Text = License.IsActive == true ? "Yes" : "No";
-                lblDateOfBirth.Text=Person.DateOfBirth.ToString();
+                lblDateOfBirth.Text=Person.DateOfBirth.ToString("dd/MM/yyyy");
                 lblDriverID.Text = License.DriverID.ToString();
-                lblExpirationDate.Text = License.ExpirationDate.ToString();
+                lblExpirationDate.Text = License.ExpirationDate.ToString("dd/MM/yyyy");
                 lblIsDetained.Text = "No";// implement this later
                 if(File.Exists(Person.ImagePath))
                 {

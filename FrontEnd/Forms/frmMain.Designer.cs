@@ -153,6 +153,7 @@
             this.tsmRenewDrivingLicense.Name = "tsmRenewDrivingLicense";
             this.tsmRenewDrivingLicense.Size = new System.Drawing.Size(513, 38);
             this.tsmRenewDrivingLicense.Text = "Renew Driving License";
+            this.tsmRenewDrivingLicense.Click += new System.EventHandler(this.tsmRenewDrivingLicense_Click);
             // 
             // toolStripSeparator1
             // 

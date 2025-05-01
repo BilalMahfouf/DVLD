@@ -258,6 +258,12 @@
     <Compile Include="Forms\Driving Licenses Services Forms\TestTypes Forms\frmManageTestTypes.Designer.cs">
       <DependentUpon>frmManageTestTypes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Renew Driving License Forms\frmRenewDrivingLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Renew Driving License Forms\frmRenewDrivingLicense.Designer.cs">
+      <DependentUpon>frmRenewDrivingLicense.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\User Forms\frmAddOrEditUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -388,6 +394,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Driving Licenses Services Forms\TestTypes Forms\frmManageTestTypes.resx">
       <DependentUpon>frmManageTestTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Renew Driving License Forms\frmRenewDrivingLicense.resx">
+      <DependentUpon>frmRenewDrivingLicense.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\User Forms\frmAddOrEditUser.resx">
       <DependentUpon>frmAddOrEditUser.cs</DependentUpon>

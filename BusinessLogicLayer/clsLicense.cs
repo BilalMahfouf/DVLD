@@ -182,7 +182,11 @@ namespace BusinessLogicLayer
             return clsLicensesData.GetDriverLicenseHistory(DriverID);
         }
 
-
+        public static bool IsLicenseExpired(int LicenseID)
+        {
+            DateTime ExpirationDate = clsLicense.Find(LicenseID).ExpirationDate;
+            return ExpirationDate <= DateTime.Now;
+        }
 
     }
 }

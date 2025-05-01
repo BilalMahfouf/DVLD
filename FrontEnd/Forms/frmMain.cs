@@ -13,6 +13,7 @@ using FrontEnd.Forms.ApplicationTypes_Forms;
 using FrontEnd.Forms.Drivers_Forms;
 using FrontEnd.Forms.Driving_Licenses_Services_Forms;
 using FrontEnd.Forms.International_License_Forms;
+using FrontEnd.Forms.Renew_Driving_License_Forms;
 using FrontEnd.Forms.TestTypes_Forms;
 using FrontEnd.Forms.User_Forms;
 
@@ -108,6 +109,13 @@ namespace FrontEnd.Forms
             frmAddNewInternationalDrivingLicense newInternationalDrivingLicense
                 =new frmAddNewInternationalDrivingLicense();
             newInternationalDrivingLicense.ShowDialog();
+        }
+
+        private void tsmRenewDrivingLicense_Click(object sender, EventArgs e)
+        {
+            frmRenewDrivingLicense renewDrivingLicense
+                = new frmRenewDrivingLicense();
+            renewDrivingLicense.ShowDialog();
         }
     }
 }

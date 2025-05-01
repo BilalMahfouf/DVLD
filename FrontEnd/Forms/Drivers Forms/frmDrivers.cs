@@ -52,15 +52,19 @@ namespace FrontEnd.Forms.Drivers_Forms
             clsUIHelper.ShowNotImplementedYetMessage();
         }
 
-        private void tsmShowPersonLicenseHistory_Click(object sender, EventArgs e)
-        {
-            clsUIHelper.ShowNotImplementedYetMessage();
-
-        }
+        
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void tsmShowPersonLicenseHistory_Click(object sender, EventArgs e)
+        {
+            int DriverID = Convert.ToInt32(dgvDrivers.CurrentRow.Cells[0].Value);
+            frmDriverLicenseHistory driverLicenseHistory
+                = new frmDriverLicenseHistory(DriverID);
+            driverLicenseHistory.ShowDialog();
         }
     }
 }

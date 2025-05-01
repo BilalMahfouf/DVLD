@@ -177,7 +177,12 @@ namespace BusinessLogicLayer
             return clsLicense.FindByApplicationID(ApplicationID).LicenseID;
         }
 
-       
+        public static DataTable GetDriverLicenseHistory(int DriverID)
+        {
+            return clsLicensesData.GetDriverLicenseHistory(DriverID);
+        }
+
+
 
     }
 }

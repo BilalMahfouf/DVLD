@@ -127,6 +127,11 @@ namespace FrontEnd.Classes
                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
+        public static string GetCurrentDate()
+        {
+            return DateTime.Now.ToString("dd/MM/yyyy");
+        }
+
 
 
     }

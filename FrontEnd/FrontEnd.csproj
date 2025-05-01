@@ -60,6 +60,12 @@
     <Compile Include="Controllers\Application Controllers\ApplicationBasicInfoController.Designer.cs">
       <DependentUpon>ApplicationBasicInfoController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\Application Controllers\ApplicationInfo_NewInternationalDLApplicationController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controllers\Application Controllers\ApplicationInfo_NewInternationalDLApplicationController.Designer.cs">
+      <DependentUpon>ApplicationInfo_NewInternationalDLApplicationController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\Application Controllers\DrivingLicenseApplicationInfoCnotroller.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -71,6 +77,24 @@
     </Compile>
     <Compile Include="Controllers\FindPersonController.Designer.cs">
       <DependentUpon>FindPersonController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\LicenseControllers\DriverLicensesHistoryController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controllers\LicenseControllers\DriverLicensesHistoryController.Designer.cs">
+      <DependentUpon>DriverLicensesHistoryController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\LicenseControllers\FindLocalLicenseController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controllers\LicenseControllers\FindLocalLicenseController.Designer.cs">
+      <DependentUpon>FindLocalLicenseController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\LicenseControllers\InternationalLicenseInfoController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controllers\LicenseControllers\InternationalLicenseInfoController.Designer.cs">
+      <DependentUpon>InternationalLicenseInfoController.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\LicenseControllers\LicenseInfoController.cs">
       <SubType>UserControl</SubType>
@@ -114,6 +138,12 @@
     <Compile Include="Forms\ApplicationTypes Forms\frmManageApplicationTypes.Designer.cs">
       <DependentUpon>frmManageApplicationTypes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Drivers Forms\frmDriverLicenseHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Drivers Forms\frmDriverLicenseHistory.Designer.cs">
+      <DependentUpon>frmDriverLicenseHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Drivers Forms\frmDrivers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +185,24 @@
     </Compile>
     <Compile Include="Forms\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\International License Forms\frmAddNewInternationalDrivingLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\International License Forms\frmAddNewInternationalDrivingLicense.Designer.cs">
+      <DependentUpon>frmAddNewInternationalDrivingLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\International License Forms\frmManageInternationalLicenseApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\International License Forms\frmManageInternationalLicenseApplication.Designer.cs">
+      <DependentUpon>frmManageInternationalLicenseApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\International License Forms\frmShowInternationalLicenseInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\International License Forms\frmShowInternationalLicenseInfo.Designer.cs">
+      <DependentUpon>frmShowInternationalLicenseInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Person Forms\frmAddOrEditPerson.cs">
       <SubType>Form</SubType>
@@ -242,11 +290,23 @@
     <EmbeddedResource Include="Controllers\Application Controllers\ApplicationBasicInfoController.resx">
       <DependentUpon>ApplicationBasicInfoController.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\Application Controllers\ApplicationInfo_NewInternationalDLApplicationController.resx">
+      <DependentUpon>ApplicationInfo_NewInternationalDLApplicationController.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controllers\Application Controllers\DrivingLicenseApplicationInfoCnotroller.resx">
       <DependentUpon>DrivingLicenseApplicationInfoCnotroller.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controllers\FindPersonController.resx">
       <DependentUpon>FindPersonController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\LicenseControllers\DriverLicensesHistoryController.resx">
+      <DependentUpon>DriverLicensesHistoryController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\LicenseControllers\FindLocalLicenseController.resx">
+      <DependentUpon>FindLocalLicenseController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\LicenseControllers\InternationalLicenseInfoController.resx">
+      <DependentUpon>InternationalLicenseInfoController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controllers\LicenseControllers\LicenseInfoController.resx">
       <DependentUpon>LicenseInfoController.cs</DependentUpon>
@@ -269,6 +329,9 @@
     <EmbeddedResource Include="Forms\ApplicationTypes Forms\frmManageApplicationTypes.resx">
       <DependentUpon>frmManageApplicationTypes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Drivers Forms\frmDriverLicenseHistory.resx">
+      <DependentUpon>frmDriverLicenseHistory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Drivers Forms\frmDrivers.resx">
       <DependentUpon>frmDrivers.cs</DependentUpon>
     </EmbeddedResource>
@@ -289,6 +352,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\International License Forms\frmAddNewInternationalDrivingLicense.resx">
+      <DependentUpon>frmAddNewInternationalDrivingLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\International License Forms\frmManageInternationalLicenseApplication.resx">
+      <DependentUpon>frmManageInternationalLicenseApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\International License Forms\frmShowInternationalLicenseInfo.resx">
+      <DependentUpon>frmShowInternationalLicenseInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Person Forms\frmAddOrEditPerson.resx">
       <DependentUpon>frmAddOrEditPerson.cs</DependentUpon>

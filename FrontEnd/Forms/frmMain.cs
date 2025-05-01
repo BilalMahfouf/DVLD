@@ -12,6 +12,7 @@ using FrontEnd.Classes;
 using FrontEnd.Forms.ApplicationTypes_Forms;
 using FrontEnd.Forms.Drivers_Forms;
 using FrontEnd.Forms.Driving_Licenses_Services_Forms;
+using FrontEnd.Forms.International_License_Forms;
 using FrontEnd.Forms.TestTypes_Forms;
 using FrontEnd.Forms.User_Forms;
 
@@ -93,6 +94,20 @@ namespace FrontEnd.Forms
         {
             frmDrivers frmDrivers = new frmDrivers();
             frmDrivers.ShowDialog();
+        }
+
+        private void tsmInternationalLicenseApplication_Click(object sender, EventArgs e)
+        {
+            frmManageInternationalLicenseApplication internationalLicenseApplication
+                = new frmManageInternationalLicenseApplication();
+            internationalLicenseApplication.ShowDialog();
+        }
+
+        private void tsmInternationalLicense_Click(object sender, EventArgs e)
+        {
+            frmAddNewInternationalDrivingLicense newInternationalDrivingLicense
+                =new frmAddNewInternationalDrivingLicense();
+            newInternationalDrivingLicense.ShowDialog();
         }
     }
 }

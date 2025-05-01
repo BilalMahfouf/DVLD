@@ -164,11 +164,11 @@ namespace BusinessLogicLayer
                 return string.Empty;          
         }
 
-        public static int AddNewRetakeTestApplication(int ApplicantPersonID,DateTime
-            ApplicationDate,byte ApplicationStatus,DateTime LastStatusDate,decimal PaidFees,
-            int CreatedByUserID)
+        public static int AddNewRetakeTestApplication(int ApplicantPersonID, DateTime
+             ApplicationDate, byte ApplicationStatus, DateTime LastStatusDate, decimal PaidFees,
+             int CreatedByUserID)
         {
-            clsApplication newRetakeTestApplication=new clsApplication();
+            clsApplication newRetakeTestApplication = new clsApplication();
             newRetakeTestApplication.ApplicantPersonID = ApplicantPersonID;
             newRetakeTestApplication.ApplicationDate = ApplicationDate;
             newRetakeTestApplication.ApplicationStatus = ApplicationStatus;
@@ -177,7 +177,7 @@ namespace BusinessLogicLayer
             newRetakeTestApplication.CreatedByUserID = CreatedByUserID;
             // 7 is the ApplicationTypeID for Retaketestapp
             newRetakeTestApplication.ApplicationTypeID = 7;
-            if( newRetakeTestApplication.Save())
+            if (newRetakeTestApplication.Save())
             {
                 return newRetakeTestApplication.ApplicationID;
             }
@@ -189,6 +189,28 @@ namespace BusinessLogicLayer
             // 3 is application status completed
             return clsApplicationsData.Update(ApplicationID, 3, DateTime.Now);
         }
+
+        public static int AddNewInternationalLicenseApplication(int ApplicantPersonID,
+            DateTime ApplicationDate, byte ApplicationStatus, DateTime LastStatusDate,
+             int CreatedByUserID)
+        {
+            // 6 is the ApplicationTypeID for International License
+            int ApplicationType = 6;
+            clsApplication newInternationalLicenseApplication = new clsApplication();
+            newInternationalLicenseApplication.ApplicantPersonID = ApplicantPersonID;
+            newInternationalLicenseApplication.ApplicationDate = ApplicationDate;
+            newInternationalLicenseApplication.ApplicationStatus = ApplicationStatus;
+            newInternationalLicenseApplication.LastStatusDate = LastStatusDate;
+            newInternationalLicenseApplication.PaidFees = clsApplicationType.GetApplicationFee(ApplicationType);
+            newInternationalLicenseApplication.CreatedByUserID = CreatedByUserID;
+
+            newInternationalLicenseApplication.ApplicationTypeID = ApplicationType;
+            if (newInternationalLicenseApplication.Save())
+            {
+                return newInternationalLicenseApplication.ApplicationID;
+            }
+            return 0;
+        }   
 
 
     }

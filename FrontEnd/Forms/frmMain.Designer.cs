@@ -41,7 +41,6 @@
             this.tsmReplacementForLostorDamagedLicense = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmReleaseDetainedDrivingLicense = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmRetakeTest = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmManageApplications = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmLocalDrivingLicenseApplication = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmInternationalLicenseApplication = new System.Windows.Forms.ToolStripMenuItem();
@@ -106,8 +105,7 @@
             this.toolStripSeparator1,
             this.tsmReplacementForLostorDamagedLicense,
             this.toolStripSeparator2,
-            this.tsmReleaseDetainedDrivingLicense,
-            this.tsmRetakeTest});
+            this.tsmReleaseDetainedDrivingLicense});
             this.tsmDrivingLicensesServices.Image = global::FrontEnd.Properties.Resources.Driver_License_48;
             this.tsmDrivingLicensesServices.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsmDrivingLicensesServices.Name = "tsmDrivingLicensesServices";
@@ -145,6 +143,7 @@
             this.tsmInternationalLicense.Name = "tsmInternationalLicense";
             this.tsmInternationalLicense.Size = new System.Drawing.Size(273, 38);
             this.tsmInternationalLicense.Text = "International License";
+            this.tsmInternationalLicense.Click += new System.EventHandler(this.tsmInternationalLicense_Click);
             // 
             // tsmRenewDrivingLicense
             // 
@@ -183,15 +182,6 @@
             this.tsmReleaseDetainedDrivingLicense.Size = new System.Drawing.Size(513, 38);
             this.tsmReleaseDetainedDrivingLicense.Text = "Release Detained Driving License";
             // 
-            // tsmRetakeTest
-            // 
-            this.tsmRetakeTest.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmRetakeTest.Image = global::FrontEnd.Properties.Resources.Retake_Test_32;
-            this.tsmRetakeTest.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsmRetakeTest.Name = "tsmRetakeTest";
-            this.tsmRetakeTest.Size = new System.Drawing.Size(513, 38);
-            this.tsmRetakeTest.Text = "Retake Test";
-            // 
             // tsmManageApplications
             // 
             this.tsmManageApplications.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -221,6 +211,7 @@
             this.tsmInternationalLicenseApplication.Name = "tsmInternationalLicenseApplication";
             this.tsmInternationalLicenseApplication.Size = new System.Drawing.Size(427, 38);
             this.tsmInternationalLicenseApplication.Text = "International License Application";
+            this.tsmInternationalLicenseApplication.Click += new System.EventHandler(this.tsmInternationalLicenseApplication_Click);
             // 
             // tsmDetainLicenses
             // 
@@ -388,7 +379,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmRenewDrivingLicense;
         private System.Windows.Forms.ToolStripMenuItem tsmReplacementForLostorDamagedLicense;
         private System.Windows.Forms.ToolStripMenuItem tsmReleaseDetainedDrivingLicense;
-        private System.Windows.Forms.ToolStripMenuItem tsmRetakeTest;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem tsmLocalLincense;

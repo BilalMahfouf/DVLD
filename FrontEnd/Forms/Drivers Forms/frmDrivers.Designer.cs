@@ -30,19 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvDrivers = new System.Windows.Forms.DataGridView();
-            this.lblRecords = new System.Windows.Forms.Label();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmShowPersonInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmIssueInternationalLicense = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmShowPersonLicenseHistory = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblRecords = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDrivers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvDrivers
@@ -59,6 +59,58 @@
             this.dgvDrivers.RowTemplate.Height = 24;
             this.dgvDrivers.Size = new System.Drawing.Size(1452, 488);
             this.dgvDrivers.TabIndex = 1;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmShowPersonInfo,
+            this.toolStripSeparator1,
+            this.tsmIssueInternationalLicense,
+            this.toolStripSeparator2,
+            this.tsmShowPersonLicenseHistory});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(328, 158);
+            // 
+            // tsmShowPersonInfo
+            // 
+            this.tsmShowPersonInfo.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmShowPersonInfo.Image = global::FrontEnd.Properties.Resources.PersonDetails_32;
+            this.tsmShowPersonInfo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsmShowPersonInfo.Name = "tsmShowPersonInfo";
+            this.tsmShowPersonInfo.Size = new System.Drawing.Size(327, 38);
+            this.tsmShowPersonInfo.Text = "Show Person Info";
+            this.tsmShowPersonInfo.Click += new System.EventHandler(this.tsmShowPersonInfo_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(324, 6);
+            // 
+            // tsmIssueInternationalLicense
+            // 
+            this.tsmIssueInternationalLicense.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmIssueInternationalLicense.Image = global::FrontEnd.Properties.Resources.International_32;
+            this.tsmIssueInternationalLicense.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsmIssueInternationalLicense.Name = "tsmIssueInternationalLicense";
+            this.tsmIssueInternationalLicense.Size = new System.Drawing.Size(327, 38);
+            this.tsmIssueInternationalLicense.Text = "Issue International License";
+            this.tsmIssueInternationalLicense.Click += new System.EventHandler(this.tsmIssueInternationalLicense_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(324, 6);
+            // 
+            // tsmShowPersonLicenseHistory
+            // 
+            this.tsmShowPersonLicenseHistory.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmShowPersonLicenseHistory.Image = global::FrontEnd.Properties.Resources.PersonLicenseHistory_32;
+            this.tsmShowPersonLicenseHistory.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsmShowPersonLicenseHistory.Name = "tsmShowPersonLicenseHistory";
+            this.tsmShowPersonLicenseHistory.Size = new System.Drawing.Size(327, 38);
+            this.tsmShowPersonLicenseHistory.Text = "Show Person License  History";
+            this.tsmShowPersonLicenseHistory.Click += new System.EventHandler(this.tsmShowPersonLicenseHistory_Click);
             // 
             // lblRecords
             // 
@@ -105,58 +157,6 @@
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmShowPersonInfo,
-            this.toolStripSeparator1,
-            this.tsmIssueInternationalLicense,
-            this.toolStripSeparator2,
-            this.tsmShowPersonLicenseHistory});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(328, 130);
-            // 
-            // tsmShowPersonInfo
-            // 
-            this.tsmShowPersonInfo.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmShowPersonInfo.Image = global::FrontEnd.Properties.Resources.PersonDetails_32;
-            this.tsmShowPersonInfo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsmShowPersonInfo.Name = "tsmShowPersonInfo";
-            this.tsmShowPersonInfo.Size = new System.Drawing.Size(327, 38);
-            this.tsmShowPersonInfo.Text = "Show Person Info";
-            this.tsmShowPersonInfo.Click += new System.EventHandler(this.tsmShowPersonInfo_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(324, 6);
-            // 
-            // tsmIssueInternationalLicense
-            // 
-            this.tsmIssueInternationalLicense.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmIssueInternationalLicense.Image = global::FrontEnd.Properties.Resources.International_32;
-            this.tsmIssueInternationalLicense.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsmIssueInternationalLicense.Name = "tsmIssueInternationalLicense";
-            this.tsmIssueInternationalLicense.Size = new System.Drawing.Size(327, 38);
-            this.tsmIssueInternationalLicense.Text = "Issue International License";
-            this.tsmIssueInternationalLicense.Click += new System.EventHandler(this.tsmIssueInternationalLicense_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(324, 6);
-            // 
-            // tsmShowPersonLicenseHistory
-            // 
-            this.tsmShowPersonLicenseHistory.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmShowPersonLicenseHistory.Image = global::FrontEnd.Properties.Resources.PersonLicenseHistory_32;
-            this.tsmShowPersonLicenseHistory.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsmShowPersonLicenseHistory.Name = "tsmShowPersonLicenseHistory";
-            this.tsmShowPersonLicenseHistory.Size = new System.Drawing.Size(327, 38);
-            this.tsmShowPersonLicenseHistory.Text = "Show Person License  History";
-            this.tsmShowPersonLicenseHistory.Click += new System.EventHandler(this.tsmShowPersonLicenseHistory_Click);
-            // 
             // frmDrivers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -173,8 +173,8 @@
             this.Text = "List Drivers";
             this.Load += new System.EventHandler(this.frmDrivers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDrivers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

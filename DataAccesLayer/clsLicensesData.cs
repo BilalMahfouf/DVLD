@@ -202,5 +202,34 @@ namespace DataAccesLayer
             finally { connection.Close(); }
             return isFound;
         }
+
+        public static DataTable GetDriverLicenseHistory(int DriverID)
+        {
+            DataTable dt = new DataTable();
+            SqlConnection connection = new SqlConnection(clsDataConnection.connection_string);
+            string query = @"
+select Licenses.LicenseID,Licenses.ApplicationID,LicenseClasses.ClassName,Licenses.IssueDate,Licenses.ExpirationDate
+,Licenses.IsActive from Licenses
+inner join LicenseClasses on LicenseClasses.LicenseClassID=Licenses.LicenseClass
+where Licenses.DriverID=@DriverID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@DriverID", DriverID);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    dt.Load(reader);
+                }
+                reader.Close();
+            }
+            catch (Exception ex) { }
+            finally { connection.Close(); }
+            return dt;
+        }
+
     }
 }

@@ -117,5 +117,29 @@ namespace FrontEnd.Forms
                 = new frmRenewDrivingLicense();
             renewDrivingLicense.ShowDialog();
         }
+
+        private void tsmReplacementForLostorDamagedLicense_Click(object sender, EventArgs e)
+        {
+            frmReplaceDamagedOrLostDL frmReplaceDamagedOrLostDL
+                = new frmReplaceDamagedOrLostDL();
+            frmReplaceDamagedOrLostDL.ShowDialog();
+        }
+
+        private void tsmManageDetainedLicenses_Click(object sender, EventArgs e)
+        {
+            clsUIHelper.ShowNotImplementedYetMessage();
+        }
+
+        private void tsmDetainLicense_Click(object sender, EventArgs e)
+        {
+            clsUIHelper.ShowNotImplementedYetMessage();
+
+        }
+
+        private void tsmReleaseDetainedLicense_Click(object sender, EventArgs e)
+        {
+            clsUIHelper.ShowNotImplementedYetMessage();
+
+        }
     }
 }

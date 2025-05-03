@@ -168,16 +168,22 @@
     <Compile Include="Forms\Driving Licenses Services Forms\frmNewOrEditDrivingLicense_Local.Designer.cs">
       <DependentUpon>frmNewOrEditDrivingLicense_Local.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Driving Licenses Services Forms\frmReplaceDamagedOrLostDL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Driving Licenses Services Forms\frmReplaceDamagedOrLostDL.Designer.cs">
+      <DependentUpon>frmReplaceDamagedOrLostDL.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Driving Licenses Services Forms\frmShowApplicationDetails.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Driving Licenses Services Forms\frmShowApplicationDetails.Designer.cs">
       <DependentUpon>frmShowApplicationDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Driving Licenses Services Forms\TestTypes Forms\frmShowLicenseInfo.cs">
+    <Compile Include="Forms\Driving Licenses Services Forms\frmShowLicenseInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Driving Licenses Services Forms\TestTypes Forms\frmShowLicenseInfo.Designer.cs">
+    <Compile Include="Forms\Driving Licenses Services Forms\frmShowLicenseInfo.Designer.cs">
       <DependentUpon>frmShowLicenseInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmLogin.cs">
@@ -350,10 +356,13 @@
     <EmbeddedResource Include="Forms\Driving Licenses Services Forms\frmNewOrEditDrivingLicense_Local.resx">
       <DependentUpon>frmNewOrEditDrivingLicense_Local.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Driving Licenses Services Forms\frmReplaceDamagedOrLostDL.resx">
+      <DependentUpon>frmReplaceDamagedOrLostDL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Driving Licenses Services Forms\frmShowApplicationDetails.resx">
       <DependentUpon>frmShowApplicationDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Driving Licenses Services Forms\TestTypes Forms\frmShowLicenseInfo.resx">
+    <EmbeddedResource Include="Forms\Driving Licenses Services Forms\frmShowLicenseInfo.resx">
       <DependentUpon>frmShowLicenseInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmLogin.resx">

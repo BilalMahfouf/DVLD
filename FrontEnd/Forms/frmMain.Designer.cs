@@ -168,6 +168,7 @@
             this.tsmReplacementForLostorDamagedLicense.Name = "tsmReplacementForLostorDamagedLicense";
             this.tsmReplacementForLostorDamagedLicense.Size = new System.Drawing.Size(513, 38);
             this.tsmReplacementForLostorDamagedLicense.Text = "Replacement For Lost or Damaged License";
+            this.tsmReplacementForLostorDamagedLicense.Click += new System.EventHandler(this.tsmReplacementForLostorDamagedLicense_Click);
             // 
             // toolStripSeparator2
             // 
@@ -234,6 +235,7 @@
             this.tsmManageDetainedLicenses.Name = "tsmManageDetainedLicenses";
             this.tsmManageDetainedLicenses.Size = new System.Drawing.Size(365, 38);
             this.tsmManageDetainedLicenses.Text = "Manage Detained Licenses";
+            this.tsmManageDetainedLicenses.Click += new System.EventHandler(this.tsmManageDetainedLicenses_Click);
             // 
             // tsmDetainLicense
             // 
@@ -243,6 +245,7 @@
             this.tsmDetainLicense.Name = "tsmDetainLicense";
             this.tsmDetainLicense.Size = new System.Drawing.Size(365, 38);
             this.tsmDetainLicense.Text = "Detain License";
+            this.tsmDetainLicense.Click += new System.EventHandler(this.tsmDetainLicense_Click);
             // 
             // tsmReleaseDetainedLicense
             // 
@@ -253,6 +256,7 @@
             this.tsmReleaseDetainedLicense.RightToLeftAutoMirrorImage = true;
             this.tsmReleaseDetainedLicense.Size = new System.Drawing.Size(365, 38);
             this.tsmReleaseDetainedLicense.Text = "Release Detained License";
+            this.tsmReleaseDetainedLicense.Click += new System.EventHandler(this.tsmReleaseDetainedLicense_Click);
             // 
             // tsmManageApplicationsTypes
             // 
@@ -349,6 +353,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.menuStrip1);
             this.Name = "frmMain";

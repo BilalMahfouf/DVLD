@@ -103,7 +103,7 @@ namespace DataAccesLayer
                     IsActive = (bool)reader["IsActive"];
                     IssueReason = (byte)reader["IssueReason"];
                     CreatedByUserID = (int)reader["CreatedByUserID"];
-                    if ((string)reader["Notes"] != null)
+                    if (reader["Notes"] != DBNull.Value)
                     {
                         Notes = (string)reader["Notes"];
                     }
@@ -229,6 +229,24 @@ where Licenses.DriverID=@DriverID";
             catch (Exception ex) { }
             finally { connection.Close(); }
             return dt;
+        }
+
+        public static bool Update(int LicesneID, bool IsActive)
+        {
+            int rowsAffected = 0;
+            SqlConnection connection = new SqlConnection(clsDataConnection.connection_string);
+            string query = @"update Licenses set IsActive=@IsActive where LicenseID=@LicenseID";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@LicenseID", LicesneID);
+            command.Parameters.AddWithValue("@IsActive", IsActive);
+            try
+            {
+                connection.Open();
+                 rowsAffected = command.ExecuteNonQuery();
+            }
+            catch (Exception ex) { }
+            finally { connection.Close(); }
+            return rowsAffected > 0;
         }
 
     }

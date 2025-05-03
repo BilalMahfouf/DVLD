@@ -430,6 +430,7 @@
             this.linklblShowLicenseInfo.TabIndex = 78;
             this.linklblShowLicenseInfo.TabStop = true;
             this.linklblShowLicenseInfo.Text = "Show License Info";
+            this.linklblShowLicenseInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblShowLicenseInfo_LinkClicked);
             // 
             // btnRenew
             // 
@@ -444,6 +445,7 @@
             this.btnRenew.TabIndex = 77;
             this.btnRenew.Text = "   Renew";
             this.btnRenew.UseVisualStyleBackColor = false;
+            this.btnRenew.Click += new System.EventHandler(this.btnRenew_Click);
             // 
             // btnClose
             // 

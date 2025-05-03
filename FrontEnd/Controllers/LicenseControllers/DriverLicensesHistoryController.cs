@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogicLayer;
+using FrontEnd.Forms.Driving_Licenses_Services_Forms.TestTypes_Forms;
+using FrontEnd.Forms.International_License_Forms;
 
 namespace FrontEnd.Controllers.LicenseControllers
 {
@@ -78,6 +80,20 @@ namespace FrontEnd.Controllers.LicenseControllers
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void tsmShowDrivingLicenseInfo_Click(object sender, EventArgs e)
+        {
+            int LicenseID = Convert.ToInt32(dgvLocalLicenses.CurrentRow.Cells[0].Value);
+            frmShowLicenseInfo showLicenseInfo= new frmShowLicenseInfo(LicenseID);
+            showLicenseInfo.ShowDialog();
+        }
+
+        private void tsmShowInternationalDrivingLicenseInfo_Click(object sender, EventArgs e)
+        {
+            int inernationalLicenseID = Convert.ToInt32(dgvInternationalLicenses.CurrentRow.Cells[0].Value);
+            frmShowInternationalLicenseInfo showInternationalLicenseInfo = new frmShowInternationalLicenseInfo(inernationalLicenseID);
+            showInternationalLicenseInfo.ShowDialog();
         }
     }
 }

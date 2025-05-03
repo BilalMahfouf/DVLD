@@ -71,7 +71,7 @@ namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
                 int DriverID = GetDriverID(PersonID);
                 if(DriverID == 0)
                 {
-                    clsUIHelper.ShowErrorMessage();
+                    clsUIHelper.ShowErrorMessageForFailOperation();
                     return false;
                 }
                 int licesneClassID = clsLicenseClasses.GetLicenseClassID(
@@ -80,8 +80,9 @@ namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
                 
               decimal PaidFees=clsLicenseClasses.GetLicenseClassFees(licesneClassID);
                 byte IssueReason = Convert.ToByte(Application.ApplicationTypeID);
+                int LicenseAge = clsLicenseClasses.Find(licesneClassID).DefaultValidityLength;
                 int LicenseID = clsLicense.AddNewLicense(ApplicationID, DriverID, licesneClassID,
-                    DateTime.Now, DateTime.Now.AddYears(10), rtbNotes.Text,
+                    DateTime.Now, DateTime.Now.AddYears(LicenseAge), rtbNotes.Text,
                     PaidFees, true, IssueReason, clsCurrentUser.UserID);
                 if (LicenseID>0)
                 {
@@ -93,7 +94,7 @@ namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
                 }
                 else
                 {
-                    clsUIHelper.ShowErrorMessage();
+                    clsUIHelper.ShowErrorMessageForFailOperation();
                 }
             }
             return false;

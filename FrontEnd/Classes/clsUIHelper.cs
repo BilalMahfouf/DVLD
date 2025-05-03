@@ -115,7 +115,7 @@ namespace FrontEnd.Classes
             }
         }
 
-       public  static void ShowErrorMessage()
+       public  static void ShowErrorMessageForFailOperation()
         {
             MessageBox.Show("Can't Perform this operation", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -132,7 +132,24 @@ namespace FrontEnd.Classes
             return DateTime.Now.ToString("dd/MM/yyyy");
         }
 
+        public static void SetFormFullScreenVerticalOnly(Form from)
+        {
+            // this from chatgbt i don't know how it work
+            from.Top = 0; // Move form to top of screen
+            from.Height = Screen.PrimaryScreen.WorkingArea.Height; // Full vertical height
 
+        }
+
+        public static bool ShowErrorMessageForInActiveLicense(int LicenseID)
+        {
+                if (!clsLicense.isActive(LicenseID))
+                {
+                    MessageBox.Show("Selected License is not Active,you can't do any operation on it "
+                        , "Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return true;
+                }
+            return false;
+        }
 
     }
 }

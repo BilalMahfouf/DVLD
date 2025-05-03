@@ -713,7 +713,7 @@ class clsPersonTester
     {
         static void Main()
         {
-        clsTestTypesTest.TestSaveTestType();
+        Console.WriteLine(DateTime.UtcNow.ToString());
         }
 
 

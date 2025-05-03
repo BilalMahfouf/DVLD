@@ -164,6 +164,15 @@ namespace BusinessLogicLayer
                 return string.Empty;          
         }
 
+
+        
+        public static bool CompleteApplication(int ApplicationID)
+        {
+            // 3 is application status completed
+            return clsApplicationsData.Update(ApplicationID, 3, DateTime.Now);
+        }
+
+        // 3/5/2025 to do later delete the repeted functions 
         public static int AddNewRetakeTestApplication(int ApplicantPersonID, DateTime
              ApplicationDate, byte ApplicationStatus, DateTime LastStatusDate, decimal PaidFees,
              int CreatedByUserID)
@@ -182,12 +191,6 @@ namespace BusinessLogicLayer
                 return newRetakeTestApplication.ApplicationID;
             }
             return 0;
-        }
-
-        public static bool CompleteApplication(int ApplicationID)
-        {
-            // 3 is application status completed
-            return clsApplicationsData.Update(ApplicationID, 3, DateTime.Now);
         }
 
         public static int AddNewInternationalLicenseApplication(int ApplicantPersonID,
@@ -211,6 +214,26 @@ namespace BusinessLogicLayer
             }
             return 0;
         }   
+
+        public static int AddNewApplication(int ApplicantPersonID,
+            DateTime ApplicationDate, byte ApplicationStatus, DateTime LastStatusDate,
+             int CreatedByUserID,int ApplicationTypeID)
+        {
+            clsApplication NewApplication = new clsApplication();
+            NewApplication.ApplicantPersonID = ApplicantPersonID;
+            NewApplication.ApplicationDate = ApplicationDate;
+            NewApplication.ApplicationStatus = ApplicationStatus;
+            NewApplication.LastStatusDate = LastStatusDate;
+            NewApplication.PaidFees = clsApplicationType.GetApplicationFee(ApplicationTypeID);
+            NewApplication.CreatedByUserID = CreatedByUserID;
+
+            NewApplication.ApplicationTypeID = ApplicationTypeID;
+            if (NewApplication.Save())
+            {
+                return NewApplication.ApplicationID;
+            }
+            return 0;
+        }
 
 
     }

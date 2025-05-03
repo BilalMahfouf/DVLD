@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccesLayer;
@@ -75,8 +76,7 @@ namespace BusinessLogicLayer
 
         private bool _Update()
         {
-            // not implemented yet
-            return false;
+            return clsLicensesData.Update(this.LicenseID, this.IsActive);
         }
 
         public bool Save()
@@ -167,6 +167,7 @@ namespace BusinessLogicLayer
             NewLicense.CreatedByUserID = createdByUserID;
             if(NewLicense.Save())
             {
+                clsApplication.CompleteApplication(NewLicense.ApplicationID);
                 return NewLicense.LicenseID;
             }
             return 0;
@@ -184,8 +185,33 @@ namespace BusinessLogicLayer
 
         public static bool IsLicenseExpired(int LicenseID)
         {
-            DateTime ExpirationDate = clsLicense.Find(LicenseID).ExpirationDate;
-            return ExpirationDate <= DateTime.Now;
+            var License= Find(LicenseID);
+            if (License!=null)
+            {
+                return License.ExpirationDate <= DateTime.Now;
+            }
+            return false;
+        }
+
+        public static bool isActive(int LicenseID)
+        {
+            var License = Find(LicenseID);
+            if (License != null)
+            {
+                return License.IsActive;
+            }
+            return false;
+        }
+
+        public static bool DesactivateLicense(int LicenseID)
+        {
+            var License = Find(LicenseID);
+            if (License != null)
+            {
+                License.IsActive = false;
+                return License.Save();
+            }
+            return false;
         }
 
     }

@@ -146,7 +146,7 @@
             this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(269, 27);
             this.tbPassword.TabIndex = 10;
-            this.tbPassword.Text = "2501";
+            this.tbPassword.Text = "1234";
             // 
             // frmLogin
             // 

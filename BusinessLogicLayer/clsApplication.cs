@@ -214,7 +214,7 @@ namespace BusinessLogicLayer
             }
             return 0;
         }   
-
+        
         public static int AddNewApplication(int ApplicantPersonID,
             DateTime ApplicationDate, byte ApplicationStatus, DateTime LastStatusDate,
              int CreatedByUserID,int ApplicationTypeID)

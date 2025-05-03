@@ -5,6 +5,15 @@ Overview
 
 The DVLD (Drivers and Vehicles License Department) Management System is a comprehensive solution designed to manage various aspects of driving license administration. The system handles the issuance, renewal, and replacement of driving licenses, including international licenses. It ensures regulatory compliance while providing services to maintain road safety and driver competence.
 
+## Installation
+-     Locate the "DVLD.bak" file in the "Database" folder and restore it to your preferred DBMS.
+-     Download the project from the repository.
+-     Extract the downloaded files to your computer and Run the Project.
+-     Open the solution and right click on the Front End project, then click "set as startup"
+-     Once the project is running, the login screen will appear.
+-     Enter the username as 'Bilal' and the password as '1234' to log in.
+
+
 ## Key Services
 
 -   **New Driving License:** Apply for a new driving license with a fee of $5. Choose from various license categories.
@@ -40,7 +49,7 @@ The system offers robust management features to ensure smooth operations:
 
     -   Handle various license categories with specific requirements and fees.
     -   Modify details such as age requirements, validity periods, and fees.
--   **Detained Licenses Management:**
+-   **Detained Licenses Management:** (not implemented yet )
 
     -   Manage the reservation and release of detained licenses, including fines and reasons for detained.
 
@@ -69,4 +78,4 @@ The system offers robust management features to ensure smooth operations:
 - **Database:** Microsoft SQL Server with ADO.NET
 - **User Interface:** Windows Forms (WinForms)
 
-For any questions or feedback, please contact me at `abdelrahman.m.taymour@gmail.com`.
+For any questions or feedback, please contact me at `billelmh501@gmail.com`.

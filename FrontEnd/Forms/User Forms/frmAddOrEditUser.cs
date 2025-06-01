@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogicLayer;
+using FrontEnd.Classes;
 
 namespace FrontEnd.Forms.User_Forms
 {
@@ -115,7 +116,7 @@ namespace FrontEnd.Forms.User_Forms
                 {
                     return false;
                 }
-                User.Password = tbPassword.Text;
+                User.Password = clsUIHelper.ComputeHash(tbPassword.Text);
                 if(_UserID<0)
                 {
                     User.PersonID = _PersonID;

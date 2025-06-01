@@ -9,6 +9,7 @@ using BusinessLogicLayer;
 using System.IO;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Security.Cryptography;
 
 namespace FrontEnd.Classes
 {
@@ -149,6 +150,23 @@ namespace FrontEnd.Classes
                     return true;
                 }
             return false;
+        }
+
+        public static string ComputeHash(string input)
+        {
+            using (SHA256 sha256= SHA256.Create())
+            {
+                // Compute the hash value from the UTF-8 encoded input string
+                byte[] hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(input));
+
+                // Convert the byte array to a lowercase hexadecimal string
+                StringBuilder HashResult = new StringBuilder();
+                foreach (var b in hashBytes)
+                {
+                    HashResult.Append(b.ToString("x2"));
+                }
+                return HashResult.ToString();
+            }
         }
 
     }

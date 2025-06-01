@@ -35,7 +35,8 @@ namespace FrontEnd.Forms
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            clsUser User = clsUser.Find(tbUserName.Text, tbPassword.Text);
+            string Password= clsUIHelper.ComputeHash(tbPassword.Text);
+            clsUser User = clsUser.Find(tbUserName.Text, Password);
             if (User != null)
             {
                 clsCurrentUser.UserName = User.UserName;

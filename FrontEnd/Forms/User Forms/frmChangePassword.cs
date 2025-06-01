@@ -43,13 +43,13 @@ namespace FrontEnd.Forms.User_Forms
 
         private bool _ValidateCurrentPassword()
         {
-            return _User.Password == tbCurrentPassword.Text;
+            return _User.Password == clsUIHelper.ComputeHash(tbCurrentPassword.Text);
         }
         private bool _SaveChangePassword()
         {
             if (_ValidateCurrentPassword() && tbNewPassword.Text.Equals(tbConfirmPassword.Text)) 
             {
-                _User.Password = tbNewPassword.Text;
+                _User.Password = clsUIHelper.ComputeHash(tbNewPassword.Text);
                 return _User.Save();
             }
             return false;

@@ -68,7 +68,7 @@ namespace FrontEnd.Controllers
                 tbEmail.Text = person.Email;
                 if(File.Exists(person.ImagePath))
                 {
-                    pbPersonPicture.Image=Image.FromFile(person.ImagePath);
+                  //  pbPersonPicture.Image=Image.FromFile(person.ImagePath);
                     pbPersonPicture.ImageLocation = person.ImagePath;
                     linklblRemove.Visible = true;
                 }

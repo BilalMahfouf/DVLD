@@ -37,9 +37,6 @@
             this.tsmShowLicenseDetails = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmShowPersonLicenseHistory = new System.Windows.Forms.ToolStripMenuItem();
             this.pbAddNewInternationalDrivingApplication = new System.Windows.Forms.PictureBox();
-            this.mtbSearch = new System.Windows.Forms.MaskedTextBox();
-            this.cbfilterBy = new System.Windows.Forms.ComboBox();
-            this.lblFilterBy = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblManagePeople = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -96,7 +93,7 @@
             this.tsmShowLicenseDetails,
             this.tsmShowPersonLicenseHistory});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(323, 146);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(323, 118);
             // 
             // tsmShowPersonDetails
             // 
@@ -140,42 +137,6 @@
             this.pbAddNewInternationalDrivingApplication.TabStop = false;
             this.pbAddNewInternationalDrivingApplication.Click += new System.EventHandler(this.pbAddNewInternationalDrivingApplication_Click);
             // 
-            // mtbSearch
-            // 
-            this.mtbSearch.BeepOnError = true;
-            this.mtbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtbSearch.Location = new System.Drawing.Point(371, 313);
-            this.mtbSearch.Name = "mtbSearch";
-            this.mtbSearch.Size = new System.Drawing.Size(185, 38);
-            this.mtbSearch.TabIndex = 24;
-            this.mtbSearch.ValidatingType = typeof(System.DateTime);
-            this.mtbSearch.Visible = false;
-            // 
-            // cbfilterBy
-            // 
-            this.cbfilterBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbfilterBy.FormattingEnabled = true;
-            this.cbfilterBy.Items.AddRange(new object[] {
-            "None",
-            "L.D.L.AppID",
-            "NationalNo",
-            "FullName",
-            "Status"});
-            this.cbfilterBy.Location = new System.Drawing.Point(155, 316);
-            this.cbfilterBy.Name = "cbfilterBy";
-            this.cbfilterBy.Size = new System.Drawing.Size(199, 37);
-            this.cbfilterBy.TabIndex = 23;
-            // 
-            // lblFilterBy
-            // 
-            this.lblFilterBy.AutoSize = true;
-            this.lblFilterBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFilterBy.Location = new System.Drawing.Point(13, 313);
-            this.lblFilterBy.Name = "lblFilterBy";
-            this.lblFilterBy.Size = new System.Drawing.Size(136, 32);
-            this.lblFilterBy.TabIndex = 22;
-            this.lblFilterBy.Text = "Filter By:";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::FrontEnd.Properties.Resources.Applications;
@@ -215,9 +176,6 @@
             this.ClientSize = new System.Drawing.Size(1505, 854);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pbAddNewInternationalDrivingApplication);
-            this.Controls.Add(this.mtbSearch);
-            this.Controls.Add(this.cbfilterBy);
-            this.Controls.Add(this.lblFilterBy);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblManagePeople);
             this.Controls.Add(this.btnClose1);
@@ -244,9 +202,6 @@
         private System.Windows.Forms.Label lblRecords1;
         private System.Windows.Forms.DataGridView dgvApplications;
         private System.Windows.Forms.PictureBox pbAddNewInternationalDrivingApplication;
-        private System.Windows.Forms.MaskedTextBox mtbSearch;
-        private System.Windows.Forms.ComboBox cbfilterBy;
-        private System.Windows.Forms.Label lblFilterBy;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblManagePeople;
         private System.Windows.Forms.PictureBox pictureBox2;

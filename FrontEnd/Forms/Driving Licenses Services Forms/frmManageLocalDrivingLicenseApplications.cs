@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogicLayer;
+using FrontEnd.Forms.Drivers_Forms;
 using FrontEnd.Forms.Driving_Licenses_Services_Forms.TestTypes_Forms;
 using FrontEnd.Forms.Tests_forms;
 
@@ -281,6 +282,22 @@ namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
             tsmShowDrivingLicense.Enabled = false;
         }
 
+        private void SetcmtForShowDrivingLicenseHistory()
+        {
+            int LDLAppID = Convert.ToInt32(dgvApplications.CurrentRow.Cells[0].Value);
+            int ApplicationID = clsManageLocalDrivingApplications.
+                GetApplicationIDFromLDLApplicationID(LDLAppID);
+            var License= clsLicense.FindByApplicationID(ApplicationID);
+            if (License!=null)
+
+            {
+                tsmShowPersonLicenseHistory.Enabled=true;
+                _DriverID = License.DriverID;
+                return;
+            }
+            tsmShowPersonLicenseHistory.Enabled = false;
+        }
+
         
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
@@ -288,6 +305,7 @@ namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
             SetcmtForIssueDrivingLicense();
             _SetcmtForCancelledAndCompletedApp();
             SetcmtForShowDrivingLicense();
+            SetcmtForShowDrivingLicenseHistory();
         }
 
         
@@ -340,9 +358,18 @@ namespace FrontEnd.Forms.Driving_Licenses_Services_Forms
             showLicenseInfo.ShowDialog();
         }
 
+        private int _DriverID = 0;
         private void tsmShowPersonLicenseHistory_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Not Implemented Yet", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            // MessageBox.Show("Not Implemented Yet", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            if(_DriverID > 0)
+            {
+                frmDriverLicenseHistory frmDriverLicenseHistory =
+                    new frmDriverLicenseHistory(_DriverID);
+                frmDriverLicenseHistory.ShowDialog();
+            }
+            
+
         }
     }
 }

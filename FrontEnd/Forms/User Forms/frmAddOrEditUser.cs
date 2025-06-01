@@ -16,7 +16,25 @@ namespace FrontEnd.Forms.User_Forms
         public frmAddOrEditUser(int UserID)
         {
             InitializeComponent();
-            findUserController1.SendPersonID += frmAddOrEditUser_SendPersonID;
+            findUserController1.SendPersonID += (object sender,int PersonID) =>
+                {
+                if (PersonID > 0)
+                {
+                    _PersonID = PersonID;
+                    personInfoController1.PersonID = PersonID;
+                    personInfoController1.ShowPersonInfo();
+                    btnNext.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Person does not exist", "Error"
+                        , MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    personInfoController1.PersonID = -1;
+                    personInfoController1.ShowPersonInfo();
+                    btnNext.Enabled = false;
+                    pUserInfo.Enabled = false;
+                }
+            };
             _UserID = UserID;
         }
 
@@ -70,22 +88,7 @@ namespace FrontEnd.Forms.User_Forms
 
         private void frmAddOrEditUser_SendPersonID(object sender,int PersonID)
         {
-            if(PersonID > 0)
-            {
-                _PersonID=PersonID;
-                personInfoController1.PersonID = PersonID;
-                personInfoController1.ShowPersonInfo();
-                btnNext.Enabled = true;
-            }
-            else
-            {
-                MessageBox.Show("Person does not exist","Error"
-                    ,MessageBoxButtons.OK,MessageBoxIcon.Error);
-                personInfoController1.PersonID = -1;
-                personInfoController1.ShowPersonInfo();
-                btnNext.Enabled = false;
-                pUserInfo.Enabled = false;
-            }
+            
             
         }
 

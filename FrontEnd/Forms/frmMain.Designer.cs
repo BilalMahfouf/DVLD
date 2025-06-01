@@ -357,7 +357,7 @@
             this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.menuStrip1);
             this.Name = "frmMain";
-            this.Text = "frmMain";
+            this.Text = "Main Screen";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuStrip1.ResumeLayout(false);
